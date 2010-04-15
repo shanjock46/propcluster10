@@ -3,9 +3,7 @@
  * and open the template in the editor.
  */
 
-package poker;
-
-import java.util.List;
+package com.prop.cluster10.poker.app.model;
 
 /**
  *
