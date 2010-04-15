@@ -1,4 +1,4 @@
-package com.prop.cluster10.blackjack.app.model;
+package com.prop.cluster10.remigio.app.model;
 import java.util.LinkedList;
 import java.util.List;
 
