@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package poker;
+package com.prop.cluster10.poker.app.model;
 
 
 /**
