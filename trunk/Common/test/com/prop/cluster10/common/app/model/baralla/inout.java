@@ -15,7 +15,7 @@ keyboard and disk files. The present version runs on
 Macintosh, Unix, and Windows 95 systems.
 */
 
-package classes;
+package com.prop.cluster10.common.app.model.baralla;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

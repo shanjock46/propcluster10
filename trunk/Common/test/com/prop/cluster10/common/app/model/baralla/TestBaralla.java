@@ -1,4 +1,4 @@
-package classes;
+package com.prop.cluster10.common.app.model.baralla;
 
 import java.util.ArrayList;
 import java.util.List;
