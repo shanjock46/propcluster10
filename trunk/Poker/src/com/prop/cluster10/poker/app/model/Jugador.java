@@ -203,9 +203,4 @@ public abstract class Jugador {
 
     public abstract boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int x);
 
-public static void main(String arg[]) throws Exception {
-    
-
-
-}
 }
