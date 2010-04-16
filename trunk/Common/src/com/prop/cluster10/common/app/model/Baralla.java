@@ -8,7 +8,8 @@ import com.prop.cluster10.common.app.model.baralla.SBCarta;
 
 // Hantaro's work
 
-
+//TODO: fer copia d'aquesta classe a la carpeta test: com.prop.cluster10.common.app.model.baralla
+//TODO: cambiar els SBCarta per Carta (quan hi siguin), ja que aquesta es la versi— "bona"
 public abstract class Baralla {
 
 	protected List<SBCarta> cartes;
