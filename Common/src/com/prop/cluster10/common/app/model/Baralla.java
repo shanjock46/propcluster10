@@ -1,7 +1,10 @@
-package classes;
+package com.prop.cluster10.common.app.model;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
+
+import com.prop.cluster10.common.app.model.baralla.SBCarta;
+
 
 // Hantaro's work
 
