@@ -3,7 +3,7 @@ package com.prop.cluster10.common.app.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.prop.cluster10.common.test.model.baralla.SBCarta;
+import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
 
 /**
  * @author Albert De Nova Santana
