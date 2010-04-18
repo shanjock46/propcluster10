@@ -36,7 +36,7 @@ public class TestEstadistiquesBlackJack {
 				io.writeln(" fitxes.");
 				break;
 			case 4:// setCartes(llistaCartes: Set(Carta))
-				io.writeln("El nombre de Rondes és constant a 10");
+				io.writeln("El nombre de Rondes es constant a 10");
 				io.write("fitxes per Ronda = ");
 				io.writeln(est.getFitxesRonda());
 				break;
