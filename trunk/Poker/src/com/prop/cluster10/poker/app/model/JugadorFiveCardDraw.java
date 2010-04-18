@@ -183,7 +183,6 @@ public class JugadorFiveCardDraw extends Jugador{
          * [22]=Cierto si alguien "HA HECHO RAISE ENTRE 60% y 80% DE MI CASH"
          * [23]=Cierto si alguien "HA HECHO RAISE ENTRE 80% y 100% DE MI CASH"
          * --BITS DEPENDIENTES DEL VALOR DE LA JUGADA--
-         [17]=Cierto si "NO HAY APUESTAS" (Todo check)
          * [24]=Cierto si "A"
          * [25]=Cierto si "2"
          * [26]=Cierto si "3"
@@ -198,11 +197,10 @@ public class JugadorFiveCardDraw extends Jugador{
          * [35]=Cierto si "Q"
          * [36]=Cierto si "K"
          */
-        System.out.println("ue1");
-        boolean[] res=new boolean[24];
+        boolean[] res=new boolean[36];
         res=evaluadorMa(res);
-        if (apostes_acomulades==0){
-            res[15]=true;
+        if (apostes_acomulades==0 && descarte==false){
+            res[14]=true;
             if (aposta==0) {
                 res[13]=true;
                 if (call==ciega) res[18]=true;
@@ -215,7 +213,8 @@ public class JugadorFiveCardDraw extends Jugador{
                 res[12]=true;
                 if (call==ciega/2) res[18]=true;
             }
-            if ((call/cash)*100<=20) res[19]=true;
+            if (call==0) res[17]=true;
+            else if (call!=0 && (call/cash)*100<=20) res[19]=true;
             else if (((call/cash)*100>20)&&((call/cash)*100<=40)) res[20]=true;
             else if (((call/cash)*100>40)&&((call/cash)*100<=60)) res[21]=true;
             else if (((call/cash)*100>60)&&((call/cash)*100<=80)) res[22]=true;
@@ -223,12 +222,12 @@ public class JugadorFiveCardDraw extends Jugador{
 
         }
         else if (descarte==true) {
-            res[16]=true;
+            res[15]=true;
         }
         else{
-            res[17]=true;
+            res[16]=true;
             if (call==0) res[17]=true;
-            else if ((call/cash)*100<=20) res[19]=true;
+            else if (call!=0 && (call/cash)*100<=20) res[19]=true;
             else if (((call/cash)*100>20)&&((call/cash)*100<=40)) res[20]=true;
             else if (((call/cash)*100>40)&&((call/cash)*100<=60)) res[21]=true;
             else if (((call/cash)*100>60)&&((call/cash)*100<=80)) res[22]=true;
