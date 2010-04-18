@@ -3,6 +3,8 @@ package com.prop.cluster10.blackjack.test.app.model.jugadorblackjack;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
+
 
 // Hantaro's work
 
