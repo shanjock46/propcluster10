@@ -76,33 +76,38 @@ public class Estadistiques {
     }
 
     public int percentatgePartidesGuanyades() {
-        return ((this.getPartidesGuanyades())/(this.getPartidesJugades())*100);
+        if (this.getPartidesJugades()==0) return 0;
+        else return ((this.getPartidesGuanyades())/(this.getPartidesJugades())*100);
     }
 
     public int percentatgePartidesPerdudes() {
-        return ((this.getPartidesEliminat())/(this.getPartidesJugades())*100);
+        if (this.getPartidesJugades()==0) return 0;
+        else return ((this.getPartidesEliminat())/(this.getPartidesJugades())*100);
     }
 
     public double coeficientEfectivitatPartides() {
-        if (this.getPartidesEliminat()==0 ) return 1337;
+        if (this.getPartidesEliminat()==0 ) return 0;
         else return (this.getPartidesGuanyades()/this.getPartidesEliminat());
     }
 
     public int percentatgeRondesGuanyades() {
-        return ((this.getRondesGuanyades())/(this.getRondesJugades())*100);
+        if (this.getRondesJugades()==0) return 0;
+        else return ((this.getRondesGuanyades())/(this.getRondesJugades())*100);
     }
 
     public int percentatgeRondesPerdudes() {
-        return ((this.getRondesPerdudes())/(this.getRondesJugades())*100);
+        if (this.getRondesJugades()==0) return 0;
+        else return ((this.getRondesPerdudes())/(this.getRondesJugades())*100);
     }
 
     public double coeficientEfectivitatRondes() {
-        if (this.getRondesPerdudes()==0 ) return 6929;
+        if (this.getRondesPerdudes()==0 ) return 0;
         else return (this.getRondesGuanyades()/this.getRondesPerdudes());
     }
 
     public double mitjanaRondesGuanyadesPartida() {
-        return (this.getRondesGuanyades()/this.getPartidesGuanyades());
+        if (this.getPartidesGuanyades()==0) return 0;
+        else return (this.getRondesGuanyades()/this.getPartidesGuanyades());
     }
 
     public void actualitzaFiRonda(boolean r, int e) {
