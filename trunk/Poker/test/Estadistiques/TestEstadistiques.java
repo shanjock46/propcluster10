@@ -1,8 +1,6 @@
 package Estadistiques;
 
 
-import com.prop.cluster10.poker.app.model.Estadistiques;
-import com.prop.cluster10.poker.app.model.inout;
 
 /*
  * To change this template, choose Tools | Templates
@@ -160,20 +158,20 @@ public class TestEstadistiques {
                                 io.writeln("Les estadistiques actuals son:");
                                 double[] d=new double[14];
                                 d=e.carregaEstadistiques();
-                                io.writeln("Partides jugades:"+d[0]+".");
-                                io.writeln("Partides guanyades:"+d[1]+".");
-                                io.writeln("Partides perdudes:"+d[2]+".");
-                                io.writeln("Rondes jugades:"+d[3]+".");
-                                io.writeln("Rondes guanyades:"+d[4]+".");
-                                io.writeln("Rondes perdudes:"+d[5]+".");
-                                io.writeln("Fitxes guanyades:"+d[6]+".");
-                                io.writeln("Percentatge de partides guanyades:"+d[7]+".");
-                                io.writeln("Percentatge de partides perdudes:"+d[8]+".");
-                                io.writeln("Percentatge de rondes guanyades:"+d[9]+".");
-                                io.writeln("Percentatge de rondes perdudes:"+d[10]+".");
-                                io.writeln("Coeficient d'efectivitat de les partides:"+d[11]+".");
-                                io.writeln("Coeficient d'efectivitat de les rondes:"+d[12]+".");
-                                io.writeln("Mitjana de rondes guanyades per partida:"+d[13]+".");
+                                io.writeln("Partides jugades: "+(int)d[0]+".");
+                                io.writeln("Partides guanyades: "+(int)d[1]+".");
+                                io.writeln("Partides perdudes: "+(int)d[2]+".");
+                                io.writeln("Rondes jugades: "+(int)d[3]+".");
+                                io.writeln("Rondes guanyades: "+(int)d[4]+".");
+                                io.writeln("Rondes perdudes: "+(int)d[5]+".");
+                                io.writeln("Fitxes guanyades: "+(int)d[6]+".");
+                                io.writeln("Percentatge de partides guanyades: "+d[7]+"%.");
+                                io.writeln("Percentatge de partides perdudes: "+d[8]+"%.");
+                                io.writeln("Percentatge de rondes guanyades: "+d[9]+"%.");
+                                io.writeln("Percentatge de rondes perdudes: "+d[10]+"%.");
+                                io.writeln("Coeficient d'efectivitat de les partides: "+d[11]+".");
+                                io.writeln("Coeficient d'efectivitat de les rondes: "+d[12]+".");
+                                io.writeln("Mitjana de rondes guanyades per partida: "+d[13]+".");
                                 break;
                             }
                 }
