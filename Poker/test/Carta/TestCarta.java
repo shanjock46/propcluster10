@@ -1,6 +1,7 @@
+package Carta;
 
-import com.prop.cluster10.poker.app.model.Carta;
-import com.prop.cluster10.poker.app.model.inout;
+
+
 
 /*
  * To change this template, choose Tools | Templates
