@@ -81,48 +81,49 @@ public abstract class Jugador {
     public void setMa(Carta[] cartes){
         ma=null;
         for (int j=0; j<5 ; j++){
-            if (ma==null) {
-                nodoCarta n=new nodoCarta();
-                n.siguiente=null;
-                n.c=cartes[j];
-                
-                ma=n;
-            }
-            else {
-                nodoCarta anterior=null;
-                nodoCarta actual=ma;
-                while (actual!=null && actual.c.getNumero()<cartes[j].getNumero()) {
-                    anterior=actual;
-                    actual=actual.siguiente;
-                }
-                if (actual==null) {
-                    nodoCarta n=new nodoCarta();
-                    n.siguiente=null;
-                    n.c=cartes[j];
-                    anterior.siguiente=n;
-                }
-                else {
-                    if (actual.c.getNumero()==cartes[j].getNumero()) {
+                if (cartes[j]!=null) {
+                    if (ma==null) {
                         nodoCarta n=new nodoCarta();
-                        n.siguiente=actual;
+                        n.siguiente=null;
                         n.c=cartes[j];
-                        if (anterior==null) ma=n;
-                        else anterior.siguiente=n;
+
+                        ma=n;
                     }
                     else {
-                        nodoCarta n=new nodoCarta();
-                        n.siguiente=actual;
-                        n.c=cartes[j];
-                        if (anterior==null) ma=n;
-                        else anterior.siguiente=n;
+                        nodoCarta anterior=null;
+                        nodoCarta actual=ma;
+                        while (actual!=null && actual.c.getNumero()<cartes[j].getNumero()) {
+                            anterior=actual;
+                            actual=actual.siguiente;
+                        }
+                        if (actual==null) {
+                            nodoCarta n=new nodoCarta();
+                            n.siguiente=null;
+                            n.c=cartes[j];
+                            anterior.siguiente=n;
+                        }
+                        else {
+                            if (actual.c.getNumero()==cartes[j].getNumero()) {
+                                nodoCarta n=new nodoCarta();
+                                n.siguiente=actual;
+                                n.c=cartes[j];
+                                if (anterior==null) ma=n;
+                                else anterior.siguiente=n;
+                            }
+                            else {
+                                nodoCarta n=new nodoCarta();
+                                n.siguiente=actual;
+                                n.c=cartes[j];
+                                if (anterior==null) ma=n;
+                                else anterior.siguiente=n;
+                            }
+
+
+
+                        }
+
                     }
-
-
-
-                }
-
-            }
-        }
+        }}
         
     }
 
@@ -139,47 +140,48 @@ public abstract class Jugador {
     }
 
     public void afegeixCarta (Carta cart){
-        if (ma==null) {
-                nodoCarta n=new nodoCarta();
-                n.siguiente=null;
-                n.c=cart;
-
-                ma=n;
-            }
-            else {
-                nodoCarta anterior=null;
-                nodoCarta actual=ma;
-                while (actual!=null && actual.c.getNumero()<cart.getNumero()) {
-                    anterior=actual;
-                    actual=actual.siguiente;
-                }
-                if (actual==null) {
-                    nodoCarta n=new nodoCarta();
-                    n.siguiente=null;
-                    n.c=cart;
-                    anterior.siguiente=n;
-                }
-                else {
-                    if (actual.c.getNumero()==cart.getNumero()) {
+            if (cart!=null){
+                if (ma==null) {
                         nodoCarta n=new nodoCarta();
-                        n.siguiente=actual;
+                        n.siguiente=null;
                         n.c=cart;
-                        if (anterior==null) ma=n;
-                        else anterior.siguiente=n;
+
+                        ma=n;
                     }
                     else {
-                        nodoCarta n=new nodoCarta();
-                        n.siguiente=actual;
-                        n.c=cart;
-                        if (anterior==null) ma=n;
-                        else anterior.siguiente=n;
+                        nodoCarta anterior=null;
+                        nodoCarta actual=ma;
+                        while (actual!=null && actual.c.getNumero()<cart.getNumero()) {
+                            anterior=actual;
+                            actual=actual.siguiente;
+                        }
+                        if (actual==null) {
+                            nodoCarta n=new nodoCarta();
+                            n.siguiente=null;
+                            n.c=cart;
+                            anterior.siguiente=n;
+                        }
+                        else {
+                            if (actual.c.getNumero()==cart.getNumero()) {
+                                nodoCarta n=new nodoCarta();
+                                n.siguiente=actual;
+                                n.c=cart;
+                                if (anterior==null) ma=n;
+                                else anterior.siguiente=n;
+                            }
+                            else {
+                                nodoCarta n=new nodoCarta();
+                                n.siguiente=actual;
+                                n.c=cart;
+                                if (anterior==null) ma=n;
+                                else anterior.siguiente=n;
+                            }
+
+                        }
+
+                        }
+
                     }
-
-
-
-                }
-
-            }
     }
 
     public void BuidaCartes(){
