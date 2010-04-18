@@ -5,6 +5,11 @@
 
 package com.prop.cluster10.poker.app.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
 /**
  *
  * @author Alberto
@@ -21,7 +26,7 @@ public abstract class Jugador {
     protected int cash;
     protected int aposta;
     protected Estadistiques est;
-
+    protected ArrayList<Carta> xD;
     
 /*
     public Jugador (String nj, Integer ch){
@@ -55,6 +60,11 @@ public abstract class Jugador {
         else return null;
     }
 
+    public ArrayList getxD(){
+        
+        return this.xD;
+    }
+
     public nodoCarta getMa(){
   
         return this.ma;
@@ -76,6 +86,19 @@ public abstract class Jugador {
 
         this.nom = nom;
 
+    }
+
+    public void setxD(Carta[] cartes) {
+        xD.clear();
+        for (int j=0; j<cartes.length ; j++){
+                if (cartes[j]!=null) {
+                    xD.add(cartes[j]);
+                    
+                }
+                }
+        Comparator<Carta> ordrecreixent=new order();
+        Collections.sort(xD, ordrecreixent);
+        
     }
 
     public void setMa(Carta[] cartes){
@@ -139,6 +162,15 @@ public abstract class Jugador {
 
     }
 
+    public void afegeixxD(Carta cart){
+        if (cart!=null){
+            xD.add(cart);
+            Comparator<Carta> ordrecreixent=new order();
+            Collections.sort(xD, ordrecreixent);
+        }
+        
+    }
+
     public void afegeixCarta (Carta cart){
             if (cart!=null){
                 if (ma==null) {
@@ -182,6 +214,22 @@ public abstract class Jugador {
                         }
 
                     }
+    }
+
+    public void buidaxD(){
+        xD.clear();
+    }
+    
+    public void descartarxD(int numero, String pal){
+        Iterator<Carta> actual=xD.iterator();
+        Carta c=new Carta();
+        while (actual.hasNext() && (c.getNumero()!=numero && c.getPal().compareTo(pal)!=0)){
+            c=actual.next();    
+        }
+        if (c.getNumero()==numero && c.getPal().compareTo(pal)==0) {
+            xD.remove(c);
+        }
+            
     }
 
     public void BuidaCartes(){

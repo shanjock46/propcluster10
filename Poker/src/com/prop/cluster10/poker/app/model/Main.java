@@ -34,7 +34,7 @@ public class Main {
             x.setNumero(b);
             c[i]=x;
            }*/
-        j.setMa(c);
+        j.setxD(c);
         j.setAposta(0);
         boolean[] b=j.evaluador(5000, false, 0, 0, 0);
         for (int z=0;z<b.length;z++) {
