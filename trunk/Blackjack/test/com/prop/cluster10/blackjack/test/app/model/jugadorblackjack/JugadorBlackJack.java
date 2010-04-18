@@ -1,14 +1,25 @@
 package com.prop.cluster10.blackjack.test.app.model.jugadorblackjack;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
 
 // Hantaro's work
 
 public class JugadorBlackJack extends SBJugador {
 	private List<SBCarta> segonaMa;
 	private int fitxesAssegurar;
+	
+	public JugadorBlackJack() {
+		ma = new ArrayList<SBCarta>();
+		segonaMa = new ArrayList<SBCarta>();
+		SBCarta carta = new SBCarta();
+		carta.setNumero(10);
+		carta.setPal("piques");
+		carta.setValor(0);
+		ma.add(carta);
+		ma.add(carta);
+	}
 	
 	public int getFitxesAssegurar() {
 		return fitxesAssegurar;
