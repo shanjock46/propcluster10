@@ -1,4 +1,4 @@
-
+package com.prop.cluster10.Blacjack.test.EstadistiquesBlackJack;
 
 public class TestEstadistiquesBlackJack {
 
@@ -31,7 +31,7 @@ public class TestEstadistiquesBlackJack {
 				est.setFitxes(fitxes);
 				break;
 			case 3:
-				io.write("El jugador té ");
+				io.write("El jugador te ");
 				io.write(est.getFitxes());
 				io.writeln(" fitxes.");
 				break;

@@ -14,8 +14,7 @@ output text to screen and disk files and input text from
 keyboard and disk files. The present version runs on
 Macintosh, Unix, and Windows 95 systems.
 */
-
-package classes;
+package com.prop.cluster10.Blacjack.test.EstadistiquesBlackJack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

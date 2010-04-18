@@ -1,5 +1,4 @@
-package classes;
-
+package com.prop.cluster10.Blacjack.test.EstadistiquesBlackJack;
 //Hantaro's Work
 
 public class EstadistiquesBlackJack extends SBEstadistiques{
