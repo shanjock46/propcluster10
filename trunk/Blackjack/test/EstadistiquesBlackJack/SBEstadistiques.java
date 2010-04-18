@@ -1,6 +1,4 @@
-package classes;
-
-
+package com.prop.cluster10.Blacjack.test.EstadistiquesBlackJack;
 
 public class SBEstadistiques {
 	int partidesJugades;
