@@ -4,7 +4,7 @@ public class SBEstadistiques {
 	int partidesJugades;
 	int partidesGuanyades;
 	int partidesEliminat;
-	int rondesJugades = 10;
+	protected int rondesJugades = 10;
 	int rondesGuanyades;
 	int rondesPerdudes;
 	int fitxesGuanyades;
