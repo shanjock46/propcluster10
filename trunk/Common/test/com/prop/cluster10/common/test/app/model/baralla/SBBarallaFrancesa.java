@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import com.prop.cluster10.common.app.model.Baralla;
+
 
 public class SBBarallaFrancesa extends Baralla{
 	
