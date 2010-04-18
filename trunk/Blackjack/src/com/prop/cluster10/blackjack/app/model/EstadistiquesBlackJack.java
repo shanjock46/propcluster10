@@ -1,4 +1,6 @@
 package com.prop.cluster10.blackjack.app.model;
+
+import com.prop.cluster10.blackjack.test.app.model.estadistiquesblackjack.SBEstadistiques;
 //Hantaro's Work
 
 public class EstadistiquesBlackJack extends SBEstadistiques{
