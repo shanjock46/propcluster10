@@ -21,9 +21,9 @@ public class TestJugador {
                 io.writeln("2- Crear un jugador amb nom i cash");
                 io.writeln("3- Veure el nom del jugador");
                 io.writeln("4- Veure la ma del jugador");
-                io.writeln("5- Veure valor de la carta");
-                io.writeln("6- Canviar pal de la carta");
-                io.writeln("7- Canviar numero de la carta");
+                io.writeln("5- Veure el cash del jugador");
+                io.writeln("6- Veure l'aposta del jugador");
+                io.writeln("7- Veure les estadistiques del jugador");
                 io.writeln("8- Canviar valor de la carta");
                 io.writeln("9- Comparar carta amb cartes predeterminades");
                 io.writeln("0- Sortir");
@@ -38,5 +38,7 @@ public class TestJugador {
                                 break;
 
 
+           }
+}
            }
 }

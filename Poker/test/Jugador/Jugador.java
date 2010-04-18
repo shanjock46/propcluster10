@@ -46,17 +46,6 @@ public abstract class Jugador {
 
     }
 
-    public Carta getCartaMa(int n){
-        nodoCarta actual=ma;
-        int i=1;
-        while (i<=n && actual!=null) {
-            actual=actual.siguiente;
-            i++;
-        }
-        if (actual!= null) return actual.c;
-        else return null;
-    }
-
     public nodoCarta getMa(){
   
         return this.ma;
@@ -139,6 +128,17 @@ public abstract class Jugador {
 
         this.aposta = aposta;
 
+    }
+
+    public Carta getCartaMa(int n){
+        nodoCarta actual=ma;
+        int i=1;
+        while (i<=n && actual!=null) {
+            actual=actual.siguiente;
+            i++;
+        }
+        if (actual!= null) return actual.c;
+        else return null;
     }
 
     public void afegeixCarta (Carta cart){
