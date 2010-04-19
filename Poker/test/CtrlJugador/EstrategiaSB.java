@@ -9,6 +9,6 @@ package CtrlJugador;
  *
  * @author Dani
  */
-class EstrategiaSB {
+public class EstrategiaSB {
 
 }
