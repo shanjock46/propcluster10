@@ -1,5 +1,8 @@
 package Estadistiques;
 
+import com.prop.cluster10.common.test.app.model.estadistiques.Estadistiques;
+import com.prop.cluster10.common.test.app.model.estadistiques.inout;
+
 
 
 /*
