@@ -5,6 +5,9 @@
 
 package com.prop.cluster10.poker.app.model;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
  * @author Dani
@@ -17,7 +20,7 @@ public class JugadorFiveCardDraw extends Jugador{
         cash = -1;
         aposta = -1;
         est= new Estadistiques();
-        ma=null;
+        ma=new ArrayList();
     }
 
     public JugadorFiveCardDraw (String nj, Integer ch){
@@ -25,7 +28,7 @@ public class JugadorFiveCardDraw extends Jugador{
         cash = ch;
         aposta = -1;
         est= new Estadistiques();
-        ma=null;
+        ma=new ArrayList();
     }
 
     public JugadorFiveCardDraw (String nj) {
@@ -33,11 +36,9 @@ public class JugadorFiveCardDraw extends Jugador{
         cash = -1;
         aposta = -1;
         est= new Estadistiques();
-        ma=new nodoCarta();
+        ma=new ArrayList();
     }
-
-    public boolean[] evaluadorMa(boolean[] b) {
-        /*Bits del array:
+    /* Post: Bits del array:
          * --BITS DEPENDIENTES DE LA MANO--
          * [0]=Cierto si jugador tiene "CARTA ALTA" en mano (Por defecto, siempre cierto)
          * [1]=Cierto si jugador tiene "PAREJA" en mano
@@ -63,7 +64,7 @@ public class JugadorFiveCardDraw extends Jugador{
          * [34]=Cierto si "J"
          * [35]=Cierto si "Q"
          * [36]=Cierto si "K" */
-
+    public boolean[] evaluadorMa(boolean[] b){
         b[0]=true;
         int cartaalta=0;
         int igualnumero=0;
@@ -72,63 +73,75 @@ public class JugadorFiveCardDraw extends Jugador{
         int pokerde=0;
         int proyecto=0;
         int j=1;
-        nodoCarta actual=ma;
+        int i=0;
+        Iterator<Carta> actual=ma.iterator();
+        Carta c1=new Carta();
+        Carta c2=new Carta();
         //--ESTO EVALUA LA MANO--
-       
-        while (actual!=null) {
-            nodoCarta checker=actual.siguiente;
+        while (actual.hasNext()) {
+            c1 = actual.next();
+            Iterator<Carta> pateador=actual;
             cartaalta=0;
             igualnumero=0;
             igualcolor=0;
             proyecto=0;
-            j=1;
-            while (checker!=null){
-                if (actual.c.getNumero()==checker.c.getNumero()) igualnumero++;
-                if (actual.c.getPal().compareToIgnoreCase(checker.c.getPal())==0) igualcolor++;
-                if (actual.c.getNumero()==checker.c.getNumero()-j) proyecto++;
-                if (checker.siguiente==null) cartaalta=checker.c.getNumero();
-                checker=checker.siguiente;
+            j=i+1;
+            while (ma.size()-j>0){
+                c2= ma.get(j);
+                if (c1.getNumero()==c2.getNumero()) igualnumero++;
+                if (c1.getPal().compareToIgnoreCase(c2.getPal())==0) igualcolor++;
+                if (c1.getNumero()==c2.getNumero()-j) proyecto++;
+                if (pateador.hasNext()==false) cartaalta=c2.getNumero();
                 j++;
             }
-            if (igualnumero==1 && triode!=actual.c.getNumero() && pokerde!=actual.c.getNumero()) {  //Evalua si PAREJA o DOBLE PAREJA o FULL
+            if (igualnumero==1 && triode!=c1.getNumero() && pokerde!=c1.getNumero()) {  //Evalua si PAREJA o DOBLE PAREJA o FULL
                 if (b[1]==true) {
                     b[1]=false;
                     b[2]=true;
-                    b[23+actual.c.getNumero()]=true;
+                    b[23+c1.getNumero()]=true;
                 }
-                else if (b[3]==true) b[6]=true;
+                else if (b[3]==true) {
+                    b[3]=false;
+                    b[6]=true;
+                                    }
                 else {
                     b[1]=true;
-                    b[23+actual.c.getNumero()]=true;
+                    b[23+c1.getNumero()]=true;
                 }
-                b[0]=false;
+                
             }
-            if (igualnumero==2 && pokerde!=actual.c.getNumero()) { //Evalua si TRIO o FULL
+            if (igualnumero==2 && pokerde!=c1.getNumero()) { //Evalua si TRIO o FULL
                 if (b[1]==true){
                     b[6]=true;
+                    b[1]=false;
                     for (int xd=24;xd<37;xd++){
                         b[xd]=false;
                     }
-                    b[23+actual.c.getNumero()]=true;
+                    b[23+c1.getNumero()]=true;
                 }
                 else {
                     b[3]=true;
-                    b[23+actual.c.getNumero()]=true;
-                    triode=actual.c.getNumero();
-                    b[0]=false;
+                    b[23+c1.getNumero()]=true;
+                    triode=c1.getNumero();
+                    
                 }
             }
             if (igualnumero==3) {                                   //Evalua si POKER
                 b[7]=true;
-                b[23+actual.c.getNumero()]=true;
-                pokerde=actual.c.getNumero();
+                b[23+c1.getNumero()]=true;
+                pokerde=c1.getNumero();
                 b[0]=false;
             }
             if (proyecto==4 && igualcolor!=4){
                 b[4]=true;
-                for(checker=actual;checker!=null;checker=checker.siguiente){
-                    b[23+checker.c.getNumero()]=true;
+                pateador=actual;
+               j=i+1;
+                 while (pateador.hasNext()){
+                    c2= ma.get(j);
+                    b[23+c2.getNumero()]=true;
                 }
+
+
             }
 
             if (igualcolor==4) {                                    //Evalua si COLOR o ESCALERA DE COLOR
@@ -136,22 +149,23 @@ public class JugadorFiveCardDraw extends Jugador{
                     b[8]=true;
                 }
                 else b [5]=true;
-                for(checker=actual;checker!=null;checker=checker.siguiente){
-                    b[23+checker.c.getNumero()]=true;
+            while (pateador.hasNext()){
+                    c2= ma.get(j);
+                    b[23+c2.getNumero()]=true;
                 }
 
             }
             if ((b[5]==false && b[10]==false)&&(igualcolor==3 || igualcolor==2)) b[10]=true; //Evalua si PROYECTO DE COLOR
-            
+
             if ((b[4]==false && b[9]==false)&&(proyecto==3 || proyecto==2)) b[9]=true; //Evalua si PROYECTO DE ESCALERA
-        actual=actual.siguiente;
+
+            i++;
         }
-        
-        //--FIN EVALUACION MANO
 
-    return b;
+
+        return b;
     }
-
+        
     public boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int apostes_acomulades) {
         /*Bits del array:
          * --BITS DEPENDIENTES DE LA MANO--
