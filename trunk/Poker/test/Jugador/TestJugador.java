@@ -15,7 +15,7 @@ public class TestJugador {
 
                 int op = 30;
                 inout io = new inout();
-                
+                Jugador jug=new JugadorFiveCardDrawSB();
                 io.writeln("1- Crear un jugador buit");
                 io.writeln("2- Crear un jugador amb nom i cash");
                 io.writeln("3- Veure el nom del jugador");
