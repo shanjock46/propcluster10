@@ -9,7 +9,7 @@ package Jugador;
  *
  * @author Dani
  */
-public class Carta {
+public class CartaSB {
     private String pal;
     private int numero;
     private int valor;
