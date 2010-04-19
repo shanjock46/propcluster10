@@ -38,6 +38,7 @@ public class TestJugador {
                 io.writeln("20- Carrega les estadístiques");
                 io.writeln("21- Afegir una carta a la ma");
                 io.writeln("0- Sortir");
+                io.writeln("0- Sortir");
 
                 while (op != 0) {
                         op = io.readint();
