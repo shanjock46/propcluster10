@@ -18,7 +18,7 @@ public class TestCtrlJugador {
 
                 io.writeln("1- Crear CtrlJugador buit");
                 io.writeln("2- Crear CtrlJugador amb el jugador que li indiquem");
-                io.writeln("3- Veure pal de la carta");
+                io.writeln("3- Crea un jugador nou i el fa persistent");
                 io.writeln("4- Veure numero de la carta");
                 io.writeln("5- Veure valor de la carta");
                 io.writeln("6- Canviar pal de la carta");
