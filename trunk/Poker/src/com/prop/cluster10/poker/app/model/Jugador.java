@@ -16,16 +16,12 @@ import java.util.Iterator;
  */
 public abstract class Jugador {
 
-    protected class nodoCarta {
-        protected Carta c;
-        protected nodoCarta siguiente;
-    }
-
     protected String nom;
     protected int cash;
     protected int aposta;
     protected Estadistiques est;
     protected ArrayList<Carta> ma;
+    protected Estrategia estrategia;
     
 /*
     public Jugador (String nj, Integer ch){
@@ -65,23 +61,18 @@ public abstract class Jugador {
 
     }
 
+    public Estadistiques getEst() {
+        return est;
+    }
+
+    public Estrategia getEstrategia() {
+        return estrategia;
+    }
+
     public void setNom(String nom){
 
         this.nom = nom;
 
-    }
-
-    public void setMa(Carta[] cartes) {
-        ma.clear();
-        for (int j=0; j<cartes.length ; j++){
-                if (cartes[j]!=null) {
-                    ma.add(cartes[j]);
-                    
-                }
-                }
-        Comparator<Carta> ordrecreixent=new order();
-        Collections.sort(ma, ordrecreixent);
-        
     }
 
     public void setCash(int cash){
@@ -94,6 +85,22 @@ public abstract class Jugador {
 
         this.aposta = aposta;
 
+    }
+
+    public void setEst(Estadistiques est) {
+        this.est = est;
+    }
+
+    /**
+     * @param ma the ma to set
+     */
+    public void setMa(ArrayList<Carta> ma) {
+        this.ma = ma;
+        Comparator<Carta> ordrecreixent=new order();
+        Collections.sort(ma, ordrecreixent);
+    }
+    public void setEstrategia(Estrategia estrategia) {
+        this.estrategia = estrategia;
     }
 
     public void afegeixCarta(Carta cart){
@@ -123,4 +130,12 @@ public abstract class Jugador {
 
     public abstract boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int x);
 
+    public double[] carregaEstadistiques() {
+        return getEst().carregaEstadistiques();
+    }
+
+    
+    
+
+    
 }
