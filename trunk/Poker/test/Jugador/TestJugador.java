@@ -18,24 +18,25 @@ public class TestJugador {
                 Jugador jug=new JugadorFiveCardDrawSB();
                 io.writeln("1- Crear un jugador buit");
                 io.writeln("2- Crear un jugador amb nom i cash");
-                io.writeln("3- Veure el nom del jugador");
-                io.writeln("4- Veure la ma del jugador");
-                io.writeln("5- Veure el cash del jugador");
-                io.writeln("6- Veure l'aposta del jugador");
-                io.writeln("7- Veure les estadistiques del jugador");
-                io.writeln("8- Veure l'estrategia");
-                io.writeln("9- Canviar el nom del jugador");
-                io.writeln("10- Canviar la ma del jugador");
-                io.writeln("11- Canviar el cash del jugador");
-                io.writeln("12- Canviar l'aposta del jugador");
-                io.writeln("13- Canviar les estadistiques del jugador");
-                io.writeln("14- Canviar l'estrategia");
-                io.writeln("15- Afegir una carta a la ma");
-                io.writeln("16- Buidar la ma");
-                io.writeln("17- Descartar una carta");
-                io.writeln("18- Fer una evaluació");
-                io.writeln("19- Carrega les estadístiques");
-                io.writeln("20- Afegir una carta a la ma");
+                io.writeln("3- Crear un jugador amb nom");
+                io.writeln("4- Veure el nom del jugador");
+                io.writeln("5- Veure la ma del jugador");
+                io.writeln("6- Veure el cash del jugador");
+                io.writeln("7- Veure l'aposta del jugador");
+                io.writeln("8- Veure les estadistiques del jugador");
+                io.writeln("9- Veure l'estrategia");
+                io.writeln("10- Canviar el nom del jugador");
+                io.writeln("11- Canviar la ma del jugador");
+                io.writeln("12- Canviar el cash del jugador");
+                io.writeln("13- Canviar l'aposta del jugador");
+                io.writeln("14- Canviar les estadistiques del jugador");
+                io.writeln("15- Canviar l'estrategia");
+                io.writeln("16- Afegir una carta a la ma");
+                io.writeln("17- Buidar la ma");
+                io.writeln("18- Descartar una carta");
+                io.writeln("19- Fer una evaluació");
+                io.writeln("20- Carrega les estadístiques");
+                io.writeln("21- Afegir una carta a la ma");
                 io.writeln("0- Sortir");
 
                 while (op != 0) {
@@ -43,7 +44,8 @@ public class TestJugador {
                         switch (op) {
 
                         case 1:// Carta()
-                                io.writeln("S'ha creat una carta buida");
+                                jug=new JugadorFiveCardDrawSB();
+                                io.writeln("S'ha creat un nou jugador");
                                 break;
                         
                         case 2:// Carta()
@@ -119,6 +121,10 @@ public class TestJugador {
                                 break;
 
                         case 20:// Carta()
+                                io.writeln("S'ha creat una carta buida");
+                                break;
+
+                        case 21:// Carta()
                                 io.writeln("S'ha creat una carta buida");
                                 break;
 
