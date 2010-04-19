@@ -9,6 +9,10 @@ package Jugador;
  *
  * @author Dani
  */
-public class Estadistiques {
+public class EstadistiquesSB {
+
+    double[] carregaEstadistiques() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 
 }
