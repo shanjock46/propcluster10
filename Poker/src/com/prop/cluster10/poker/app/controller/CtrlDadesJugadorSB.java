@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 
-package com.prop.cluster10.poker.app.model;
+package com.prop.cluster10.poker.app.controller;
+
+import com.prop.cluster10.poker.app.model.Jugador;
 
 /**
  *
