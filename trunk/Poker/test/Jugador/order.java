@@ -5,7 +5,6 @@
 
 package Jugador;
 
-import com.prop.cluster10.poker.app.model.*;
 import java.util.Comparator;
 
 /**

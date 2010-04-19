@@ -1,5 +1,8 @@
 package Carta;
 
+import com.prop.cluster10.common.test.app.model.carta.Carta;
+import com.prop.cluster10.common.test.app.model.carta.inout;
+
 
 
 
