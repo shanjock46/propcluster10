@@ -1,11 +1,12 @@
-package com.prop.cluster10.remigio.app.model;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public abstract class CtrlPartida 
 {
-	private Partida partida = null;
+	protected Partida partida = null;
+	private Ronda rondaActual = null;
+	private CtrlRonda ctrlRonda = null;
 	
 	public CtrlPartida()
 	{
@@ -16,46 +17,43 @@ public abstract class CtrlPartida
 	{
 		this.partida = p;
 	}
-
-	public abstract Partida crearPartida(List<Jugador> jugadors, Integer cashInicial);
 	
-	public void eliminarJugadors(List<Jugador> jugadors)
-	{
-		this.partida.eliminaJugadors(jugadors);
+	public abstract void iniPartida(List<Jugador> jugadors);
+
+	public void crearPartida(List<Jugador> jugadors, Integer cashInicial){
+		iniPartida(jugadors);	//iniciem la partida del tipus de cada joc
+		this.rondaActual = this.partida.creaRonda(jugadors);
+		jugarPartida();
 	}
+	
+	private void jugarPartida() {
+		ctrlRonda = new CtrlRonda(rondaActual);
+		while(!fiPartida()){	//he separat fiRonda(retorna si sha acabat la partida, abstracte)
+			ctrlRonda.jugarRonda();
+			finalitzarRonda();	//només actualitza estadístiques
+		}
+		finalitzarPartida();
+	}
+
+	public abstract boolean fiPartida();
 	
 	public void carregarPartida(Long id)
 	{
-		
+		//TODO: Falten els controladors de la capa de dades
 	}
 	
 	public void guardarPartida()
 	{
-		
+		//TODO: Falten els controladors de la capa de dades
 	}
 	
-	public boolean finalitzarRonda()
+	public void finalitzarRonda()
 	{	
-			
-		for(Jugador jugador: this.partida.getJugadors())
-		{
-			//TODO:
-			//Estadistiques stats = jugador.getEstadistiques();
-			//stats.setRondesJugades(stats.getRondesJugades() + 1);
-			// y asi sucesivamemte...
-			//stats.
-		}
+		//actualitzar estadístique
+		this.partida.actualitzaEstadistiquesFiRonda();
 		
-		List<Jugador> jugadorsToDelete = new LinkedList<Jugador>();
-		for(Jugador j: this.partida.getJugadors())
-		{
-			//TODO: descomentar cuando se haya implementado Jugador
-			//if (j.getCash().intValue() <= 0) jugadorsToDelete.add(j);
-		}
-		
-		this.partida.eliminaJugadors(jugadorsToDelete);
-		
-		return (this.partida.getJugadors().size() > 1);
+		//eliminar jugadors sense diners (treure dels actius)
+		this.partida.eliminaJugadors();
 	}
 	
 	public void finalitzarPartida()
@@ -69,4 +67,5 @@ public abstract class CtrlPartida
 		stats.setTotalPartidesJugades(stats.getTotalPartidesJugades() + 1);
 	  */
 	}
+
 }
