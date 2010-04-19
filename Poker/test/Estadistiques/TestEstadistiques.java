@@ -139,20 +139,20 @@ public class TestEstadistiques {
                                 io.writeln("La mitjana de rondes per partida es:"+e.mitjanaRondesGuanyadesPartida()+".");
                                 break;
                          case 23:// actualitzaFiRonda()
-                                io.writeln("La ronda ha finalitzat, heu guanyat?");
+                                io.writeln("La ronda ha finalitzat, heu guanyat? (si/no)");
                                 String rguanyat=io.readword();
                                 if (rguanyat.compareToIgnoreCase("si")==0){
                                     io.writeln("Quantes fitxes heu guanyat?");
                                     int fitxes=io.readint();
                                     e.actualitzaFiRonda(true, fitxes);
                                 }
-                                else e.actualitzaFiRonda(false, 0);
+                                else if (rguanyat.compareToIgnoreCase("no")==0) e.actualitzaFiRonda(false, 0);
                                 break;
                          case 24:// actualitzaFiPartida()
-                                io.writeln("La partida ha finalitzat, heu guanyat?");
+                                io.writeln("La partida ha finalitzat, heu guanyat (si/no)?");
                                 String pguanyat=io.readword();
                                 if (pguanyat.compareToIgnoreCase("si")==0) e.actualitzaFiPartida(true);
-                                else e.actualitzaFiPartida(false);
+                                else if (pguanyat.compareToIgnoreCase("no")==0) e.actualitzaFiPartida(false);
                                 break;
                          case 25:// carregaEstadistiques()
                                 io.writeln("Les estadistiques actuals son:");
