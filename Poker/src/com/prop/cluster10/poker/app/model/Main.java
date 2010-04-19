@@ -22,8 +22,8 @@ public class Main {
         String s=io.readword();
 	Jugador j=new JugadorFiveCardDraw(s);
         Carta[] c=new Carta[5];
-        /*System.out.println("5 cartas");
-        Carta[] c=new Carta[5];
+        System.out.println("5 cartas");
+        //Carta[] c=new Carta[5];
         for (int i=0; i<5; i++) {
             Carta x=new Carta();
             System.out.println("Pal de la carta "+(i+1)+":");
@@ -33,14 +33,21 @@ public class Main {
             int b=io.readint();
             x.setNumero(b);
             c[i]=x;
-           }*/
-        j.setxD(c);
+           }
+        j.setMa(c);
         j.setAposta(0);
+        /*ArrayList<Carta> C1=j.getxD();
+        Iterator<Carta> actual=C1.iterator();
+        Carta xD=new Carta();
+        while (actual.hasNext()){
+            xD=actual.next();
+            io.writeln("Numero= "+xD.getNumero()+"Pal= "+xD.getPal());
+        }*/
         boolean[] b=j.evaluador(5000, false, 0, 0, 0);
         for (int z=0;z<b.length;z++) {
             if (b[z]==true) System.out.print(z+",");
                     }
-    }
+    }}
 
 
-    }
+    
