@@ -39,7 +39,6 @@ public class TestJugador {
                 io.writeln("18- Descartar una carta");
                 io.writeln("19- Fer una evaluació");
                 io.writeln("20- Carrega les estadístiques");
-                io.writeln("21- Afegir una carta a la ma");
                 io.writeln("0- Sortir");
 
                 while (op != 0) {
@@ -211,16 +210,22 @@ public class TestJugador {
 
                         case 19:// Evaluador(int,boolean,int,int,int)
                                                                
-                                jug.evaluador(0, true, 0, 0, 0);
+                                boolean[] rc=jug.evaluador(0, true, 0, 0, 0);
+                                for (int ui=0;ui<rc.length;ui++) {
+                                    if (rc[ui]==true) io.writeln("El boolea en posicio "+ui+" es TRUE");
+                    }
+
                                 break;
 
                         case 20:// Carrega estadistiques()
-                                io.writeln("S'ha creat una carta buida");
+                                io.writeln("Les estadistiques son...");
+                                double[] pepe=jug.carregaEstadistiques();
+                                for (int iee=0;iee>pepe.length;iee++){
+                                   io.write(pepe[iee]+" ");
+                                }
                                 break;
 
-                        case 21:// afegeix carta a la mà()
-                                io.writeln("S'ha creat una carta buida");
-                                break;
+                       
 
            }
 }

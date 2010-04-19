@@ -19,7 +19,11 @@ public class EstadistiquesSB {
     private int fitxesGuanyades=7;
     
     double[] carregaEstadistiques() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        double[] res=new double[7];
+        for (int i=0;i<res.length;i++){
+            res[i]=i*2.2;
+        }
+        return res;
     }
 
     /**
