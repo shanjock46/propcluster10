@@ -9,33 +9,53 @@ package com.prop.cluster10.poker.app.model;
  *
  * @author Alberto
  */
-public class CtrlJugador {
+public abstract class CtrlJugador {
     
-    private Jugador jug = new Jugador();
-    private CtrlPartida ctrlpart = new CtrlPartida();
-    private CtrlRonda crtlronda = new CtrlRonda();
+    protected Jugador jug;
+    private CtrlDadesJugadorSB capaDeDades;
+    protected CtrlEstrategiaSB estrategia;
 
     public CtrlJugador (){
         this.jug = null;
-       
-    }
-
-    public CtrlJugador (Jugador jugador){
-        this.jug = jugador;
 
     }
 
-    public Jugador getJugador(){
-        return this.jug;
+    public CtrlJugador (String nom){
+        this.jug = obteJugador(nom);
+
     }
 
-    public void setJugador (Jugador jugador){
-        this.jug = jugador;
+    public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
+
+    public Jugador obteJugador (String nom){
+        return capaDeDades.obteJugador(nom);
     }
-    //por supuesto no es un int
-    public int CarregaJugador (Jugador jugador){
-        return 0;
+
+    public void guardaJugador () {
+        capaDeDades.guardaJugador(jug);
     }
+
+    public double[] carregaEstadistiques () {
+        return getJug().carregaEstadistiques();
+    }
+
+    /**
+     * @return the jug
+     */
+    public Jugador getJug() {
+        return jug;
+    }
+
+    /**
+     * @param jug the jug to set
+     */
+    public void setJug(Jugador jug) {
+        this.jug = jug;
+    }
+
+
+ 
+
 
 
 
