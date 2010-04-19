@@ -9,9 +9,9 @@ package CtrlJugador;
  *
  * @author Dani
  */
-class JugadorSB {
+public class JugadorSB {
 
-    double[] carregaEstadistiques() {
+    public double[] carregaEstadistiques() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 

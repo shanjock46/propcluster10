@@ -15,14 +15,14 @@ public abstract class CtrlJugador {
     private CtrlDadesJugadorSB capaDeDades;
     protected CtrlEstrategiaSB estrategia;
 
+
+
     public CtrlJugador (){
         this.jug = null;
-
     }
 
     public CtrlJugador (String nom){
         this.jug = obteJugador(nom);
-
     }
 
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
@@ -46,9 +46,6 @@ public abstract class CtrlJugador {
         return jug;
     }
 
-    /**
-     * @param jug the jug to set
-     */
     public void setJug(JugadorSB jug) {
         this.jug = jug;
     }

@@ -9,7 +9,7 @@ package CtrlJugador;
  *
  * @author Daniel Mulero
  */
-class CtrlEstrategiaSB {
+public class CtrlEstrategiaSB {
     private EstrategiaSB estrategia;
 
     /**
