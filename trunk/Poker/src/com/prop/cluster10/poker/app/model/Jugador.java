@@ -23,22 +23,6 @@ public abstract class Jugador {
     protected ArrayList<Carta> ma;
     protected Estrategia estrategia;
     
-/*
-    public Jugador (String nj, Integer ch){
-        nom = nj;
-        cash = ch;
-        aposta = -1;
-        est= new Estadistiques();
-    }
-
-    public  Jugador (String nj) {
-        nom = nj;
-        cash = -1;
-        aposta = -1;
-        est= new Estadistiques();
-    }
-*/
-
     public String getNom(){
         return this.nom;
 
@@ -91,9 +75,6 @@ public abstract class Jugador {
         this.est = est;
     }
 
-    /**
-     * @param ma the ma to set
-     */
     public void setMa(ArrayList<Carta> ma) {
         this.ma = ma;
         Comparator<Carta> ordrecreixent=new order();
@@ -127,8 +108,6 @@ public abstract class Jugador {
         }
             
     }
-
-    public abstract boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int x);
 
     public double[] carregaEstadistiques() {
         return getEst().carregaEstadistiques();
