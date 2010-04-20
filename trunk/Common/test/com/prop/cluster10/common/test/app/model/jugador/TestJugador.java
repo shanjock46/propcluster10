@@ -208,16 +208,8 @@ public class TestJugador {
                                 io.writeln("La carta de numero: "+num+" i pal"+pal+" ha estat descartada");
                                 break;
 
-                        case 19:// Evaluador(int,boolean,int,int,int)
-                                                               
-                                boolean[] rc=jug.evaluador(0, true, 0, 0, 0);
-                                for (int ui=0;ui<rc.length;ui++) {
-                                    if (rc[ui]==true) io.writeln("El boolea en posicio "+ui+" es TRUE");
-                    }
-
-                                break;
-
-                        case 20:// Carrega estadistiques()
+                        
+                        case 19:// Carrega estadistiques()
                                 io.writeln("Les estadistiques son...");
                                 double[] pepe=jug.carregaEstadistiques();
                                 for (int iee=0;iee>pepe.length;iee++){
