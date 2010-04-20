@@ -4,7 +4,7 @@
  */
 
 package JugadorFiveCardDraw;
-
+    
 /**
  *
  * @author Dani
@@ -17,6 +17,22 @@ public class CartaSB {
     /**
      * @return the pal
      */
+    public CartaSB(){
+        this.pal="";
+    	this.numero=-1;
+    	this.valor=-1;
+    
+    }
+
+    public CartaSB(String pal, int numero, int valor) {
+        this.pal=pal;
+    	this.numero=numero;
+    	this.valor=valor;
+        
+    }
+
+
+
     public String getPal() {
         return pal;
     }
