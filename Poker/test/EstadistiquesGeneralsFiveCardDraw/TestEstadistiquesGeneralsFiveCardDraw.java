@@ -59,20 +59,20 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                                 e=new EstadistiquesGeneralsFiveCardDraw();
                                 io.writeln("S'han creat les estadistiques generals buides");
                                 break;
-                        case 2:// getTotalPartidesJugades()
+                        case 2:// getTotalPartidesJugades() NO ES FA
                                 io.writeln("El total de les partides que s'han jugat es: "+e.getTotalPartidesJugades()+".");
                                 break;
 
-                        case 3:// getTotalRondesJugades()
+                        case 3:// getTotalRondesJugades() NO ES FA
                                 io.writeln("El total de rondes que s'han jugat es: "+e.getTotalRondesJugades()+".");
                                 break;
-                        case 4:// getTotalJugadorsParticipants()
+                        case 4:// getTotalJugadorsParticipants() NO ES FA
                                 io.writeln("El total de jugadors participants ha estat: "+e.getTotalJugadorsParticipants()+".");
                                 break;
-                        case 5:// mitjanaJugadorsPartida()
+                        case 5:// mitjanaJugadorsPartida() NO ES FA
                                 io.writeln("La mitjana de jugadors per partida es de: "+e.mitjanaJugadorsPartida()+".");
                                 break;
-                        case 6:// mitjanaRondesPartida()
+                        case 6:// mitjanaRondesPartida() NO ES FA
                                 io.writeln("La mitjana de rondes jugades per partida es de: "+e.mitjanaRondesPartida()+".");
                                 break;
                         case 7:// getTotalVictoriaCartaAlta()
@@ -102,19 +102,19 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                         case 15:// getTotalVictoriaEscalaColor()
                                 io.writeln("El total de victories per Escala de Color es de: "+e.getTotalVictoriaEscalaColor()+".");
                                 break;
-                        case 16:// setTotalPartidesJugades()
+                        case 16:// setTotalPartidesJugades() NO ES FA
                                 io.writeln("Entra el nou numero per actualitzar el total de partides jugades");
                                 int numpartides=io.readint();
                                 e.setTotalPartidesJugades(numpartides);
                                 io.writeln("S'ha actualitzat el total de partides jugades a "+numpartides+".");
                                 break;
-                        case 17:// setTotalRondesJugades()
+                        case 17:// setTotalRondesJugades() NO ES FA
                                 io.writeln("Entra el nou numero per actualitzar el total de rondes jugades");
                                 int numrondes=io.readint();
                                 e.setTotalRondesJugades(numrondes);
                                 io.writeln("S'ha actualitzat el total de rondes jugades a "+numrondes+".");
                                 break;
-                        case 18:// setTotalJugadorsParticipants()
+                        case 18:// setTotalJugadorsParticipants() NO ES FA
                                 io.writeln("Entra el nou numero per actualitzar el total de jugadors participants");
                                 int numjugadors=io.readint();
                                 e.setTotalJugadorsParticipants(numjugadors);
@@ -174,7 +174,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                                 e.setTotalVictoriaEscalaColor(escalacolor);
                                 io.writeln("S'ha actualitzat el total de victories per escala de color a "+escalacolor+".");
                                 break;
-                         case 28:// actualitzaEstadistiquesGenerals()
+                         case 28:// actualitzaEstadistiquesGenerals() NO ES FA
                                 io.writeln("La partida ha finalitzat, quantes rondes heu jugat?");
                                 int r=io.readint();
                                 io.writeln("I quants jugadors?");
@@ -205,12 +205,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                               
                          case 30:// carregaEstadistiquesGeneralsPoker()
                                 io.writeln("Les estadistiques generals Poker actuals son:");
-                                ArrayList<Object> est = new ArrayList<Object>();
-                                est=e.carregaEstadistiquesGenerals();
-                                Iterator iter = est.listIterator();
-
-                                while (iter.hasNext()) io.writeln(""+iter.next());
-                                                                
+                                                                                              
                                 Map<String, Object> map = new HashMap<String, Object>();
                                 map=e.carregaEstadistiquesGeneralsPoker();
                                 Iterator iterator = map.keySet().iterator();
