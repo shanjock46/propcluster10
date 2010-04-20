@@ -58,9 +58,9 @@ public class TestJugadorFiveCardDraw {
                                 break;
 
                         case 4:// evaluadorMa();
-                              /*ArrayList<Carta> C1=new ArrayList();
+                              ArrayList<CartaSB> C1=new ArrayList();
                                 for (int i=0; i<5; i++) {
-                                    Carta x=new Carta();
+                                    CartaSB x=new CartaSB();
                                     System.out.println("Pal de la carta "+(i+1)+":");
                                     String a=io.readword();
                                     x.setPal(a);
@@ -68,7 +68,23 @@ public class TestJugadorFiveCardDraw {
                                     int b=io.readint();
                                     x.setNumero(b);
                                     C1.add(x);
-                                                    }           CONTINUARÁ*/
+                                                    }
+                              jug.setMa(C1);
+                              Map<String,Object> eval=new HashMap<String,Object>();
+                              eval=jug.evaluadorMa(eval);
+                              Iterator iterator = eval.keySet().iterator();
+
+                                while (iterator.hasNext()) {
+                                    String key = iterator.next().toString();
+                                    Object value = eval.get(key);
+                                    if (key.compareTo("Dobles Parelles")==0){
+                                        ArrayList<Integer> bb=new ArrayList<Integer>();
+                                        int xx=bb.get(0);
+                                        int yy=bb.get(1);
+                                        io.writeln(key+" de "+Math.max(xx, yy)+" y "+Math.min(xx, yy));
+                                    }
+                                    else io.writeln(key+" de "+value);
+                                   }
 
 
 
