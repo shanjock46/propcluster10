@@ -1,11 +1,10 @@
 package com.prop.cluster10.common.app.controller;
 
-
-
-
 import java.util.Set;
 
-
+/**
+ * @author Albert Moreno
+ */
 public class CtrlRonda 
 {
 	private Ronda ronda = null;
