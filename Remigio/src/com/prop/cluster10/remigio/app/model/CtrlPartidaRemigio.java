@@ -1,11 +1,12 @@
-import java.util.List;
+package com.prop.cluster10.remigio.app.model;
+import java.util.LinkedList;
 
 
 public class CtrlPartidaRemigio extends CtrlPartida {
 
 	@Override
-	public void iniPartida(List<Jugador> jugadors) {
-		// TODO Auto-generated method stub
+	public void iniPartida(LinkedList<Jugador> jugadors) {
+		// TODO Parlar amb la capa de presentaci— per decidir el tipus de partida
 		partida = new PartidaFirstToKnock(jugadors);
 	}
 

@@ -1,29 +1,28 @@
+package com.prop.cluster10.remigio.app.model;
 import java.util.Date;
-import java.util.List;
+import java.util.LinkedList;
 
 
 public class PartidaFirstToKnock extends Partida{
 
-	public PartidaFirstToKnock(List<Jugador> j) {
-		this.jugadors = j;		//PREGUNTA: quan fem aquesta assignació, estem copiant tots els valors de j a l'adreça de jugadors, oi?
-		this.id = (new Date()).getTime();// És fa aquí?
+	public PartidaFirstToKnock(LinkedList<Jugador> j) {
+		this.jugadors = j;
+		this.jugadorsActius.addAll(j);
+		this.id = (new Date()).getTime();// Es faria aquí?
 		this.baralla = new BarallaFrancesa(2, true);//inicialitzem la baralla
+		this.rondesJugades = 0;
 	}
 
 	@Override
-	public boolean finalitza() {
-		//Estaria bé que RondaRemigio mirés si la classe de la partida és FirstToKnock i en aquest cas
-		//acabés la ronda quan algun dels jugadors es quedés amb un deadwood < 10 en comptes de lligar-les totes.
-		return true;	//És una sola ronda
-	}
-
-	public void iniBaralla() {
-		baralla = new BarallaFrancesa(2, true);
+	public Ronda creaRonda() {
+		rondaActual = new RondaRemigio(this.jugadorsActius, baralla);
+		return rondaActual;
 	}
 
 	@Override
-	public void iniRonda(List<Jugador> j) {
-		rondaActual = new RondaRemigio(j, baralla);
+	public LinkedList<Jugador> guanyadorsPartida() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
