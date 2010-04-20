@@ -1,7 +1,8 @@
 package Estrategia;
 
-import ReglaFinal.ReglaFinal;
+
 import java.util.List;
+import java.util.Map;
 
 public class Estrategia {
 
@@ -13,13 +14,8 @@ public class Estrategia {
 	 * 
 	 * @return accio a realitzar
 	 */
-	public String avaluaRegles(boolean[] frase) {
-		//TODO: TOT
+	public String avaluaRegles(Map x) {
 		
-		//Iterem sobre cada regla
-		//Per cada regla comprovem si es Simple o Composta
-		//Si es simple mirem si es complix
-		//Si es composta, anem recorrent fins que trobem una simple
 		
 		return null;
 	}
