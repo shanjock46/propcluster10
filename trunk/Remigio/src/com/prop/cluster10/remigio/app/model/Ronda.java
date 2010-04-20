@@ -5,16 +5,6 @@ public abstract class Ronda
 {
 	private List<Jugador> jugadors = null;
 	
-	public Ronda() 
-	{
-	
-	}
-	
-	public Ronda(List<Jugador> j, Baralla b) 
-	{
-		this.jugadors = j;
-	}
-
 	public List<Jugador> getJugadorsActius() 
 	{
 		return jugadors;
