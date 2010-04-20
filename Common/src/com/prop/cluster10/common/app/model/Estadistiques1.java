@@ -5,11 +5,15 @@
 
 package com.prop.cluster10.common.app.model;
 
+import Estadistiques.*;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Martina Canyelles
  */
-public class Estadistiques {
+public class Estadistiques1 {
     private int partidesJugades;
     private int partidesGuanyades;
     private int partidesEliminat;
@@ -75,12 +79,12 @@ public class Estadistiques {
         this.fitxesGuanyades = fitxesGuanyades;
     }
 
-    public int percentatgePartidesGuanyades() {
+    public double percentatgePartidesGuanyades() {
         if (this.getPartidesJugades()==0) return 0;
         else return ((this.getPartidesGuanyades())/(this.getPartidesJugades())*100);
     }
 
-    public int percentatgePartidesPerdudes() {
+    public double percentatgePartidesPerdudes() {
         if (this.getPartidesJugades()==0) return 0;
         else return ((this.getPartidesEliminat())/(this.getPartidesJugades())*100);
     }
@@ -90,12 +94,12 @@ public class Estadistiques {
         else return (this.getPartidesGuanyades()/this.getPartidesEliminat());
     }
 
-    public int percentatgeRondesGuanyades() {
+    public double percentatgeRondesGuanyades() {
         if (this.getRondesJugades()==0) return 0;
         else return ((this.getRondesGuanyades())/(this.getRondesJugades())*100);
     }
 
-    public int percentatgeRondesPerdudes() {
+    public double percentatgeRondesPerdudes() {
         if (this.getRondesJugades()==0) return 0;
         else return ((this.getRondesPerdudes())/(this.getRondesJugades())*100);
     }
@@ -123,24 +127,23 @@ public class Estadistiques {
         else this.setPartidesEliminat(this.getPartidesEliminat()+1);
     }
 
-    public double[] carregaEstadistiques() {
-        double[] res=new double[14];
-        res[0]=this.partidesJugades;
-        res[1]=this.partidesGuanyades;
-        res[2]=this.partidesEliminat;
-        res[3]=this.rondesJugades;
-        res[4]=this.rondesGuanyades;
-        res[5]=this.rondesPerdudes;
-        res[6]=this.fitxesGuanyades;
-        res[7]=this.percentatgePartidesGuanyades();
-        res[8]=this.percentatgePartidesPerdudes();
-        res[9]=this.percentatgeRondesGuanyades();
-        res[10]=this.percentatgeRondesPerdudes();
-        res[11]=this.coeficientEfectivitatPartides();
-        res[12]=this.coeficientEfectivitatRondes();
-        res[13]=this.mitjanaRondesGuanyadesPartida();
+    public Map carregaEstadistiques() {
+        Map<String, Double> map = new HashMap<String, Double>();
+        map.put("Partides jugades", (double)this.partidesJugades);
+        map.put("Partides guanyades", (double)this.partidesGuanyades);
+        map.put("Partides eliminat", (double)this.partidesEliminat);
+        map.put("Rondes jugades", (double)this.rondesJugades);
+        map.put("Rondes guanyades", (double)this.rondesGuanyades);
+        map.put("Rondes perdudes", (double)this.rondesPerdudes);
+        map.put("Percentatge partides guanyades", this.percentatgePartidesGuanyades());
+        map.put("Percentatge partides perdudes", this.percentatgePartidesPerdudes());
+        map.put("Percentatge rondes guanyades", this.percentatgeRondesGuanyades());
+        map.put("Percentatge rondes perdudes", this.percentatgeRondesPerdudes());
+        map.put("Coeficient efectivitat partides", this.coeficientEfectivitatPartides());
+        map.put("Coeficient efectivitat rondes", this.coeficientEfectivitatRondes());
+        map.put("Fitxes guanyades", (double)this.fitxesGuanyades);
 
-        return res;
+        return map;
     }
 
 
