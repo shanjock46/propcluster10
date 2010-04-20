@@ -8,6 +8,7 @@ package Jugador;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  *
@@ -220,10 +221,16 @@ public class TestJugador {
 
                         case 19:// Carrega estadistiques()
                                 io.writeln("Les estadistiques son...");
-                                double[] pepe=jug.carregaEstadistiques();
-                                for (int iee=0;iee>pepe.length;iee++){
-                                   io.write(pepe[iee]+" ");
-                                }
+                                Map<String,Double> pepe=jug.carregaEstadistiques();
+
+                                Iterator iterator = pepe.keySet().iterator();
+
+                                while (iterator.hasNext()) {
+                                    String key = iterator.next().toString();
+                                    String value = pepe.get(key).toString();
+                                    io.writeln(key + ": " + value);
+                                   }
+
                                 break;
 
                        
