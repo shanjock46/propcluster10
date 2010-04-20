@@ -1,17 +1,18 @@
+package com.prop.cluster10.remigio.app.model;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Date;
 
 
 public abstract class Partida 
 {
-	protected Long id;
-	protected List<Jugador> jugadors = null;
-	protected List<Jugador> jugadorsActius = null;
+	protected long id;
+	protected LinkedList<Jugador> jugadors = null;
+	protected LinkedList<Jugador> jugadorsActius = null;
 	protected Baralla baralla = null;
 	protected Ronda rondaActual = null;
-	public CtrlPartida ctrlPartida = null;	//l'he afegit a les creadores
+	protected int rondesJugades;
+
 	
 	public Partida() 
 	{
@@ -19,23 +20,12 @@ public abstract class Partida
 		this.jugadorsActius = new LinkedList<Jugador>();
 	}
 	
-	public Partida(List<Jugador> j) 
-	{
+	public Partida(LinkedList<Jugador> j) 
+	{	//cal¿
 		this.jugadors = j;		//PREGUNTA: quan fem aquesta assignació, estem copiant tots els valors de j a l'adreça de jugadors, oi?
+		this.jugadorsActius.addAll(j);
+		this.rondesJugades = 0;
 		this.id = (new Date()).getTime();// És fa aquí?
-	}
-	
-	public Ronda creaRonda(List<Jugador> j){
-		iniRonda(j);
-		return rondaActual;
-	}
-	
-	public void eliminaJugadors()
-	{
-		for(Jugador j: this.jugadorsActius)
-		{
-			if (j.getCash() <= 0) jugadorsActius.remove(j);
-		}
 	}
 
 	public Baralla getBaralla() 
@@ -48,22 +38,22 @@ public abstract class Partida
 		this.baralla = baralla;
 	}
 
-	public List<Jugador> getJugadors() 
+	public LinkedList<Jugador> getJugadors() 
 	{
 		return jugadors;
 	}
 
-	public void setJugadors(List<Jugador> jugs) 
+	public void setJugadors(LinkedList<Jugador> jugs) 
 	{
 		this.jugadors = jugs;
 	}
 	
-	public List<Jugador> getJugadorsActius() 
+	public LinkedList<Jugador> getJugadorsActius() 
 	{
 		return jugadorsActius;
 	}
 
-	public void setJugadorsActius(List<Jugador> jugs) 
+	public void setJugadorsActius(LinkedList<Jugador> jugs) 
 	{
 		this.jugadorsActius = jugs;
 	}
@@ -79,70 +69,64 @@ public abstract class Partida
 		this.rondaActual = rondaActual;
 	}
 
-	public Long getId()
+	public long getId()
 	{
 		return id;
 	}
 	
-	public abstract void iniRonda(List<Jugador> j);
+	public void setId(long idP)
+	{
+		this.id = idP;
+	}
 	
-	public abstract void iniBaralla();
+	public int getRondesJugades() {
+		// TODO Auto-generated method stub
+		return rondesJugades;
+	}
 	
-	public abstract boolean finalitza();
-	
-	public void jugarPartida(int cashInicial, int rj, boolean carrega){
-		
-		int rondesJugades = rj;
-		boolean guardar = false;
-		List<Jugador> jugadorsToDelete = null;
-		
-		for(Jugador j: this.jugadorsActius)
-		{
-			j.setCash(cashInicial);
-		}
-		
-		if(!carrega){
-			iniBaralla(); // Inicialitzem la baralla
-			this.jugadorsActius.addAll(jugadors);	//Correcte?
-		}
-		
-		// Llançem el joc i anem controlant per cada Ronda si ja ha acabat la partida o no. Anem actualitzant est
-		while(this.jugadorsActius.size() > 1 && !guardar && !finalitza()){ //Es podria fer una operació que retornés l'int size directament i no tota la llista?
-			iniRonda(this.jugadorsActius);
-			rondaActual.jugarRonda(); //Juguem la ronda
-			rondesJugades++;
-			
-			//Fer el control de puntuacions
-			//ho fa Ronda?//
-
-			
-		}
-		if(guardar){
-			ctrlPartida.guardarPartida();
-		}else{ //acaba la partida
-			//assignar guanyador i actualitzar estadístiques de jugadors
-			Jugador guanyador = null; //TODO: assignar segons puntuacions o segons si es l'unic jugadorActiu
-			Estadistiques e;
-			e = guanyador.getEstadistiques();
-			e.finalitzaPartida(true);
-			for(Jugador j: jugadors){
-				if(j != guanyador){
-					e = j.getEstadistiques();
-					e.finalitzarPartida(false);
-				}
-			}
-			ctrlPartida.finalitzarPartida();	//S'hauria de comunicar amb la capa de presentació per avisar que s'acaba la partida
-			// Actualitza fitxes guanyades (es pot fer a dalt)
-			//...//
-			// Actualitzem estadístiques generals
-			//EstadistiquesGenerals estGenerals = EstadistiquesGenerals(); //com es crida la classe singleton?
-			//estGenerals.actualitzaEstadistiquesGenerals(rondesJugades, jugadors.size());
-			//estGenerals.guardar();
-		}
+	public void setRondesJugades(int r) {
+		// TODO Auto-generated method stub
+		this.rondesJugades = r;
 	}
 
 	public void actualitzaEstadistiquesFiRonda() {
-		// TODO Auto-generated method stub
+		//actualitzem les estadístiques de fi de ronda de cada jugador
+		//TODO com sabem qui és el guanyador d'una ronda? A poker pot haver-hi més d'un guanyador, oi? En aquest cas auqesta opció no valdria...
+		Jugador g = this.rondaActual.getGuanyador();
+		g.actualitzaFiRonda(true);
+		for(Jugador j: this.jugadorsActius)
+		{
+			if(j != g){
+				j.actualitzaFiRonda(false);
+			}
+		}
+	}
+
+	public void actualitzaEstadistiquesFiPartida() {
+		//actualitzem les estadístiques de fi de partida de cada jugador
+		//TODO com sabem qui és guanyador de la partida? No és necessàriament l'últim que queda...fem un obté guanyador abstracte a partida
+		LinkedList<Jugador> guanyadors = guanyadorsPartida();
+		for(Jugador j: guanyadors){
+			j.actualitzaFiPartida(true);
+		}
+		for(Jugador j: this.jugadors)
+		{
+			if(!guanyadors.contains(j)){
+				j.actualitzaFiPartida(false);
+			}
+		}
 		
+	}
+	
+	public abstract LinkedList<Jugador> guanyadorsPartida();
+	
+	public abstract Ronda creaRonda();
+	
+	public void eliminaJugadors()
+	{
+		for(Jugador j: this.jugadorsActius)
+		{
+			if (j.getCash() <= 0) jugadorsActius.remove(j);
+		}
 	}
 }
