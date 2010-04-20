@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  *
@@ -109,7 +110,7 @@ public abstract class Jugador {
             
     }
 
-    public double[] carregaEstadistiques() {
+    public Map carregaEstadistiques() {
         return getEst().carregaEstadistiques();
     }
 
