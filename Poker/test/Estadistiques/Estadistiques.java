@@ -127,20 +127,20 @@ public class Estadistiques {
     }
 
     public Map carregaEstadistiques() {
-        Map<String, Double> map = new HashMap<String, Double>();
-        map.put("Partides jugades", (double)this.partidesJugades);
-        map.put("Partides guanyades", (double)this.partidesGuanyades);
-        map.put("Partides eliminat", (double)this.partidesEliminat);
-        map.put("Rondes jugades", (double)this.rondesJugades);
-        map.put("Rondes guanyades", (double)this.rondesGuanyades);
-        map.put("Rondes perdudes", (double)this.rondesPerdudes);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("Partides jugades", this.partidesJugades);
+        map.put("Partides guanyades", this.partidesGuanyades);
+        map.put("Partides eliminat", this.partidesEliminat);
+        map.put("Rondes jugades", this.rondesJugades);
+        map.put("Rondes guanyades", this.rondesGuanyades);
+        map.put("Rondes perdudes", this.rondesPerdudes);
         map.put("Percentatge partides guanyades", this.percentatgePartidesGuanyades());
         map.put("Percentatge partides perdudes", this.percentatgePartidesPerdudes());
         map.put("Percentatge rondes guanyades", this.percentatgeRondesGuanyades());
         map.put("Percentatge rondes perdudes", this.percentatgeRondesPerdudes());
         map.put("Coeficient efectivitat partides", this.coeficientEfectivitatPartides());
         map.put("Coeficient efectivitat rondes", this.coeficientEfectivitatRondes());
-        map.put("Fitxes guanyades", (double)this.fitxesGuanyades);
+        map.put("Fitxes guanyades", this.fitxesGuanyades);
 
         return map;
     }
