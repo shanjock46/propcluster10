@@ -5,11 +5,13 @@
 
 package CtrlJugador;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Daniel Mulero
  */
-class CtrlDadesJugadorSB {
+public class CtrlDadesJugadorSB {
 
     public JugadorSB obteJugador(String nom) {
         throw new UnsupportedOperationException("Not yet implemented");
@@ -17,6 +19,10 @@ class CtrlDadesJugadorSB {
 
     void guardaJugador(JugadorSB jug) {
         
+    }
+
+    ArrayList<JugadorSB> obteTots() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
 }

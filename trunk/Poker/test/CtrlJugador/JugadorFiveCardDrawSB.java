@@ -12,6 +12,7 @@ package CtrlJugador;
 class JugadorFiveCardDrawSB extends JugadorSB {
 
     public JugadorFiveCardDrawSB(String nom) {
+
     }
 
 }
