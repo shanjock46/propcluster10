@@ -5,17 +5,14 @@
 
 package CtrlJugadorFiveCardDraw;
 
-import com.prop.cluster10.poker.app.model.CtrlJugador;
-import com.prop.cluster10.poker.app.model.JugadorFiveCardDraw;
-
 /**
  *
  * @author Daniel Mulero
  */
-public class CtrlJugadorFiveCardDraw extends CtrlJugador{
+public class CtrlJugadorFiveCardDraw extends CtrlJugadorSB{
 
     public void crearJugador (String nom, boolean maquina) {
-        jug=new JugadorFiveCardDraw(nom);
+        jug=new JugadorFiveCardDrawSB(nom);
         if (maquina) {
             estrategia=new CtrlEstrategiaSB();
             estrategia.crearEstrategia();
