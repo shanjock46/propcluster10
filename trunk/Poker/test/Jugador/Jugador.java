@@ -116,7 +116,6 @@ public abstract class Jugador {
             
     }
 
-    public abstract boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int x);
 
     public double[] carregaEstadistiques() {
         return getEst().carregaEstadistiques();
