@@ -59,7 +59,8 @@ public class TestJugadorFiveCardDraw {
 
                         case 4:// evaluadorMa();
                               ArrayList<CartaSB> C1=new ArrayList();
-                                for (int i=0; i<5; i++) {
+                              System.out.println("Entra la ma a evaluar");
+                              for (int i=0; i<5; i++) {
                                     CartaSB x=new CartaSB();
                                     System.out.println("Pal de la carta "+(i+1)+":");
                                     String a=io.readword();
@@ -73,7 +74,7 @@ public class TestJugadorFiveCardDraw {
                               Map<String,Object> eval=new HashMap<String,Object>();
                               eval=jug.evaluadorMa(eval);
                               Iterator iterator = eval.keySet().iterator();
-
+                                System.out.print("Tens ");
                                 while (iterator.hasNext()) {
                                     String key = iterator.next().toString();
                                     Object value = eval.get(key);
