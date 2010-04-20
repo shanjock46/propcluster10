@@ -4,13 +4,13 @@ package Estrategia;
 
 public class ReglaSimple extends ReglaFinal {
 
-	private boolean[] frase;
+	private String frase;
 	private Integer valor;
 
 	public ReglaSimple() {
 	}
 
-	public ReglaSimple(String nom, boolean[] frase, Integer pes, Double probabilitatVictoria, Double probabilitatMillora) {
+	public ReglaSimple(String nom, String frase, Integer pes, Double probabilitatVictoria, Double probabilitatMillora) {
 		this.frase = frase;
 		this.nom = nom;
 		this.pes = pes;
@@ -19,11 +19,11 @@ public class ReglaSimple extends ReglaFinal {
 	}
 
 	/* GETTERS & SETTERS */
-	public boolean[] getFrase() {
+	public String getFrase() {
 		return frase;
 	}
 
-	public void setFrase(boolean[] frase) {
+	public void setFrase(String frase) {
 		this.frase = frase;
 	}
 
