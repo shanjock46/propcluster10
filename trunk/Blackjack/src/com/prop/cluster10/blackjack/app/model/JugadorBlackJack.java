@@ -14,14 +14,12 @@ public class JugadorBlackJack extends SBJugador {
 	private int fitxesAssegurar;
 	
 	public JugadorBlackJack() {
-		ma = new ArrayList<SBCarta>();
-		segonaMa = new ArrayList<SBCarta>();
-		SBCarta carta = new SBCarta();
-		carta.setNumero(10);
-		carta.setPal("piques");
-		carta.setValor(0);
-		ma.add(carta);
-		ma.add(carta);
+		this.ma = new ArrayList<SBCarta>();
+		this.segonaMa = new ArrayList<SBCarta>();
+		this.fitxesAssegurar = -1;
+		this.nom = "";
+		this.cash = -1;
+		this.aposta = -1;
 	}
 	
 	public int getFitxesAssegurar() {
