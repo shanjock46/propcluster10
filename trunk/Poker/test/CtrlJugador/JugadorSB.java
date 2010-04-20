@@ -5,14 +5,18 @@
 
 package CtrlJugador;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Dani
  */
 public class JugadorSB {
 
-    public double[] carregaEstadistiques() {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public Map carregaEstadistiques() {
+        Map<Integer, Integer> m=new HashMap<Integer, Integer>();
+        return m;
     }
 
 }

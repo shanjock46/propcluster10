@@ -5,6 +5,8 @@
 
 package CtrlJugador;
 
+import java.util.Map;
+
 /**
  *
  * @author Alberto
@@ -35,7 +37,7 @@ public abstract class CtrlJugador {
         capaDeDades.guardaJugador(jug);
     }
 
-    public double[] carregaEstadistiques () {
+    public Map carregaEstadistiques () {
         return getJug().carregaEstadistiques();
     }
 
