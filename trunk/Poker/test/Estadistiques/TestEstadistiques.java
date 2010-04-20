@@ -160,13 +160,13 @@ public class TestEstadistiques {
                                 break;
                          case 25:// carregaEstadistiques()
                                 io.writeln("Les estadistiques actuals son:");
-                                Map<String, Double> map = new HashMap<String, Double>();
+                                Map<String, Object> map = new HashMap<String, Object>();
                                 map=e.carregaEstadistiques();
                                 Iterator iterator = map.keySet().iterator();
 
                                 while (iterator.hasNext()) {
                                     String key = iterator.next().toString();
-                                    double value = map.get(key);
+                                    String value = map.get(key).toString();
                                     io.writeln(key + ": " + value);
                                    }
                                 break;
