@@ -5,6 +5,9 @@
 
 package Jugador;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Dani
@@ -18,11 +21,10 @@ public class EstadistiquesSB {
     private int rondesPerdudes=6;
     private int fitxesGuanyades=7;
     
-    double[] carregaEstadistiques() {
-        double[] res=new double[7];
-        for (int i=0;i<res.length;i++){
-            res[i]=i*2.2;
-        }
+    public Map carregaEstadistiques() {
+        Map<String,Double> res=new HashMap<String,Double>();
+        res.put("ESTO ESTÁ VACÍO", 0.987);
+
         return res;
     }
 
