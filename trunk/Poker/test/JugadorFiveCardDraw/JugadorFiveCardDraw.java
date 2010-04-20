@@ -46,8 +46,8 @@ public class JugadorFiveCardDraw extends JugadorSB{
         
         int igualnumero=0; int igualcolor=0; int triode=0; int pokerde=0;
         int proyecto=0; int j=1; int i=0;
-        Iterator<Carta> actual=ma.iterator();
-        Carta c1=new Carta(); Carta c2=new Carta();
+        Iterator<CartaSB> actual=ma.iterator();
+        CartaSB c1=new CartaSB(); CartaSB c2=new CartaSB();
         Map<String, Integer> sit=new HashMap<String, Integer>();
 
         //--ESTO EVALUA LA MANO--
