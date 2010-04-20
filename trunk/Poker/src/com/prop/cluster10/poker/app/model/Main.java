@@ -53,7 +53,11 @@ public class Main {
                                 while (iterator.hasNext()) {
                                     String key = iterator.next().toString();
                                     Object value = m.get(key);
-                                    if (value==0) io.writeln(key);
+                                    if (key.compareTo("Dobles Parelles")==true){
+                                        ArrayList<Integer> bb=new ArrayList<Integer>();
+                                        
+                                        io.writeln(key);
+                                    }
                                     else io.writeln(key+" de "+value);
                                    }
     }}
