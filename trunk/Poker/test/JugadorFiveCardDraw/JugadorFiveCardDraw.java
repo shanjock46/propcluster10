@@ -48,7 +48,7 @@ public class JugadorFiveCardDraw extends JugadorSB{
         int proyecto=0; int j=1; int i=0;
         Iterator<CartaSB> actual=ma.iterator();
         CartaSB c1=new CartaSB(); CartaSB c2=new CartaSB();
-        Map<String, Integer> sit=new HashMap<String, Integer>();
+        Map<String, Object> sit=new HashMap<String, Object>();
 
         //--ESTO EVALUA LA MANO--
         while (actual.hasNext()) {
@@ -67,12 +67,15 @@ public class JugadorFiveCardDraw extends JugadorSB{
             }
             if (igualnumero==1 && triode!=c1.getNumero() && pokerde!=c1.getNumero()) {  //Evalua si PAREJA o DOBLE PAREJA o FULL
                 if (sit.containsKey("Parella")==true) {
-                    //double f=sit.get("Parella");
+                    Object ff=sit.get("Parella");
                     sit.remove("Parella");
-                    sit.put("Doble Parella", c1.getNumero()); //Cal fer algo per guardar 2 valors!
+                    ArrayList<Integer> tt=new ArrayList();
+                    tt.add((Integer)ff);
+                    tt.add(c1.getNumero());
+                    sit.put("Doble Parella", ff); //Cal fer algo per guardar 2 valors!
                     }
                 else if (sit.containsKey("Trio")==true) {
-                    int f=sit.get("Trio");
+                    Object f=sit.get("Trio");
                     sit.remove("Trio");
                     sit.put("Full", f);
                     }
@@ -120,7 +123,7 @@ public class JugadorFiveCardDraw extends JugadorSB{
         
     public Map evaluador(int pot,boolean descarte,int call, int ciega, int apostes_acomulades) {
         
-        Map<String,Integer> map=new HashMap<String, Integer>();
+        Map<String,Object> map=new HashMap<String, Object>();
         map=evaluadorMa(map);
         if (apostes_acomulades==0 && descarte==false){
             map.put("Primera ronda d'apostes", 0);
