@@ -5,11 +5,14 @@
 
 package com.prop.cluster10.poker.app.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Martina Canyelles
  */
-public class EstadistiquesGeneralsFiveCardDraw extends Estadistiques {
+public class EstadistiquesGeneralsFiveCardDraw extends EstadistiquesGeneralsSB {
 
     private int totalVictoriaCartaAlta;
     private int totalVictoriaParelles;
@@ -23,22 +26,27 @@ public class EstadistiquesGeneralsFiveCardDraw extends Estadistiques {
 
 public EstadistiquesGeneralsFiveCardDraw(){
 
-    this.totalVictoriaCartaAlta=0;
-    this.totalVictoriaParelles=0;
-    this.totalVictoriaDoblesParelles=0;
-    this.totalVictoriaTrio=0;
-    this.totalVictoriaEscala=0;
-    this.totalVictoriaColor=0;
-    this.totalVictoriaFull=0;
-    this.totalVictoriaPoker=0;
-    this.totalVictoriaEscalaColor=0;
+    this.totalVictoriaCartaAlta=-1;
+    this.totalVictoriaParelles=-1;
+    this.totalVictoriaDoblesParelles=-1;
+    this.totalVictoriaTrio=-1;
+    this.totalVictoriaEscala=-1;
+    this.totalVictoriaColor=-1;
+    this.totalVictoriaFull=-1;
+    this.totalVictoriaPoker=-1;
+    this.totalVictoriaEscalaColor=-1;
+    this.totalPartidesJugades=-1;
+    this.totalRondesJugades=-1;
+    this.totalJugadorsParticipants=-1;
 }
 
     /**
      * @return the totalVictoriaCartaAlta
      */
     public int getTotalVictoriaCartaAlta() {
-        return totalVictoriaCartaAlta;
+        if (totalVictoriaCartaAlta != -1)
+			return totalVictoriaCartaAlta;
+		return 0;
     }
 
     /**
@@ -52,7 +60,10 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaParelles
      */
     public int getTotalVictoriaParelles() {
-        return totalVictoriaParelles;
+        if (totalVictoriaParelles != -1)
+			return totalVictoriaParelles;
+		return 0;
+
     }
 
     /**
@@ -66,7 +77,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaDoblesParelles
      */
     public int getTotalVictoriaDoblesParelles() {
-        return totalVictoriaDoblesParelles;
+        if (totalVictoriaDoblesParelles != -1)
+			return totalVictoriaDoblesParelles;
+		return 0;
     }
 
     /**
@@ -80,7 +93,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaTrio
      */
     public int getTotalVictoriaTrio() {
-        return totalVictoriaTrio;
+        if (totalVictoriaTrio != -1)
+			return totalVictoriaTrio;
+		return 0;
     }
 
     /**
@@ -94,9 +109,10 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaEscala
      */
     public int getTotalVictoriaEscala() {
-        return totalVictoriaEscala;
+        if (totalVictoriaEscala != -1)
+			return totalVictoriaEscala;
+		return 0;
     }
-
     /**
      * @param totalVictoriaEscala the totalVictoriaEscala to set
      */
@@ -108,7 +124,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaColor
      */
     public int getTotalVictoriaColor() {
-        return totalVictoriaColor;
+        if (totalVictoriaColor != -1)
+			return totalVictoriaColor;
+		return 0;
     }
 
     /**
@@ -122,7 +140,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaFull
      */
     public int getTotalVictoriaFull() {
-        return totalVictoriaFull;
+        if (totalVictoriaFull != -1)
+			return totalVictoriaFull;
+		return 0;
     }
 
     /**
@@ -136,7 +156,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaPoker
      */
     public int getTotalVictoriaPoker() {
-        return totalVictoriaPoker;
+        if (totalVictoriaPoker != -1)
+			return totalVictoriaPoker;
+		return 0;
     }
 
     /**
@@ -150,7 +172,9 @@ public EstadistiquesGeneralsFiveCardDraw(){
      * @return the totalVictoriaEscalaColor
      */
     public int getTotalVictoriaEscalaColor() {
-        return totalVictoriaEscalaColor;
+        if (totalVictoriaEscalaColor != -1)
+			return totalVictoriaEscalaColor;
+		return 0;
     }
 
     /**
@@ -172,4 +196,22 @@ public EstadistiquesGeneralsFiveCardDraw(){
         else if (s.compareToIgnoreCase("poker")==0) this.totalVictoriaPoker++;
         else if (s.compareToIgnoreCase("escalacolor")==0) this.totalVictoriaEscalaColor++;
     }
+
+    public Map carregaEstadistiquesGeneralsPoker() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("Total partides jugades", this.totalPartidesJugades);
+        map.put("Total rondes jugades", this.totalRondesJugades);
+        map.put("Total jugadors participants", this.totalJugadorsParticipants);
+        map.put("Total victoria carta alta", this.totalVictoriaCartaAlta);
+        map.put("Total victoria parella", this.totalVictoriaParelles);
+        map.put("Total victoria doble parella", this.totalVictoriaDoblesParelles);
+        map.put("Total victoria trio", this.totalVictoriaTrio);
+        map.put("Total victoria escala", this.totalVictoriaEscala);
+        map.put("Total victoria color", this.totalVictoriaColor);
+        map.put("Total victoria full", this.totalVictoriaFull);
+        map.put("Total victoria poker", this.totalVictoriaPoker);
+        map.put("Total victoria escala de color", this.totalVictoriaEscalaColor);
+        return map;
+    }
+
 }
