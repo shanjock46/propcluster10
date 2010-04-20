@@ -47,12 +47,12 @@ public class Main {
             xD=actual.next();
             io.writeln("Numero= "+xD.getNumero()+"Pal= "+xD.getPal());
         }*/
-        Map<String,Integer> m=j.evaluador(5000, false, 0, 0, 0);
+        Map<String,Object> m=j.evaluador(5000, false, 0, 0, 0);
         Iterator iterator = m.keySet().iterator();
 
                                 while (iterator.hasNext()) {
                                     String key = iterator.next().toString();
-                                    int value = m.get(key);
+                                    Object value = m.get(key);
                                     if (value==0) io.writeln(key);
                                     else io.writeln(key+" de "+value);
                                    }
