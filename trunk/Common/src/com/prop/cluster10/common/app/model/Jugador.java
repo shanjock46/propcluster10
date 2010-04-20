@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  *
@@ -129,9 +130,7 @@ public abstract class Jugador {
             
     }
 
-    public abstract boolean[] evaluador(int pot,boolean descarte,int call, int ciega, int x);
-
-    public double[] carregaEstadistiques() {
+    public Map carregaEstadistiques() {
         return getEst().carregaEstadistiques();
     }
 
