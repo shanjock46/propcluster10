@@ -5,6 +5,10 @@
 
 package com.prop.cluster10.poker.app.model;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+
 
 /**
  *
@@ -20,10 +24,10 @@ public class Main {
         inout io= new inout();
         System.out.println("Nom jugador");
         String s=io.readword();
-	Jugador j=new JugadorFiveCardDraw(s);
+	JugadorFiveCardDraw j=new JugadorFiveCardDraw(s);
         Carta[] c=new Carta[5];
         System.out.println("5 cartas");
-        //Carta[] c=new Carta[5];
+        ArrayList<Carta> C1=new ArrayList();
         for (int i=0; i<5; i++) {
             Carta x=new Carta();
             System.out.println("Pal de la carta "+(i+1)+":");
@@ -32,9 +36,9 @@ public class Main {
             System.out.println("Numero de la carta "+(i+1)+":");
             int b=io.readint();
             x.setNumero(b);
-            c[i]=x;
+            C1.add(x);
            }
-        j.setMa(c);
+        j.setMa(C1);
         j.setAposta(0);
         /*ArrayList<Carta> C1=j.getxD();
         Iterator<Carta> actual=C1.iterator();
@@ -43,10 +47,15 @@ public class Main {
             xD=actual.next();
             io.writeln("Numero= "+xD.getNumero()+"Pal= "+xD.getPal());
         }*/
-        boolean[] b=j.evaluador(5000, false, 0, 0, 0);
-        for (int z=0;z<b.length;z++) {
-            if (b[z]==true) System.out.print(z+",");
-                    }
+        Map<String,Integer> m=j.evaluador(5000, false, 0, 0, 0);
+        Iterator iterator = m.keySet().iterator();
+
+                                while (iterator.hasNext()) {
+                                    String key = iterator.next().toString();
+                                    int value = m.get(key);
+                                    if (value==0) io.writeln(key);
+                                    else io.writeln(key+" de "+value);
+                                   }
     }}
 
 
