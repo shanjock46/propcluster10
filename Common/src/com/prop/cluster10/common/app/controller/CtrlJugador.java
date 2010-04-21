@@ -17,8 +17,8 @@ import java.util.Map;
 public abstract class CtrlJugador {
     
     protected Jugador jug;
-    private CtrlDadesJugador capaDeDades;
-    private CtrlEstrategia estrategia;
+    protected CtrlDadesJugador capaDeDades;
+    protected CtrlEstrategia estrategia;
 
 
 
