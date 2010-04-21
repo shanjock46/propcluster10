@@ -10,11 +10,11 @@ import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
  */
 public class BarallaFrancesa extends Baralla {
 
-	private static final String PAL_CORS = "cors";
-	private static final String PAL_PIQUES = "piques";
-	private static final String PAL_TREVOLS = "trevols";
-	private static final String PAL_DIAMANTS = "diamants";
-	private static final String COMODIN = "comodin";
+	public static final String PAL_CORS = "cors";
+	public static final String PAL_PIQUES = "piques";
+	public static final String PAL_TREVOLS = "trevols";
+	public static final String PAL_DIAMANTS = "diamants";
+	public static final String COMODIN = "comodin";
 	
 	public BarallaFrancesa() {		
 	}
