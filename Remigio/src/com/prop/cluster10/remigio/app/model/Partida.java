@@ -1,32 +1,18 @@
 package com.prop.cluster10.remigio.app.model;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Date;
 
 
 public abstract class Partida 
 {
 	protected long id;
-	protected LinkedList<Jugador> jugadors = null;
-	protected LinkedList<Jugador> jugadorsActius = null;
+	protected List<Jugador> jugadors = null;
+	protected List<Jugador> jugadorsActius = null;
 	protected Baralla baralla = null;
 	protected Ronda rondaActual = null;
 	protected int rondesJugades;
-
-	
-	public Partida() 
-	{
-		this.jugadors = new LinkedList<Jugador>();
-		this.jugadorsActius = new LinkedList<Jugador>();
-	}
-	
-	public Partida(LinkedList<Jugador> j) 
-	{	//cal¿
-		this.jugadors = j;		//PREGUNTA: quan fem aquesta assignació, estem copiant tots els valors de j a l'adreça de jugadors, oi?
-		this.jugadorsActius.addAll(j);
-		this.rondesJugades = 0;
-		this.id = (new Date()).getTime();// És fa aquí?
-	}
 
 	public Baralla getBaralla() 
 	{
@@ -38,22 +24,22 @@ public abstract class Partida
 		this.baralla = baralla;
 	}
 
-	public LinkedList<Jugador> getJugadors() 
+	public List<Jugador> getJugadors() 
 	{
 		return jugadors;
 	}
 
-	public void setJugadors(LinkedList<Jugador> jugs) 
+	public void setJugadors(List<Jugador> jugs) 
 	{
 		this.jugadors = jugs;
 	}
 	
-	public LinkedList<Jugador> getJugadorsActius() 
+	public List<Jugador> getJugadorsActius() 
 	{
 		return jugadorsActius;
 	}
 
-	public void setJugadorsActius(LinkedList<Jugador> jugs) 
+	public void setJugadorsActius(List<Jugador> jugs) 
 	{
 		this.jugadorsActius = jugs;
 	}
@@ -80,24 +66,31 @@ public abstract class Partida
 	}
 	
 	public int getRondesJugades() {
-		// TODO Auto-generated method stub
 		return rondesJugades;
 	}
 	
 	public void setRondesJugades(int r) {
-		// TODO Auto-generated method stub
 		this.rondesJugades = r;
 	}
 
+	public void eliminaJugadors()	// Elimina els jugadors sense cash
+	{
+		for(Jugador j: this.jugadorsActius)
+		{
+			if (j.getCash() <= 0) jugadorsActius.remove(j);
+		}
+	}
+	
 	public void actualitzaEstadistiquesFiRonda() {
 		//actualitzem les estadístiques de fi de ronda de cada jugador
 		//TODO com sabem qui és el guanyador d'una ronda? A poker pot haver-hi més d'un guanyador, oi? En aquest cas auqesta opció no valdria...
-		Jugador g = this.rondaActual.getGuanyador();
-		g.actualitzaFiRonda(true);
+		List<Jugador> g = this.rondaActual.guanyadorsRonda();
 		for(Jugador j: this.jugadorsActius)
 		{
-			if(j != g){
-				j.actualitzaFiRonda(false);
+			if(!g.contains(j)){
+				j.getEstadistiques().actualitzaFiRonda(false);
+			}else{
+				g.getEstadistiques().actualitzaFiRonda(true);
 			}
 		}
 	}
@@ -105,28 +98,20 @@ public abstract class Partida
 	public void actualitzaEstadistiquesFiPartida() {
 		//actualitzem les estadístiques de fi de partida de cada jugador
 		//TODO com sabem qui és guanyador de la partida? No és necessàriament l'últim que queda...fem un obté guanyador abstracte a partida
-		LinkedList<Jugador> guanyadors = guanyadorsPartida();
-		for(Jugador j: guanyadors){
-			j.actualitzaFiPartida(true);
-		}
+		List<Jugador> guanyadors = guanyadorsPartida();
 		for(Jugador j: this.jugadors)
 		{
 			if(!guanyadors.contains(j)){
-				j.actualitzaFiPartida(false);
+				j.getEstadistiques().actualitzaFiPartida(false);
+			}else{
+				j.getEstadistiques().actualitzaFiPartida(true);
 			}
 		}
 		
 	}
 	
-	public abstract LinkedList<Jugador> guanyadorsPartida();
+	public abstract List<Jugador> guanyadorsPartida();
 	
 	public abstract Ronda creaRonda();
-	
-	public void eliminaJugadors()
-	{
-		for(Jugador j: this.jugadorsActius)
-		{
-			if (j.getCash() <= 0) jugadorsActius.remove(j);
-		}
-	}
+
 }

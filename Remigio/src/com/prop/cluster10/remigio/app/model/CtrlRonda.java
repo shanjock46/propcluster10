@@ -1,12 +1,13 @@
 package com.prop.cluster10.remigio.app.model;
 
+import java.util.List;
 
-import java.util.Set;
-
-
-public class CtrlRonda 
+/**
+ * @author Albert Moreno
+ */
+public abstract class CtrlRonda 
 {
-	private Ronda ronda = null;
+	protected Ronda ronda = null;
 	
 	public CtrlRonda() 
 	{
@@ -28,11 +29,13 @@ public class CtrlRonda
 		this.ronda = ronda;
 	}
 
-	public void eliminarJugador(Set<Jugador> j)
+	public void eliminarJugador(List<Jugador> j)
 	{
 		for (Jugador jugador: j)
 		{
 			ronda.getJugadorsActius().remove(jugador);
 		}
 	}
+
+	public abstract void jugarRonda();
 }
