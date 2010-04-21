@@ -61,7 +61,7 @@ public abstract class CtrlPartida
 		
 		//actualitzem les estad’stiques generals
 		CtrlEstadistiquesGenerals ctrlEstGen = new CtrlEstadistiquesGenerals();
-		EstadistiquesGenerals stats = EstadistiquesGenerals().getInstance();
+		EstadistiquesGenerals stats = ctrlEstGen.getInstance();
 		stats.setTotalPartidesJugades(stats.getTotalPartidesJugades() + 1);
 		stats.setTotalRondesJugades(stats.getTotalRondesJugades() + this.partida.getRondesJugades());
 		stats.setTotalJugadorsParticipants(stats.getTotalJugadorsParticipants() + this.partida.getJugadors().size());
