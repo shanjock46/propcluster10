@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.prop.cluster10.common.app.model.EstadistiquesGenerals;
 /**
- * Temporal
  * @author Albert De Nova
  */
 public abstract class CtrlEstadistiquesGenerals {
