@@ -14,16 +14,16 @@ import java.util.ArrayList;
  */
 public class CtrlDadesJugadorSB {
 
-    public JugadorSB obteJugador(String nom) {
+    public Jugador obteJugador(String nom) {
         System.out.println("S'ha arribat fins la capa de dades");
         return null;
     }
 
-    void guardaJugador(JugadorSB jug) {
+    void guardaJugador(Jugador jug) {
       System.out.println("S'ha arribat fins la capa de dades");
     }
 
-    ArrayList<JugadorSB> obteTots() {
+    ArrayList<Jugador> obteTots() {
         System.out.println("S'ha arribat fins la capa de dades");
         return null;
     }
