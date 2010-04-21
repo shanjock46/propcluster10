@@ -49,13 +49,13 @@ public abstract class CtrlJugador {
 //Mes funcions
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
-    public JugadorSB obteJugador (String nom){
-        return getCapaDeDades().obteJugador(nom);
+    public void JugadorSB obteJugador (String nom){
+        this.jug=capaDeDades.obteJugador(nom);
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
         ArrayList<JugadorSB> jugadors=new ArrayList();
-        jugadors=getCapaDeDades().obteTots();
+        jugadors=capaDeDades.obteTots();
         Iterator<JugadorSB> it=jugadors.iterator();
         JugadorSB aux=new JugadorSB();
         while (it.hasNext()) {

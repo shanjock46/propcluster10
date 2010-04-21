@@ -5,6 +5,11 @@
 
 package CtrlJugador;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  *
  * @author Dani
@@ -15,7 +20,7 @@ public class TestCtrlJugador {
 
                 int op = 30;
                 inout io = new inout();
-                CtrlJugador c=new CtrlJugador();
+                CtrlJugador c=new CtrlJugadorFiveCardDrawSB();
                 JugadorSB j=new JugadorSB();
                 io.writeln("1- Retorna el jugador present a la capa");
                 io.writeln("2- Canvia el jugador present a la capa");
@@ -48,42 +53,70 @@ public class TestCtrlJugador {
 
                         case 3:// getCtrlDadesJugador()
 
-                                io.writeln("S'ha creat una carta buida");
+                                if (c.getCapaDeDades()==null) io.writeln("No hi ha cap capa de dades de jugador associada a aquesta capa.");
+                                else io.writeln("Hi ha una capa de dades de jugador associada a aquesta capa");
                                 break;
 
                         case 4:// setCtrlDadesJugador(CtrlDadesJugador)
-
-                                io.writeln("S'ha creat una carta buida");
+                                CtrlDadesJugadorSB cj=new CtrlDadesJugadorSB();
+                                c.setCapaDeDades(cj);
+                                io.writeln("S'ha associat una capa de dades de jugador a aquesta capa");
                                 break;
 
                         case 5:// getCtrlEstrategia()
 
-                                io.writeln("S'ha creat una carta buida");
+                                if (c.getEstrategia()==null) io.writeln("No hi ha cap controlador estrategia associat a aquesta capa.");
+                                else io.writeln("Hi ha un controlador estrategia associat a aquesta capa");
                                 break;
 
                         case 6:// setCtrlEstrategia()
 
-                                io.writeln("S'ha creat una carta buida");
+                                CtrlEstrategiaSB e=new CtrlEstrategiaSB();
+                                c.setEstrategia(e);
+                                io.writeln("S'ha associat un controlador estrategia a aquesta capa");
                                 break;
 
                         case 7:// crearJugador(String,Boolean)
-
-                                io.writeln("S'ha creat una carta buida");
+                                io.writeln("Introdueix nom");
+                                String nom2=io.readword();
+                                io.writeln("Es maquina? (si/no)");
+                                String maquina=io.readword();
+                                if (maquina.compareTo("si")==0) {
+                                    c.crearJugador(nom2, true);
+                                    io.writeln("S'ha creat un nou jugador maquina i esta a la capa");
+                                }
+                                else if (maquina.compareTo("no")==0){
+                                    c.crearJugador(nom2, false);
+                                    io.writeln("S'ha creat un nou jugador huma i esta a la capa");
+                                }
                                 break;
 
-                        case 8:// obteLlistatJugadors()
-
-                                io.writeln("S'ha creat una carta buida");
+                        case 8:// obteJugador(String)
+                                c.obteJugador(nom);
+                                io.writeln("S'ha obtingut el jugador de la capa de dades i ara està a la capa");
+                                break;
+                        
+                        case 9:// obteLlistatJugadors()
+                                ArrayList<String> llista=new ArrayList<String>();
+                                llista=c.obteLlistatJugadors();
+                                Iterator<String> it=llista.iterator();
+                                while (it.hasNext()) {
+                                    io.writeln(it.next());
+        }
+                                io.writeln("Fi de la llista");
                                 break;
 
-                        case 11:// guardarJugador()
-
-                                io.writeln("S'ha creat una carta buida");
+                        case 10:// guardarJugador()
+                                c.guardaJugador();
+                                io.writeln("S'ha guardat el jugador a la capa de dades");
                                 break;
 
-                        case 12:// carregaEstadistiques()
-
-                                io.writeln("S'ha creat una carta buida");
+                        case 11:// carregaEstadistiques()
+                                Map <Integer,Integer> est=new HashMap<Integer,Integer>();
+                                for (int ix=0;ix<est.size();ix++){
+                                    io.writeln(est.get(ix));
+                                }
+                                io.writeln("Fi de les estadístiques");
                                 break;
                         
 

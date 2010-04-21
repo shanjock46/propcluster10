@@ -14,15 +14,17 @@ import java.util.ArrayList;
 public class CtrlDadesJugadorSB {
 
     public JugadorSB obteJugador(String nom) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        System.out.println("S'ha arribat fins la capa de dades");
+        return null;
     }
 
     void guardaJugador(JugadorSB jug) {
-        
+      System.out.println("S'ha arribat fins la capa de dades");
     }
 
     ArrayList<JugadorSB> obteTots() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        System.out.println("S'ha arribat fins la capa de dades");
+        return null;
     }
 
 }
