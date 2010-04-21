@@ -11,6 +11,8 @@ package CtrlJugadorFiveCardDraw;
  */
 public class CtrlJugadorFiveCardDraw extends CtrlJugadorSB{
 
+    private static inout io=new inout();
+
     public void crearJugador (String nom, boolean maquina) {
         jug=new JugadorFiveCardDrawSB(nom);
         if (maquina) {
@@ -20,4 +22,7 @@ public class CtrlJugadorFiveCardDraw extends CtrlJugadorSB{
             }
 
     }
-}
+
+    
+    }
+
