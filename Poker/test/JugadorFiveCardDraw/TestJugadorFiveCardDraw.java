@@ -22,7 +22,7 @@ public class TestJugadorFiveCardDraw {
 
                 int op = 30;
                 inout io = new inout();
-                CartaSB aux=new CartaSB();
+                Carta aux=new Carta();
                 JugadorFiveCardDraw jug=new JugadorFiveCardDraw();
                 io.writeln("1- Crear un jugador buit");
                 io.writeln("2- Crear un jugador amb nom i cash");
@@ -58,10 +58,10 @@ public class TestJugadorFiveCardDraw {
                                 break;
 
                         case 4:// evaluadorMa();
-                              ArrayList<CartaSB> C1=new ArrayList();
+                              ArrayList<Carta> C1=new ArrayList();
                               System.out.println("Entra la ma a evaluar");
                               for (int i=0; i<5; i++) {
-                                    CartaSB x=new CartaSB();
+                                    Carta x=new Carta();
                                     System.out.println("Pal de la carta "+(i+1)+":");
                                     String a=io.readword();
                                     x.setPal(a);
