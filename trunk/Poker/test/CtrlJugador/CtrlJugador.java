@@ -21,18 +21,7 @@ public abstract class CtrlJugador {
 
 
 
-    public CtrlJugador (){
-        this.jug = null;
-        this.capaDeDades=new CtrlDadesJugadorSB();
-        this.estrategia=new CtrlEstrategiaSB();
-    }
-
-    public CtrlJugador (String nom){
-        this.jug = obteJugador(nom);
-        this.capaDeDades=new CtrlDadesJugadorSB();
-        this.estrategia=new CtrlEstrategiaSB();
-    }
-
+    
     //Getters i setters
     public JugadorSB getJug() {
         return jug;
@@ -63,7 +52,7 @@ public abstract class CtrlJugador {
     public JugadorSB obteJugador (String nom){
         return getCapaDeDades().obteJugador(nom);
     }
-    public ArrayList obteTotsNom () {
+    public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
         ArrayList<JugadorSB> jugadors=new ArrayList();
         jugadors=getCapaDeDades().obteTots();
