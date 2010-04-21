@@ -5,8 +5,6 @@
 
 package com.prop.cluster10.common.app.model;
 
-import com.prop.cluster10.poker.app.model.*;
-
 /**
  *
  * @author Daniel Mulero
