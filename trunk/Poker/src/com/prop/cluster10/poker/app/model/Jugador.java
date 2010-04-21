@@ -5,6 +5,7 @@
 
 package com.prop.cluster10.poker.app.model;
 
+import Estrategia.Estrategia;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
