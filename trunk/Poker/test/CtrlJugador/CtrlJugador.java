@@ -49,7 +49,7 @@ public abstract class CtrlJugador {
 //Mes funcions
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
-    public void JugadorSB obteJugador (String nom){
+    public void obteJugador (String nom){
         this.jug=capaDeDades.obteJugador(nom);
     }
     public ArrayList obteLlistatJugadors () {
