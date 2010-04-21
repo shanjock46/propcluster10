@@ -6,6 +6,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.prop.cluster10.common.app.model.Accio;
+import com.prop.cluster10.common.app.model.ComparadorRegla;
+import com.prop.cluster10.common.app.model.ReglaComposta;
+import com.prop.cluster10.common.app.model.ReglaFinal;
+import com.prop.cluster10.common.app.model.ReglaSimple;
+
 public class Estrategia {
 
 	private List<ReglaFinal> llistatReglesFinals;
@@ -21,7 +27,7 @@ public class Estrategia {
 		this.llistatReglesFinals = llistatReglesFinals;
 		this.accioDefecte = accioDefecte;
 	}
-	
+
 	/**
 	 * Afegeix una nova regla al llistat de les ja existents
 	 * 
@@ -51,10 +57,10 @@ public class Estrategia {
 			reglaSeCumple = avaluaReglaFinal(reglaFinal);
 		}
 
-		if(reglaSeCumple) {
-			return reglaFinal.getAccio();			
+		if (reglaSeCumple && reglaFinal.getAccio() != null) {
+			return reglaFinal.getAccio();
 		}
-		
+
 		return accioDefecte;
 	}
 
@@ -77,13 +83,12 @@ public class Estrategia {
 	@SuppressWarnings("unchecked")
 	private boolean avaluaReglaSimple(ReglaSimple reglaSimple) {
 		if (reglaSimple.getFrase() != null) {
-			Object frase = frases.get(reglaSimple.getNom());
-
 			// Si no est‡ en el Map obviamente no se cumple
-			if (frase == null) {
+			if (!frases.containsKey(reglaSimple.getFrase())) {
 				return false;
 			}
-
+			
+			Object frase = frases.get(reglaSimple.getFrase());
 			// Si la regla tiene valor nulo, se cumple directamente
 			if (reglaSimple.getValor() == null) {
 				return true;
@@ -94,33 +99,38 @@ public class Estrategia {
 		} else {
 			try {
 				// Navegaci— per OGNL de l'objecte jugador
-				String[] jugadorOGNL = reglaSimple.getPropietat().split(".");
-				
 				Object claseActual = jugador;
 				Class propietatClaseActual = jugador.getClass();
 				String propietat = null;
-				int propietatActual = 0;
-				for (propietatActual = 0; propietatActual < jugadorOGNL.length - 1; ++propietatActual) {
+
+				if (reglaSimple.getPropietat().contains(".")) {
+					String[] jugadorOGNL = reglaSimple.getPropietat().split("\\.");
+
+					int propietatActual = 0;
+					for (propietatActual = 0; propietatActual < jugadorOGNL.length - 1; ++propietatActual) {
+						propietat = jugadorOGNL[propietatActual];
+						propietatClaseActual = propietatClaseActual.getMethod("get" + capitalize(propietat),
+								new Class[] {}).invoke(claseActual, new Object[] {}).getClass();
+						claseActual = propietatClaseActual.getConstructor(new Class[] {}).newInstance((Object[]) null);
+					}
+
 					propietat = jugadorOGNL[propietatActual];
-					propietatClaseActual = propietatClaseActual.getMethod("get" + capitalize(propietat),  new Class[]{}).invoke(
-							claseActual,  new Object[]{}).getClass();
-					claseActual = propietatClaseActual.getConstructor(new Class[]{}).newInstance((Object[]) null);
+				} else {
+					propietat = reglaSimple.getPropietat();
 				}
-				
-				propietat = jugadorOGNL[propietatActual];
-				Integer valorPropietat = (Integer) propietatClaseActual.getMethod("get" + capitalize(propietat), new Class[]{})
-						.invoke(claseActual, new Object[]{});
+				Integer valorPropietat = (Integer) propietatClaseActual.getMethod("get" + capitalize(propietat),
+						new Class[] {}).invoke(claseActual, new Object[] {});
 
 				if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_IGUAL) {
-					return reglaSimple.getValor() == valorPropietat;
+					return valorPropietat == reglaSimple.getValor();
 				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MAJOR) {
-					return reglaSimple.getValor() > valorPropietat;
+					return valorPropietat > reglaSimple.getValor();
 				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MENOR) {
-					return reglaSimple.getValor() < valorPropietat;
+					return valorPropietat < reglaSimple.getValor();
 				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MAJOR_IGUAL) {
-					return reglaSimple.getValor() >= valorPropietat;
+					return valorPropietat >= reglaSimple.getValor();
 				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MENOR_IGUAL) {
-					return reglaSimple.getValor() <= valorPropietat;
+					return valorPropietat <= reglaSimple.getValor();
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -131,8 +141,23 @@ public class Estrategia {
 
 	private boolean avaluaReglaComposta(ReglaComposta reglaComposta) {
 		boolean primeraReglaEsCompleix = avaluaReglaFinal(reglaComposta.getPrimeraRegla());
+		
+		// Si la primera es compleix i la operacio es "or" ja podem tornar que si
+		if (primeraReglaEsCompleix
+				&& reglaComposta.getTipusComparacio().equals(ReglaComposta.OPERACIO_OR)) {
+			return true;
+		}
+		
+		// Si la primera no es compleix i la operacio es "and" ja podem tornar que no
+		if (!primeraReglaEsCompleix
+				&& reglaComposta.getTipusComparacio().equals(ReglaComposta.OPERACIO_AND)) {
+			return false;
+		}
+		
+		
+		// En cas contrari evaluem la segona regla
 		boolean segonaReglaEsCompleix = avaluaReglaFinal(reglaComposta.getSegonaRegla());
-
+		
 		if (reglaComposta.getTipusComparacio().equals(ReglaComposta.OPERACIO_AND)) {
 			return primeraReglaEsCompleix & segonaReglaEsCompleix;
 		} else if (reglaComposta.getTipusComparacio().equals(ReglaComposta.OPERACIO_OR)) {
@@ -147,7 +172,7 @@ public class Estrategia {
 	private static String capitalize(String s) {
 		if (s.length() == 0)
 			return s;
-		return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+		return s.substring(0, 1).toUpperCase() + s.substring(1);
 	}
 
 	/* GETTERS & SETTERS */

@@ -57,7 +57,7 @@ public class Estrategia {
 			reglaSeCumple = avaluaReglaFinal(reglaFinal);
 		}
 
-		if (reglaSeCumple) {
+		if (reglaSeCumple && reglaFinal.getAccio() != null) {
 			return reglaFinal.getAccio();
 		}
 
@@ -83,13 +83,12 @@ public class Estrategia {
 	@SuppressWarnings("unchecked")
 	private boolean avaluaReglaSimple(ReglaSimple reglaSimple) {
 		if (reglaSimple.getFrase() != null) {
-			Object frase = frases.get(reglaSimple.getNom());
-
 			// Si no est‡ en el Map obviamente no se cumple
-			if (frase == null) {
+			if (!frases.containsKey(reglaSimple.getFrase())) {
 				return false;
 			}
-
+			
+			Object frase = frases.get(reglaSimple.getFrase());
 			// Si la regla tiene valor nulo, se cumple directamente
 			if (reglaSimple.getValor() == null) {
 				return true;
