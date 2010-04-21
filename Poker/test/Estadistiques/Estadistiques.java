@@ -13,13 +13,13 @@ import java.util.Map;
  * @author Martina Canyelles
  */
 public class Estadistiques {
-    private int partidesJugades;
-    private int partidesGuanyades;
-    private int partidesEliminat;
-    private int rondesJugades;
-    private int rondesGuanyades;
-    private int rondesPerdudes;
-    private int fitxesGuanyades;
+    protected int partidesJugades;
+    protected int partidesGuanyades;
+    protected int partidesEliminat;
+    protected int rondesJugades;
+    protected int rondesGuanyades;
+    protected int rondesPerdudes;
+    protected int fitxesGuanyades;
 
 
     public int getPartidesJugades() {
