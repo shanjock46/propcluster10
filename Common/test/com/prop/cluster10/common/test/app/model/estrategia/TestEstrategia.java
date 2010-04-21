@@ -38,6 +38,7 @@ public class TestEstrategia {
 			io.writeln("8- Introduir accio per defecte");
 			io.writeln("9- Obtenir accio per defecte");
 			io.writeln("10- Avaluar regles");
+			io.writeln("11- Llistar regles");
 			io.writeln("0- Sortir");
 
 			while (operacio != 0) {
@@ -148,6 +149,13 @@ public class TestEstrategia {
 				case 10:
 					io.writeln("L'accio a realitzar es:" + estrategia.avaluaRegles());
 					break;
+				case 11:
+					io.writeln("Regles");
+					List<ReglaFinal> reglaFinalList = estrategia.getLlistatReglesFinals();
+					for (ReglaFinal reglaFinal2 : reglaFinalList) {
+						System.out.println("- " + reglaFinal2.getNom() + ", Prioritat: " + reglaFinal2.getPrioritat());
+					}
+					break;
 				}
 			}
 		} catch (Exception e) {
@@ -188,8 +196,14 @@ public class TestEstrategia {
 				nom = io.readword();
 				io.writeln("Introdueix frase");
 				String frase = io.readword();
-				io.writeln("Introdueix valor");
-				valor = io.readint();
+				io.writeln("Indica: 1 - Introduir valor, 2 - No introduir valor");
+				tipus = io.readint();
+				if(tipus == 1) {
+					io.writeln("Introdueix valor");
+					valor = io.readint();
+				} else {
+					valor = null;
+				}
 				io.writeln("Introdueix prioritat");
 				prioritat = io.readint();
 				reglaSimple = new ReglaSimple(nom, frase, valor, prioritat);
@@ -368,6 +382,8 @@ public class TestEstrategia {
 		String frase = null;
 		Integer valor = null;
 		while (tipus != 0) {
+			frase = null;
+			valor = null;
 			io.writeln("Introdueix frase");
 			frase = io.readword();
 			io.writeln("Vols introduir valor (integer)? 1- Si, 2 - No");
