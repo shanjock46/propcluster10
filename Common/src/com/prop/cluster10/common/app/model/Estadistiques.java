@@ -80,37 +80,37 @@ public class Estadistiques {
 
     public double percentatgePartidesGuanyades() {
         if (this.getPartidesJugades()==0) return 0;
-        else return ((this.getPartidesGuanyades())/(this.getPartidesJugades())*100);
+        else return (((double)this.getPartidesGuanyades())/((double)this.getPartidesJugades())*100);
     }
 
     public double percentatgePartidesPerdudes() {
         if (this.getPartidesJugades()==0) return 0;
-        else return ((this.getPartidesEliminat())/(this.getPartidesJugades())*100);
+        else return (((double)this.getPartidesEliminat())/((double)this.getPartidesJugades())*100);
     }
 
     public double coeficientEfectivitatPartides() {
         if (this.getPartidesEliminat()==0 ) return 0;
-        else return (this.getPartidesGuanyades()/this.getPartidesEliminat());
+        else return ((double)this.getPartidesGuanyades()/(double)this.getPartidesEliminat());
     }
 
     public double percentatgeRondesGuanyades() {
         if (this.getRondesJugades()==0) return 0;
-        else return ((this.getRondesGuanyades())/(this.getRondesJugades())*100);
+        else return (((double)this.getRondesGuanyades())/((double)this.getRondesJugades())*100);
     }
 
     public double percentatgeRondesPerdudes() {
         if (this.getRondesJugades()==0) return 0;
-        else return ((this.getRondesPerdudes())/(this.getRondesJugades())*100);
+        else return (((double)this.getRondesPerdudes())/((double)this.getRondesJugades())*100);
     }
 
     public double coeficientEfectivitatRondes() {
         if (this.getRondesPerdudes()==0 ) return 0;
-        else return (this.getRondesGuanyades()/this.getRondesPerdudes());
+        else return ((double)this.getRondesGuanyades()/(double)this.getRondesPerdudes());
     }
 
     public double mitjanaRondesGuanyadesPartida() {
         if (this.getPartidesGuanyades()==0) return 0;
-        else return (this.getRondesGuanyades()/this.getPartidesGuanyades());
+        else return ((double)this.getRondesGuanyades()/(double)this.getPartidesGuanyades());
     }
 
     public void actualitzaFiRonda(boolean r, int e) {
