@@ -133,10 +133,8 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                                 break;
                          
                          case 20:// actualitzaEstadistiquesGeneralsFiveCardDraw()
-                                io.writeln("La ronda ha finalitzat, heu guanyat? (si/no)");
-                                String rguanyat=io.readword();
-                                if (rguanyat.compareToIgnoreCase("si")==0){
-                                    io.writeln("Amb quina combinació heu guanyat?");
+                               
+                                    io.writeln("Amb quina combinació ha acabat la ronda?");
                                     io.writeln("Carta Alta");
                                     io.writeln("Parelles");
                                     io.writeln("Dobles Parelles");
@@ -149,7 +147,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                                     String combinacio=io.readword();
                                     e.actualitzaEstadístiquesGeneralsFiveCardDraw(combinacio);
                                     io.writeln("Les estadistiques generals FiveCardDraw han estat actualitzades");
-                                }
+                                
                                 break;
                                 
                               
