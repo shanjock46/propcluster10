@@ -15,7 +15,7 @@ import java.util.Map;
 
 /**
  *
- * @author Alberto
+ * @author Alberto Esteban Olmos
  */
 public abstract class Jugador {
 
