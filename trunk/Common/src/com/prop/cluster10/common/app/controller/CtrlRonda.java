@@ -1,13 +1,13 @@
 package com.prop.cluster10.common.app.controller;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author Albert Moreno
  */
-public class CtrlRonda 
+public abstract class CtrlRonda 
 {
-	private Ronda ronda = null;
+	protected Ronda ronda = null;
 	
 	public CtrlRonda() 
 	{
@@ -29,11 +29,13 @@ public class CtrlRonda
 		this.ronda = ronda;
 	}
 
-	public void eliminarJugador(Set<Jugador> j)
+	public void eliminarJugador(List<Jugador> j)
 	{
 		for (Jugador jugador: j)
 		{
 			ronda.getJugadorsActius().remove(jugador);
 		}
 	}
+
+	public abstract void jugarRonda();
 }
