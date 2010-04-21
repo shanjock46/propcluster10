@@ -151,12 +151,14 @@ public class TestEstadistiques {
                                     e.actualitzaFiRonda(true, fitxes);
                                 }
                                 else if (rguanyat.compareToIgnoreCase("no")==0) e.actualitzaFiRonda(false, 0);
+                                io.writeln("S'han actualitzat les estadistiques de final de ronda");
                                 break;
                          case 24:// actualitzaFiPartida()
                                 io.writeln("La partida ha finalitzat, heu guanyat (si/no)?");
                                 String pguanyat=io.readword();
                                 if (pguanyat.compareToIgnoreCase("si")==0) e.actualitzaFiPartida(true);
                                 else if (pguanyat.compareToIgnoreCase("no")==0) e.actualitzaFiPartida(false);
+                                io.writeln("S'han actualitzat les estadistiques de final de partida");
                                 break;
                          case 25:// carregaEstadistiques()
                                 io.writeln("Les estadistiques actuals son:");
