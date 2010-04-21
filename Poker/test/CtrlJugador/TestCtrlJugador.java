@@ -29,9 +29,10 @@ public class TestCtrlJugador {
                 io.writeln("5- Retorna el controlador d'estrategia");
                 io.writeln("6- Canvia el controlador d'estrategia");
                 io.writeln("7- Crea una nova instancia de jugador al sistema");
-                io.writeln("8- Fa persistent el jugador present a la capa");
-                io.writeln("9- Obte un jugador del sistema amb nom igual a entrada");
-                io.writeln("10- Carrega les estadistiques del jugador present a la capa");
+                io.writeln("8- Obte un jugador del sistema amb nom igual a entrada");
+                io.writeln("9- Obte un llistat de noms de jugador del sistema");
+                io.writeln("10- Fa persistent el jugador al sistema");
+                io.writeln("11- Carrega les estadistiques del jugador present a la capa");
 
                 while (op != 0) {
                         op = io.readint();
@@ -92,7 +93,9 @@ public class TestCtrlJugador {
                                 break;
 
                         case 8:// obteJugador(String)
-                                c.obteJugador(nom);
+                                io.writeln("Introdueix nom a buscar");
+                                String nom3=io.readword();
+                                c.obteJugador(nom3);
                                 io.writeln("S'ha obtingut el jugador de la capa de dades i ara està a la capa");
                                 break;
                         
