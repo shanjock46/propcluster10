@@ -20,7 +20,7 @@ public class TestJugador {
 
                 int op = 30;
                 inout io = new inout();
-                Jugador jug=new JugadorFiveCardDrawSB();
+                Jugador jug=new JugadorFiveCardDraw();
                 io.writeln("1- Crear un jugador buit");
                 io.writeln("2- Crear un jugador amb nom i cash");
                 io.writeln("3- Crear un jugador amb nom");
@@ -48,7 +48,7 @@ public class TestJugador {
                         switch (op) {
 
                         case 1:// Creadora buida. Jugador es abstracta.
-                                jug=new JugadorFiveCardDrawSB();
+                                jug=new JugadorFiveCardDraw();
                                 io.writeln("S'ha creat un nou jugador");
                                 break;
                         
@@ -57,14 +57,14 @@ public class TestJugador {
                                 String x=io.readword();
                                 io.writeln("Cash inicial:");
                                 int i=io.readint();
-                                jug=new JugadorFiveCardDrawSB(x,i);
+                                jug=new JugadorFiveCardDraw(x,i);
                                 io.writeln("S'ha creat un jugador amb nom "+jug.getNom()+" i amb el cash inicial igual a "+jug.getCash());
                                 break;
                                 
                         case 3:// Creadora amb parametres. Jugador es abstracta
                                 io.writeln("Nom del jugador:");
                                 String s=io.readword();
-                                jug=new JugadorFiveCardDrawSB(s);
+                                jug=new JugadorFiveCardDraw(s);
                                 io.writeln("S'ha creat un jugador amb nom "+jug.getNom());
                                 break;
 
@@ -73,10 +73,10 @@ public class TestJugador {
                                 break;
 
                          case 5:// getMa()
-                                ArrayList<CartaSB> ma=jug.getMa();
+                                ArrayList<Carta> ma=jug.getMa();
                                 io.writeln("La ma del jugador es la seguent:");
-                                Iterator<CartaSB> pateador=ma.iterator();
-                                CartaSB c=new CartaSB();
+                                Iterator<Carta> pateador=ma.iterator();
+                                Carta c=new Carta();
                                 while (pateador.hasNext()){
                                     c=pateador.next();
                                     io.writeln("El "+c.getNumero()+" de "+c.getPal());
@@ -119,9 +119,9 @@ public class TestJugador {
                         case 11:// setMa(ArrayList<Carta>)
                                 io.writeln("Cuantes cartes vols ficar?");
                                 int r=io.readint();
-                                ArrayList<CartaSB> f=new ArrayList();
+                                ArrayList<Carta> f=new ArrayList();
                                 for (int w=0; w<r; w++) {
-                                    CartaSB xx=new CartaSB();
+                                    Carta xx=new Carta();
                                     io.writeln("Pal de la carta "+(w+1)+":");
                                     String a=io.readword();
                                     xx.setPal(a);
@@ -149,7 +149,7 @@ public class TestJugador {
                                 break;
 
                         case 14:// setEstadistiques(Estadistiques)
-                                EstadistiquesSB dfg=new EstadistiquesSB();
+                                Estadistiques dfg=new Estadistiques();
                                 io.writeln("Introdueix Partides Jugades:");
                                 int de=io.readint();
                                 dfg.setPartidesJugades(de);
@@ -185,7 +185,7 @@ public class TestJugador {
                                 break;
 
                         case 16:// afegeixCarta(Carta)
-                                CartaSB klj=new CartaSB();
+                                Carta klj=new Carta();
                                 io.writeln("Pal de la carta:");
                                 String m=io.readword();
                                 klj.setPal(m);
