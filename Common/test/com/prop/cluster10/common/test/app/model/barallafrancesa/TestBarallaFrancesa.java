@@ -38,8 +38,7 @@ public class TestBarallaFrancesa {
 						}
 					}
 					break;
-				}
-				io.writeln("Operaci— completada, escull un altre operaci— a realitzar");
+				}				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
