@@ -121,15 +121,15 @@ public class Estrategia {
 				Integer valorPropietat = (Integer) propietatClaseActual.getMethod("get" + capitalize(propietat),
 						new Class[] {}).invoke(claseActual, new Object[] {});
 
-				if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_IGUAL) {
+				if (reglaSimple.getTipusComparacio().equals(ReglaSimple.COMPARACIO_IGUAL)) {
 					return valorPropietat == reglaSimple.getValor();
-				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MAJOR) {
+				} else if (reglaSimple.getTipusComparacio().equals(ReglaSimple.COMPARACIO_MAJOR)) {
 					return valorPropietat > reglaSimple.getValor();
-				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MENOR) {
+				} else if (reglaSimple.getTipusComparacio().equals(ReglaSimple.COMPARACIO_MENOR)) {
 					return valorPropietat < reglaSimple.getValor();
-				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MAJOR_IGUAL) {
+				} else if (reglaSimple.getTipusComparacio().equals(ReglaSimple.COMPARACIO_MAJOR_IGUAL)) {
 					return valorPropietat >= reglaSimple.getValor();
-				} else if (reglaSimple.getTipusComparacio() == ReglaSimple.COMPARACIO_MENOR_IGUAL) {
+				} else if (reglaSimple.getTipusComparacio().equals(ReglaSimple.COMPARACIO_MENOR_IGUAL)) {
 					return valorPropietat <= reglaSimple.getValor();
 				}
 			} catch (Exception e) {
