@@ -15,14 +15,14 @@ import java.util.Map;
  *
  * @author Dani
  */
-public class JugadorFiveCardDraw extends JugadorSB{
+public class JugadorFiveCardDraw extends Jugador{
 
 
     public JugadorFiveCardDraw() {
         nom = "";
         cash = -1;
         aposta = -1;
-        est= new EstadistiquesSB();
+        est= new Estadistiques();
         ma=new ArrayList();
     }
 
@@ -30,7 +30,7 @@ public class JugadorFiveCardDraw extends JugadorSB{
         nom = nj;
         cash = ch;
         aposta = -1;
-        est= new EstadistiquesSB();
+        est= new Estadistiques();
         ma=new ArrayList();
     }
 
@@ -38,7 +38,7 @@ public class JugadorFiveCardDraw extends JugadorSB{
         nom = nj;
         cash = -1;
         aposta = -1;
-        est= new EstadistiquesSB();
+        est= new Estadistiques();
         ma=new ArrayList();
     }
     
@@ -46,8 +46,8 @@ public class JugadorFiveCardDraw extends JugadorSB{
         
         int igualnumero=0; int igualcolor=0; int triode=0; int pokerde=0;
         int proyecto=0; int j=1; int i=0;
-        Iterator<CartaSB> actual=ma.iterator();
-        CartaSB c1=new CartaSB(); CartaSB c2=new CartaSB();
+        Iterator<Carta> actual=ma.iterator();
+        Carta c1=new Carta(); Carta c2=new Carta();
         Map<String, Object> sit=new HashMap<String, Object>();
 
         //--ESTO EVALUA LA MANO--
@@ -148,7 +148,7 @@ public class JugadorFiveCardDraw extends JugadorSB{
 
         }
         else if (descarte==true) {
-            map.put("Fase descart", call);
+            map.put("Fase descart", 0);
         }
         else{
             map.put("Segona ronda d'apostes", 0);
