@@ -186,32 +186,100 @@ public EstadistiquesGeneralsFiveCardDraw(){
 
     public void actualitzaEstadístiquesGeneralsFiveCardDraw(String s){
 
-        if (s.compareToIgnoreCase("cartaalta")==0) this.totalVictoriaCartaAlta++;
-        else if (s.compareToIgnoreCase("parelles")==0) this.totalVictoriaParelles++;
-        else if (s.compareToIgnoreCase("doblesparelles")==0) this.totalVictoriaDoblesParelles++;
-        else if (s.compareToIgnoreCase("trio")==0) this.totalVictoriaTrio++;
-        else if (s.compareToIgnoreCase("escala")==0) this.totalVictoriaEscala++;
-        else if (s.compareToIgnoreCase("color")==0) this.totalVictoriaColor++;
-        else if (s.compareToIgnoreCase("full")==0) this.totalVictoriaFull++;
-        else if (s.compareToIgnoreCase("poker")==0) this.totalVictoriaPoker++;
-        else if (s.compareToIgnoreCase("escalacolor")==0) this.totalVictoriaEscalaColor++;
+        if (s.compareToIgnoreCase("carta alta")==0){
+            if (this.totalVictoriaCartaAlta==-1) this.totalVictoriaCartaAlta=1;
+            else this.totalVictoriaCartaAlta++;
+        }
+        else if (s.compareToIgnoreCase("parelles")==0){
+            if (this.totalVictoriaParelles==-1) this.totalVictoriaParelles=1;
+            else this.totalVictoriaParelles++;
+        }
+        else if (s.compareToIgnoreCase("dobles parelles")==0){
+            if (this.totalVictoriaDoblesParelles==-1) this.totalVictoriaDoblesParelles=1;
+            else this.totalVictoriaDoblesParelles++;
+        }
+        else if (s.compareToIgnoreCase("trio")==0){
+            if (this.totalVictoriaTrio==-1) this.totalVictoriaTrio=1;
+            else this.totalVictoriaTrio++;
+        }
+        else if (s.compareToIgnoreCase("escala")==0){
+            if (this.totalVictoriaEscala==-1) this.totalVictoriaEscala=1;
+            else this.totalVictoriaEscala++;
+        }
+        else if (s.compareToIgnoreCase("color")==0){
+            if (this.totalVictoriaColor==-1) this.totalVictoriaColor=1;
+            else this.totalVictoriaColor++;
+        }
+        else if (s.compareToIgnoreCase("full")==0){
+            if (this.totalVictoriaFull==-1) this.totalVictoriaFull=1;
+            else this.totalVictoriaFull++;
+        }
+        else if (s.compareToIgnoreCase("poker")==0){
+            if (this.totalVictoriaPoker==-1) this.totalVictoriaPoker=1;
+            else this.totalVictoriaPoker++;
+        }
+        else if (s.compareToIgnoreCase("escala color")==0){
+            if (this.totalVictoriaEscalaColor==-1) this.totalVictoriaEscalaColor=1;
+            else this.totalVictoriaEscalaColor++;
+        }
     }
 
     public Map carregaEstadistiquesGeneralsPoker() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("Total partides jugades", this.totalPartidesJugades);
-        map.put("Total rondes jugades", this.totalRondesJugades);
-        map.put("Total jugadors participants", this.totalJugadorsParticipants);
-        map.put("Total victoria carta alta", this.totalVictoriaCartaAlta);
-        map.put("Total victoria parella", this.totalVictoriaParelles);
-        map.put("Total victoria doble parella", this.totalVictoriaDoblesParelles);
-        map.put("Total victoria trio", this.totalVictoriaTrio);
-        map.put("Total victoria escala", this.totalVictoriaEscala);
-        map.put("Total victoria color", this.totalVictoriaColor);
-        map.put("Total victoria full", this.totalVictoriaFull);
-        map.put("Total victoria poker", this.totalVictoriaPoker);
-        map.put("Total victoria escala de color", this.totalVictoriaEscalaColor);
-        return map;
+            
+            if (this.totalPartidesJugades==-1) map.put("Total partides jugades", 0);
+            else map.put("Total partides jugades", this.totalRondesJugades);
+       
+            if (this.totalRondesJugades==-1) map.put("Total rondes jugades", 0);
+            else map.put("Total rondes jugades", this.totalRondesJugades);
+        
+            if (this.totalJugadorsParticipants==-1) map.put("Total jugadors participants", 0);
+            else map.put("Total jugadors participants", this.totalJugadorsParticipants);
+        
+            if (this.totalVictoriaCartaAlta==-1)  map.put("Total victoria carta alta", 0);
+            else  map.put("Total victoria carta alta", this.totalVictoriaCartaAlta);
+       
+            if (this.totalVictoriaParelles==-1) map.put("Total victoria parella", 0);
+            else map.put("Total victoria parella", this.totalVictoriaParelles);
+        
+            if (this.totalVictoriaDoblesParelles==-1) map.put("Total victoria doble parella", 0);
+            else map.put("Total victoria doble parella", this.totalVictoriaDoblesParelles);
+       
+            if (this.totalVictoriaTrio==-1) map.put("Total victoria trio", 0);
+            else map.put("Total victoria trio", this.totalVictoriaTrio);
+        
+            if (this.totalVictoriaEscala==-1) map.put("Total victoria escala", 0);
+            else map.put("Total victoria escala", this.totalVictoriaEscala);
+       
+            if (this.totalVictoriaColor==-1) map.put("Total victoria color", 0);
+            else map.put("Total victoria color", this.totalVictoriaColor);
+        
+            if (this.totalVictoriaFull==-1) map.put("Total victoria full", 0);
+            else map.put("Total victoria full", this.totalVictoriaFull);
+        
+            if (this.totalVictoriaPoker==-1) map.put("Total victoria poker", 0);
+            else map.put("Total victoria poker", this.totalVictoriaPoker);
+        
+            if (this.totalVictoriaEscalaColor==-1) map.put("Total victoria escala de color", 0);
+            else map.put("Total victoria escala de color", this.totalVictoriaEscalaColor);
+        
+                return map;
     }
 
-}
+
+
+
+       
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    }
+
