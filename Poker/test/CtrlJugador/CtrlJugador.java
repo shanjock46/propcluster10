@@ -16,19 +16,19 @@ import java.util.Map;
  */
 public abstract class CtrlJugador {
     
-    protected JugadorSB jug;
-    private CtrlDadesJugadorSB capaDeDades;
-    private CtrlEstrategiaSB estrategia;
+    protected Jugador jug;
+    protected CtrlDadesJugadorSB capaDeDades;
+    protected CtrlEstrategiaSB estrategia;
 
 
 
     
     //Getters i setters
-    public JugadorSB getJug() {
+    public Jugador getJug() {
         return jug;
     }
 
-    public void setJug(JugadorSB jug) {
+    public void setJug(Jugador jug) {
         this.jug = jug;
     }
 
@@ -55,10 +55,10 @@ public abstract class CtrlJugador {
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
-        ArrayList<JugadorSB> jugadors=new ArrayList();
+        ArrayList<Jugador> jugadors=new ArrayList();
         jugadors=capaDeDades.obteTots();
-        Iterator<JugadorSB> it=jugadors.iterator();
-        JugadorSB aux=new JugadorSB();
+        Iterator<Jugador> it=jugadors.iterator();
+        Jugador aux;
         while (it.hasNext()) {
             aux=it.next();
             noms.add(aux.getNom());

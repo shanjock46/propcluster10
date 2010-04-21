@@ -21,8 +21,8 @@ public class TestCtrlJugador {
 
                 int op = 30;
                 inout io = new inout();
-                CtrlJugador c=new CtrlJugadorFiveCardDrawSB();
-                JugadorSB j=new JugadorSB();
+                CtrlJugador c=new CtrlJugadorFiveCardDraw();
+                Jugador j=new JugadorFiveCardDraw();
                 io.writeln("1- Retorna el jugador present a la capa");
                 io.writeln("2- Canvia el jugador present a la capa");
                 io.writeln("3- Retorna la capa de dades de jugador");
@@ -47,7 +47,7 @@ public class TestCtrlJugador {
                         case 2:// setJug(Jugador)
                                 io.writeln("Introdueix un nom de jugador");
                                 String nom=io.readword();
-                                j=new JugadorSB();
+                                j=new JugadorFiveCardDraw();
                                 j.setNom(nom);
                                 c.setJug(j);
                                 io.writeln("S'ha canviat el jugador present a la capa");
