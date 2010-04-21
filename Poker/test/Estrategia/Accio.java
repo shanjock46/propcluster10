@@ -1,4 +1,4 @@
-package Accio;
+package Estrategia;
 
 public enum Accio {
 	//BLACKJACK
