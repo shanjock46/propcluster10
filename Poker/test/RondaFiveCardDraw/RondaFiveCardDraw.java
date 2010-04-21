@@ -21,24 +21,13 @@ public class RondaFiveCardDraw extends RondaSB{
         //Es crea una baralla nova
         BarallaSB baralla=new BarallaFrancesaSB(1,false);
         //Es reparteixen les cartes, una a cada jugador, fins que en tenen 5 cadascun
-        repartirCartes(jugadors,baralla);
+        repartirCartes();
         //Fase 1: Inicialitzar apostes a 0. Inicialitza la primera posició a 0, la 2a a CG/2, i la 3a a CG.
         //En cas de només 2 jugadors, la posició 0 s'inicialitza a CG.
-        inicialitzarApostes(jugadors);
-
-
-
-
-
-
-
-
-
-
-
+        inicialitzarApostes();
 
     }
-        private void inicialitzarApostes(List<JugadorSB> jugadors){
+        private void inicialitzarApostes(){
             for (int i=0;i<jugadors.size();i++){
                 if (i==0) {
                     if (jugadors.size()==2) jugadors.get(i).setAposta(CG);
@@ -53,11 +42,13 @@ public class RondaFiveCardDraw extends RondaSB{
             }
 
         }
-        private void repartirCartes(List<JugadorSB> jugadors, BarallaSB baralla){
+        private void repartirCartes(){
             for (int x=0;x<5;x++){
             for (int i=0;i<jugadors.size();i++){
                 jugadors.get(i).afegeixCarta(baralla.extreuCarta());
         }
         }
         }
+
+       
 }
