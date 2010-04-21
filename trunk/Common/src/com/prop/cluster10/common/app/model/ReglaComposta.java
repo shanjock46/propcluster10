@@ -2,20 +2,24 @@ package com.prop.cluster10.common.app.model;
 
 public class ReglaComposta extends ReglaFinal {
 
+	public static final String OPERACIO_AND = "and";
+	public static final String OPERACIO_OR = "or";
+	public static final String OPERACIO_XOR = "xor";
+
 	private ReglaFinal primeraRegla;
 	private ReglaFinal segonaRegla;
-	private String operacio;
-	
-	public ReglaComposta() {}
-	
-	public ReglaComposta(String nom, ReglaFinal primeraRegla, ReglaFinal segonaRegla, String operacio, Integer pes, Double probabilitatVictoria, Double probabilitatMillora) {		
+	private String tipusComparacio;
+
+	public ReglaComposta() {
+	}
+
+	public ReglaComposta(String nom, ReglaFinal primeraRegla, ReglaFinal segonaRegla, String tipusComparacio,
+			Integer prioritat) {
 		this.nom = nom;
 		this.primeraRegla = primeraRegla;
 		this.segonaRegla = segonaRegla;
-		this.operacio = operacio;
-		this.pes = pes;
-		this.probabilitatVictoria = probabilitatVictoria;
-		this.probabilitatMillora = probabilitatMillora;		
+		this.tipusComparacio = tipusComparacio;
+		this.prioritat = prioritat;
 	}
 
 	/* GETTERS & SETTERS */
@@ -35,12 +39,12 @@ public class ReglaComposta extends ReglaFinal {
 		this.primeraRegla = primeraRegla;
 	}
 
-	public String getOperacio() {
-		return operacio;
+	public String getTipusComparacio() {
+		return tipusComparacio;
 	}
 
-	public void setOperacio(String operacio) {
-		this.operacio = operacio;
+	public void setTipusComparacio(String tipusComparacio) {
+		this.tipusComparacio = tipusComparacio;
 	}
-	
+
 }
