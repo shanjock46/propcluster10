@@ -56,7 +56,7 @@ public abstract class CtrlJugador {
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
         ArrayList<Jugador> jugadors=new ArrayList();
-        jugadors=capaDeDades.obteTots();
+        //jugadors=capaDeDades.obteTots();
         Iterator<Jugador> it=jugadors.iterator();
         Jugador aux;
         while (it.hasNext()) {
