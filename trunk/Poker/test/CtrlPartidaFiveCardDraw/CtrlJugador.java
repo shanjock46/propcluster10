@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public abstract class CtrlJugador {
     
-    protected Jugador jug;
+    protected Jugador jugador;
     protected CtrlDadesJugadorSB capaDeDades;
     protected CtrlEstrategiaSB estrategia;
 
@@ -24,12 +24,12 @@ public abstract class CtrlJugador {
 
     
     //Getters i setters
-    public Jugador getJug() {
-        return jug;
+    public Jugador getJugador() {
+        return jugador;
     }
 
-    public void setJug(Jugador jug) {
-        this.jug = jug;
+    public void setJugador(Jugador jug) {
+        this.jugador = jug;
     }
 
     public CtrlDadesJugadorSB getCapaDeDades() {
@@ -51,7 +51,7 @@ public abstract class CtrlJugador {
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
     public void obteJugador (String nom){
-        this.jug=capaDeDades.obteJugador(nom);
+        this.jugador=capaDeDades.obteJugador(nom);
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
@@ -67,11 +67,11 @@ public abstract class CtrlJugador {
     }
 
     public void guardaJugador () {
-        getCapaDeDades().guardaJugador(jug);
+        getCapaDeDades().guardaJugador(jugador);
     }
 
     public Map carregaEstadistiques () {
-        return getJug().carregaEstadistiques();
+        return getJugador().carregaEstadistiques();
     }
 
  
