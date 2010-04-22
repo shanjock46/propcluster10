@@ -5,6 +5,7 @@
 
 package PartidaFiveCardDraw;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,17 +18,18 @@ public class PartidaFiveCardDraw extends PartidaSB{
 
     public PartidaFiveCardDraw(List<Jugador> j, int cega) {
         jugadors = j;
+        jugadorsActius = new ArrayList<Jugador>();
         jugadorsActius.addAll(j);
         id = (new Date()).getTime();// assignem un identificador a la nova partida
         this.rondesJugades = 0;
         CG=cega;
 	}
     
-    public RondaSB creaRonda() {
+    public RondaFiveCardDraw creaRonda() {
 	if (rondesJugades!=0) if (jugadors.size()%rondesJugades==0) CG=CG*2;
         baralla=new BarallaFrancesaSB (1,false);
         rondaActual = new RondaFiveCardDraw(jugadorsActius, baralla);
-	return rondaActual;
+	return (RondaFiveCardDraw) rondaActual;
 	}
 
     public List<Jugador> guanyadorsPartida(){
