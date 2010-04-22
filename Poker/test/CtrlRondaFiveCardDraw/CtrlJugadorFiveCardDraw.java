@@ -13,10 +13,10 @@ package CtrlRondaFiveCardDraw;
  */
 public class CtrlJugadorFiveCardDraw extends CtrlJugador{
 
-    private static inout io=new inout();
+    
 
     public void crearJugador (String nom, boolean maquina) {
-        jug=new JugadorFiveCardDrawSB(nom);
+        jug=new JugadorFiveCardDraw(nom);
         if (maquina) {
             estrategia=new CtrlEstrategiaSB();
             estrategia.crearEstrategia();
