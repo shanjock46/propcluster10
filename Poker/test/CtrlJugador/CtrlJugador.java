@@ -51,7 +51,7 @@ public abstract class CtrlJugador {
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
     public void obteJugador (String nom){
-        this.jug=capaDeDades.obteJugador(nom);
+        //this.jug=capaDeDades.obteJugador(nom);   Persistencia no implementada
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();

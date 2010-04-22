@@ -97,7 +97,7 @@ public class TestCtrlJugador {
                                 io.writeln("Introdueix nom a buscar");
                                 String nom3=io.readword();
                                 c.obteJugador(nom3);
-                                io.writeln("S'ha obtingut el jugador de la capa de dades i ara està a la capa");
+                                io.writeln("Persistencia no implementada encara");
                                 break;
                         
                         case 9:// obteLlistatJugadors()
