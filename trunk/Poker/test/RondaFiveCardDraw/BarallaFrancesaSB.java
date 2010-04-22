@@ -5,6 +5,9 @@
 
 package RondaFiveCardDraw;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Daniel Mulero
@@ -12,6 +15,11 @@ package RondaFiveCardDraw;
 public class BarallaFrancesaSB extends BarallaSB{
 
     public BarallaFrancesaSB(int i, boolean b) {
+        cartes=new ArrayList<Carta>();
+        for (int f=0; f<15;f++){
+                cartes.add(new Carta());
+        }
+
     }
 
 }
