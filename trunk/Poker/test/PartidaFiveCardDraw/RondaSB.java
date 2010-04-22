@@ -39,7 +39,7 @@ public abstract class RondaSB
 		this.jugadorsActius.remove(j);
 	}
 
-	public JugadorSB getGuanyador() {
+	public Jugador getGuanyador() {
 		// TODO Convertir la funci� en public LinkedList<Jugador> getGuanyadors()
 		return null;
 	}

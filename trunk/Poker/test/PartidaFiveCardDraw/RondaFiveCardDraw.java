@@ -5,7 +5,6 @@
 
 package PartidaFiveCardDraw;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -30,7 +29,6 @@ public class RondaFiveCardDraw extends RondaSB{
         iter=jugadorsActius.iterator();
     }
 
-    @Override
     public void tancaRonda() {
 		for(Jugador j: getGuanyadors()){
 			j.setCash(j.getCash() + getPot()/getGuanyadors().size());	// Actualitza les puntuacions (el cash)
@@ -38,7 +36,6 @@ public class RondaFiveCardDraw extends RondaSB{
 		}
 	}
     
-    @Override
     public void repartir(){
             for (int x=0;x<5;x++){
                 for (int i=0;i<jugadorsActius.size();i++){
@@ -46,7 +43,6 @@ public class RondaFiveCardDraw extends RondaSB{
                      }
                 }
             }
-    @Override
     public Jugador seguentJugador() {
 		if (iter.hasNext()==false) iter=jugadorsActius.iterator();
                 return iter.next();
