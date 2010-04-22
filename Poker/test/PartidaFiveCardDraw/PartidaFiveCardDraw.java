@@ -5,23 +5,25 @@
 
 package PartidaFiveCardDraw;
 
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author Dani
  */
-public class PartidaFiveCardDraw extends Partida{
+public class PartidaFiveCardDraw extends PartidaSB{
 
-    public PartidaFirstToKnock(List<Jugador> j) {
+    public PartidaFiveCardDraw(List<Jugador> j) {
         this.jugadors = j;
         this.jugadorsActius.addAll(j);
         this.id = (new Date()).getTime();// assignem un identificador a la nova partida
         this.rondesJugades = 0;
 	}
     
-    public Ronda creaRonda() {
-	baralla=new BarallaFrancesa (1,false);	
+    public RondaSB creaRonda() {
+	if (rondesJugades!=0) if (jugadors.size()%rondesJugades==0) CG=CG*2;
+        baralla=new BarallaFrancesaSB (1,false);
         rondaActual = new RondaFiveCardDraw(jugadorsActius, baralla);
 	return rondaActual;
 	}
