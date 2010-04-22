@@ -1,7 +1,7 @@
+package com.prop.cluster10.remigio.app.controller;
 /**
  * @author Albert Moreno
  */
-package com.prop.cluster10.common.app.controller;
 
 import java.util.List;
 

@@ -1,23 +1,12 @@
-package com.prop.cluster10.remigio.app.model;
-
-import java.util.List;
-
 /**
  * @author Albert Moreno
  */
+
+import java.util.List;
+
 public abstract class CtrlRonda 
 {
 	protected Ronda ronda = null;
-	
-	public CtrlRonda() 
-	{
-		
-	}
-	
-	public CtrlRonda(Ronda r) 
-	{
-		this.ronda = r;
-	}
 
 	public Ronda getRonda() 
 	{

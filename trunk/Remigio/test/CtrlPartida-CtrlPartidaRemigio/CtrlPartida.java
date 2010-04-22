@@ -1,5 +1,6 @@
-package com.prop.cluster10.remigio.app.model;
-
+/**
+ * @author Victor Mier
+ */
 import java.util.List;
 import java.lang.String;
 
@@ -7,6 +8,22 @@ public abstract class CtrlPartida
 {
 	protected Partida partida = null;
 	protected CtrlRonda ctrlRonda = null;
+	
+	public Partida getPartida() {
+		return partida;
+	}
+
+	public void setPartida(Partida partida) {
+		this.partida = partida;
+	}
+
+	public CtrlRonda getCtrlRonda() {
+		return ctrlRonda;
+	}
+
+	public void setCtrlRonda(CtrlRonda ctrlRonda) {
+		this.ctrlRonda = ctrlRonda;
+	}
 	
 	public abstract void crearPartida(List<String> jugadors, Integer cashInicial);
 	
@@ -30,7 +47,7 @@ public abstract class CtrlPartida
 	
 	public void carregarPartida(Long id)
 	{
-		//TODO: Falten els controladors de la capa de dades
+		//Falten els controladors de la capa de dades
 		/*
 		this.partida = ctrlDades.getPartida(idPartida);
 		jugarPartida();
@@ -61,12 +78,12 @@ public abstract class CtrlPartida
 		
 		//actualitzem les estad’stiques generals
 		CtrlEstadistiquesGenerals ctrlEstGen = new CtrlEstadistiquesGenerals();
-		EstadistiquesGenerals stats = EstadistiquesGenerals().getInstance();
+		EstadistiquesGenerals stats = ctrlEstGen.getInstance();
 		stats.setTotalPartidesJugades(stats.getTotalPartidesJugades() + 1);
 		stats.setTotalRondesJugades(stats.getTotalRondesJugades() + this.partida.getRondesJugades());
 		stats.setTotalJugadorsParticipants(stats.getTotalJugadorsParticipants() + this.partida.getJugadors().size());
 		
-		//TODO Eliminar la partida si aquesta estava guardada
+		//Eliminar la partida si aquesta estava guardada
 		//Falta el ctrl de la Capa de Dades
 	}
 

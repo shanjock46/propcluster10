@@ -1,11 +1,12 @@
-package com.prop.cluster10.remigio.app.model;
-
+package com.prop.cluster10.remigio.app.controller;
+/**
+ * @author Victor Mier
+ */
 import java.lang.String;
 
 public class CtrlRondaRemigio extends CtrlRonda {
 	
 	private CtrlJugadorRemigio jugadorActual = null;
-	//TODO OJO QUE LA RONDA NO LA PILLA COM A RondaRemigio..les he ficat abstractes a Ronda
 	
 	public CtrlRondaRemigio(){
 		jugadorActual = new CtrlJugadorRemigio();
@@ -13,6 +14,7 @@ public class CtrlRondaRemigio extends CtrlRonda {
 
 	public CtrlRondaRemigio(Ronda r){
 		this.ronda = r;
+		jugadorActual = new CtrlJugadorRemigio();
 	}
 	
 	public CtrlJugadorRemigio getJugadorActual() {
