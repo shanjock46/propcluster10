@@ -16,8 +16,8 @@ public class CtrlEstrategiaSB {
     public CtrlEstrategiaSB() {
     }
 
-    void crearEstrategia() {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public EstrategiaSB crearEstrategia() {
+        return estrategia;
     }
 
     /**
