@@ -9,7 +9,7 @@ package CtrlRondaFiveCardDraw;
  *
  * @author Dani
  */
-public class CtrlRondaFiveCardDraw {
+public class CtrlRondaFiveCardDraw extends CtrlRondaSB{
 
     private CtrlJugadorFiveCardDraw actual;
     
@@ -17,7 +17,7 @@ public class CtrlRondaFiveCardDraw {
 	actual = new CtrlJugadorFiveCardDraw();
 	}
 
-    public CtrlRondaFiveCardDraw(Ronda r){
+    public CtrlRondaFiveCardDraw(RondaSB r){
         this.ronda = r;
     }
 
@@ -27,7 +27,8 @@ public class CtrlRondaFiveCardDraw {
 
     public void setJugadorActual(CtrlJugadorFiveCardDraw nou) {
         actual = nou;
-
+    }
+    @Override
     public void jugarRonda () {
         ronda.repartir();
 	actual.setJugador(ronda.seguentJugador());
@@ -52,5 +53,6 @@ public class CtrlRondaFiveCardDraw {
 
 
     }
-    
+    }
 }
+
