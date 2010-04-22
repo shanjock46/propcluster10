@@ -9,7 +9,7 @@ package CtrlJugadorFiveCardDraw;
  *
  * @author Daniel Mulero
  */
-public class CtrlJugadorFiveCardDraw extends CtrlJugadorSB{
+public class CtrlJugadorFiveCardDraw extends CtrlJugador{
 
     private static inout io=new inout();
 
