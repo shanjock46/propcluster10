@@ -67,7 +67,7 @@ public abstract class CtrlJugador {
     }
 
     public void guardaJugador () {
-        getCapaDeDades().guardaJugador(jug);
+        //getCapaDeDades().guardaJugador(jug);
     }
 
     public Map carregaEstadistiques () {
