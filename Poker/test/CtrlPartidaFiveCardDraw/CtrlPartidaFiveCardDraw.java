@@ -16,7 +16,7 @@ import java.util.List;
 public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
 
     private CtrlJugador ctrlJugador;
-    public static int CG=0;
+    private int CG=0;
 
     public void crearPartida(List<String> llista, Integer cashInicial){
         ctrlJugador=new CtrlJugadorFiveCardDraw();
@@ -29,7 +29,7 @@ public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
         }
                 if (cashInicial*(0.05)<1) CG=1;
                 else CG=(int)(cashInicial*(0.05));
-		partida = new PartidaFiveCardDraw(players);
+		partida = new PartidaFiveCardDraw(players, CG);
 		ctrlRonda = new CtrlRondaFiveCardDraw(partida.creaRonda());
 		this.jugarPartida();
 	}
