@@ -13,12 +13,14 @@ import java.util.List;
  * @author Dani
  */
 public class PartidaFiveCardDraw extends PartidaSB{
+    private int CG;
 
-    public PartidaFiveCardDraw(List<Jugador> j) {
-        this.jugadors = j;
-        this.jugadorsActius.addAll(j);
-        this.id = (new Date()).getTime();// assignem un identificador a la nova partida
+    public PartidaFiveCardDraw(List<Jugador> j, int cega) {
+        jugadors = j;
+        jugadorsActius.addAll(j);
+        id = (new Date()).getTime();// assignem un identificador a la nova partida
         this.rondesJugades = 0;
+        CG=cega;
 	}
     
     public RondaSB creaRonda() {

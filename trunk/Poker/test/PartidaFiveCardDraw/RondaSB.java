@@ -1,6 +1,6 @@
 package PartidaFiveCardDraw;
 
-import RondaFiveCardDraw.*;
+
 import java.util.List;
 
 /**
