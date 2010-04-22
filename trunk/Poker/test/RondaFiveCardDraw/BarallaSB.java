@@ -13,12 +13,12 @@ import java.util.Random;
  * @author Daniel Mulero
  */
 public class BarallaSB {
-    protected List<CartaSB> cartes;
-    public CartaSB extreuCarta() {
+    protected List<Carta> cartes;
+    public Carta extreuCarta() {
     	//{Pre: cartes.size() > 0}
 		Random random = new Random();
 		int k = random.nextInt(cartes.size());
-		CartaSB carta = cartes.get(k);
+		Carta carta = cartes.get(k);
 		cartes.remove(k);
 		return carta;
     }
