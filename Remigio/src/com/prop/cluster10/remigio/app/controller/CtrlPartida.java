@@ -1,7 +1,7 @@
 /**
  * @author Victor Mier
  */
-package com.prop.cluster10.common.app.controller;
+package com.prop.cluster10.remigio.app.controller;
 import java.util.List;
 import java.lang.String;
 
