@@ -16,21 +16,21 @@ import java.util.List;
  */
 public class RondaFiveCardDraw extends RondaSB{
 
-    private ArrayList<JugadorSB> guanyadors;
+    private ArrayList<Jugador> guanyadors;
     private int pot;
-    private Iterator<JugadorSB> iter;
+    private Iterator<Jugador> iter;
     
-    public RondaFiveCardDraw(List<JugadorSB> jugadors, BarallaSB baralla){
-        jugadorsActius=new LinkedList<JugadorSB>();
+    public RondaFiveCardDraw(List<Jugador> jugadors, BarallaSB baralla){
+        jugadorsActius=new LinkedList<Jugador>();
         jugadorsActius.addAll(jugadors);
         this.baralla=baralla;
-        guanyadors=new ArrayList<JugadorSB>();
+        guanyadors=new ArrayList<Jugador>();
         pot=0;
         iter=jugadorsActius.iterator();
     }
 
     public void tancaRonda() {
-		for(JugadorSB j: getGuanyadors()){
+		for(Jugador j: getGuanyadors()){
 			j.setCash(j.getCash() + getPot()/getGuanyadors().size());	// Actualitza les puntuacions (el cash)
 			j.buidaCartes();	// Retorna les cartes dels jugadors a la baralla
 		}
@@ -43,17 +43,17 @@ public class RondaFiveCardDraw extends RondaSB{
                      }
                 }
             }
-    public JugadorSB seguentJugador() {
+    public Jugador seguentJugador() {
 		if (iter.hasNext()==false) iter=jugadorsActius.iterator();
                 return iter.next();
 	}
 
 //GETTERS I SETTERS
-    public ArrayList<JugadorSB> getGuanyadors() {
+    public ArrayList<Jugador> getGuanyadors() {
         return guanyadors;
     }
     
-    public void setGuanyadors(ArrayList<JugadorSB> guanyadors) {
+    public void setGuanyadors(ArrayList<Jugador> guanyadors) {
         this.guanyadors = guanyadors;
     }
    
