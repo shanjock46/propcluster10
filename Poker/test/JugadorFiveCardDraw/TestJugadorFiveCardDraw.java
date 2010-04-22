@@ -91,8 +91,35 @@ public class TestJugadorFiveCardDraw {
 
                                 break;
 
-                        case 5:// evaluador();
-                                
+                        case 5:// evaluador(pot,descarte,call,ciega,apostes_acomulades)
+                              System.out.println("Es la fase de descart?");
+                                Map<String,Object> evalx=new HashMap<String,Object>();
+                                boolean b=io.readboolean();
+                                if (b) evalx=jug.evaluador(0,true,0,0,0);
+                                else {
+                                    System.out.println("Si apostes=0 -> Primera ronda d'apostes");
+                                    System.out.println("Si call=cega -> Jugador intermig");
+                                    System.out.println("Si call=cega/2 -> Cega petita");
+                                    System.out.println("Si call=0 -> Cega gran");
+                                    System.out.println("Pot:");
+                                    int pot=io.readint();
+                                    System.out.println("Call:");
+                                    int call=io.readint();
+                                    System.out.println("Cega:");
+                                    int cega=io.readint();
+                                    System.out.println("Apostes acomulades:");
+                                    int apostes=io.readint();
+                                    evalx=jug.evaluador(pot,false,call,cega,apostes);
+                                }
+
+                              Iterator iteratorx = evalx.keySet().iterator();
+                                System.out.print("Tens ");
+                                while (iteratorx.hasNext()) {
+                                    String key = iteratorx.next().toString();
+                                    Object value = evalx.get(key);
+                                    io.writeln(key);
+                                   }
+
                                 break;
 
 
