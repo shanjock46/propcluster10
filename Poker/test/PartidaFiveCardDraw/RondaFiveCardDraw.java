@@ -30,13 +30,15 @@ public class RondaFiveCardDraw extends RondaSB{
         iter=jugadorsActius.iterator();
     }
 
+    @Override
     public void tancaRonda() {
-		for(JugadorSB j: getGuanyadors()){
+		for(Jugador j: getGuanyadors()){
 			j.setCash(j.getCash() + getPot()/getGuanyadors().size());	// Actualitza les puntuacions (el cash)
 			j.buidaCartes();	// Retorna les cartes dels jugadors a la baralla
 		}
 	}
     
+    @Override
     public void repartir(){
             for (int x=0;x<5;x++){
                 for (int i=0;i<jugadorsActius.size();i++){
@@ -44,17 +46,18 @@ public class RondaFiveCardDraw extends RondaSB{
                      }
                 }
             }
-    public JugadorSB seguentJugador() {
+    @Override
+    public Jugador seguentJugador() {
 		if (iter.hasNext()==false) iter=jugadorsActius.iterator();
                 return iter.next();
 	}
 
 //GETTERS I SETTERS
-    public ArrayList<JugadorSB> getGuanyadors() {
+    public ArrayList<Jugador> getGuanyadors() {
         return guanyadors;
     }
     
-    public void setGuanyadors(ArrayList<JugadorSB> guanyadors) {
+    public void setGuanyadors(ArrayList<Jugador> guanyadors) {
         this.guanyadors = guanyadors;
     }
    
