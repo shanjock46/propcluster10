@@ -2,6 +2,7 @@ package com.prop.cluster10.common.app.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
 
@@ -16,7 +17,9 @@ public class BarallaFrancesa extends Baralla {
 	public static final String PAL_DIAMANTS = "diamants";
 	public static final String COMODIN = "comodin";
 	
-	public BarallaFrancesa() {		
+	public BarallaFrancesa() {
+		this.cartes = new ArrayList<SBCarta>();
+		this.cartesDescartades = new Stack<SBCarta>();
 	}
 
 	/**
