@@ -31,8 +31,14 @@ public class TestCtrlJugadorFiveCardDraw {
                                 io.writeln("Escrigui el nom del jugador:");
                                 String nom=io.readword();
                                 io.writeln("Es jugador màquina (si/no)");
-                                
-                                io.writeln("S'ha creat el jugador"+nom+" de tipus"+tipus+);
+                                String maquina=io.readword();
+                                if (maquina.compareToIgnoreCase("si")==0) {
+                                    c.crearJugador(nom, true);
+                                     io.writeln("S'ha creat el jugador "+nom+" de tipus maquina.");
+                                } else if (maquina.compareToIgnoreCase("no")==0) {
+                                    c.crearJugador(nom, false);
+                                    io.writeln("S'ha creat el jugador "+nom+" de tipus huma.");
+                                }
                                 break;
                         }
                 }
