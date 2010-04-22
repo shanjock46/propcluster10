@@ -15,6 +15,10 @@ import java.util.Comparator;
  */
 public class JugadorSB {
 
+    public void buidaCartes() {
+        ma.clear();
+    }
+
     
     private class order implements Comparator<CartaSB>{
 
