@@ -9,7 +9,7 @@ package CtrlJugadorFiveCardDraw;
  *
  * @author Daniel Mulero
  */
-public class JugadorFiveCardDrawSB extends JugadorSB{
+public class JugadorFiveCardDrawSB extends Jugador{
 
     public JugadorFiveCardDrawSB(String nom) {
     }
