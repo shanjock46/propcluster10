@@ -5,6 +5,9 @@
 
 package RondaFiveCardDraw;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,43 +15,55 @@ import java.util.List;
  * @author Martina Canyelles
  */
 public class RondaFiveCardDraw extends RondaSB{
- 
-    public RondaFiveCardDraw(List<JugadorSB> jugadors){
-        this.jugadors=jugadors;
+
+    private ArrayList<JugadorSB> guanyadors;
+    private int pot;
+    private Iterator<JugadorSB> iter;
+    
+    public RondaFiveCardDraw(List<JugadorSB> jugadors, BarallaSB baralla){
+        jugadorsActius=new LinkedList<JugadorSB>();
+        jugadorsActius.addAll(jugadors);
+        this.baralla=baralla;
+        guanyadors=new ArrayList<JugadorSB>();
+        pot=0;
+        iter=jugadorsActius.iterator();
     }
 
-    public void JugarRondaFiveCardDraw() {
-        //Es crea una baralla nova
-        BarallaSB baralla=new BarallaFrancesaSB(1,false);
-        //Es reparteixen les cartes, una a cada jugador, fins que en tenen 5 cadascun
-        repartirCartes();
-        //Fase 1: Inicialitzar apostes a 0. Inicialitza la primera posició a 0, la 2a a CG/2, i la 3a a CG.
-        //En cas de només 2 jugadors, la posició 0 s'inicialitza a CG.
-        inicialitzarApostes();
-
-    }
-        private void inicialitzarApostes(){
-            for (int i=0;i<jugadors.size();i++){
-                if (i==0) {
-                    if (jugadors.size()==2) jugadors.get(i).setAposta(CG);
-                    else jugadors.get(i).setAposta(0);
-                    }
-                else if (i==1) jugadors.get(i).setAposta(CG/2);
-                    
-                else if (i==2){
-                jugadors.get(i).setAposta(CG);
-                    }
-                else jugadors.get(i).setAposta(0);
-            }
-
-        }
-        private void repartirCartes(){
+    public void tancaRonda() {
+		for(JugadorSB j: getGuanyadors()){
+			j.setCash(j.getCash() + getPot()/getGuanyadors().size());	// Actualitza les puntuacions (el cash)
+			j.buidaCartes();	// Retorna les cartes dels jugadors a la baralla
+		}
+	}
+    
+    public void repartir(){
             for (int x=0;x<5;x++){
-            for (int i=0;i<jugadors.size();i++){
-                jugadors.get(i).afegeixCarta(baralla.extreuCarta());
-        }
-        }
-        }
+                for (int i=0;i<jugadorsActius.size();i++){
+                    jugadorsActius.get(i).afegeixCarta(baralla.extreuCarta());
+                     }
+                }
+            }
+    public JugadorSB seguentJugador() {
+		if (iter.hasNext()==false) iter=jugadorsActius.iterator();
+                return iter.next();
+	}
+
+//GETTERS I SETTERS
+    public ArrayList<JugadorSB> getGuanyadors() {
+        return guanyadors;
+    }
+    
+    public void setGuanyadors(ArrayList<JugadorSB> guanyadors) {
+        this.guanyadors = guanyadors;
+    }
+   
+    public int getPot() {
+        return pot;
+    }
+    
+    public void setPot(int pot) {
+        this.pot = pot;
+    }
 
        
 }
