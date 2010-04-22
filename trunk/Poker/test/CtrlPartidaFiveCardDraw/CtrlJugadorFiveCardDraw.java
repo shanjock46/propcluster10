@@ -15,6 +15,7 @@ public class CtrlJugadorFiveCardDraw extends CtrlJugador{
 
     
 
+    @Override
   public void crearJugador (String nom, boolean maquina) {
         jug=new JugadorFiveCardDraw(nom);
         if (maquina) {
