@@ -10,5 +10,6 @@ package PartidaFiveCardDraw;
  * @author Daniel Mulero
  */
 public class BarallaSB {
-
+    public void extreuCarta(){}
+    
 }
