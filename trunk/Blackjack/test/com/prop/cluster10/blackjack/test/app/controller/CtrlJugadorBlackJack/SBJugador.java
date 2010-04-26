@@ -1,9 +1,8 @@
-package com.prop.cluster10.blackjack.test.app.model.jugadorblackjack;
 
 
 import java.util.List;
 
-import com.prop.cluster10.blackjack.test.app.controller.CtrlJugadorBlackJack.SBCarta;
+
 
 
 public class SBJugador {
@@ -35,6 +34,10 @@ public class SBJugador {
 
 	public void setCash(int cash) {
 		this.cash = cash;
+	}
+	
+	public void afageixCarta(SBCarta c) {
+		ma.add(c);
 	}
 	
 }

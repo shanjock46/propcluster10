@@ -5,7 +5,7 @@ public class EstadistiquesBlackJack extends SBEstadistiques{
 	private int fitxes;
 
 	public EstadistiquesBlackJack() {
-		this.fitxes = 0;
+		this.fitxes = -1;
 	}
 	
 	public void setFitxes(int fitxes) {
@@ -13,7 +13,8 @@ public class EstadistiquesBlackJack extends SBEstadistiques{
 	}
 
 	public int getFitxes() {
-		return fitxes;
+		if(fitxes == -1) return 0; 
+		else return fitxes;
 	}
 	
 	public double getFitxesRonda() {

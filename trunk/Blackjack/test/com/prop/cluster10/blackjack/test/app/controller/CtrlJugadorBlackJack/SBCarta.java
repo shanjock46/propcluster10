@@ -1,4 +1,4 @@
-package com.prop.cluster10.blackjack.test.app.model.jugadorblackjack;
+
 
 public class SBCarta {
 	String pal;
