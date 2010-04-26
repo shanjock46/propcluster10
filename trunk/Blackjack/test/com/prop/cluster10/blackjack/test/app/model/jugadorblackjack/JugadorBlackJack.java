@@ -11,11 +11,14 @@ import com.prop.cluster10.blackjack.test.app.controller.CtrlJugadorBlackJack.SBC
 
 public class JugadorBlackJack extends SBJugador {
 	private List<SBCarta> segonaMa;
+	private int apostaSegonaMa;
 	private int fitxesAssegurar;
 	
 	public JugadorBlackJack() {
 		ma = new ArrayList<SBCarta>();
 		segonaMa = new ArrayList<SBCarta>();
+		setFitxesSegonaMa(0);
+		fitxesAssegurar = 0;
 	}
 	
 	public int getFitxesAssegurar() {
@@ -80,5 +83,13 @@ public class JugadorBlackJack extends SBJugador {
 			valor -= 10;
 		}
 		return valor;
+	}
+
+	public void setFitxesSegonaMa(int fitxesSegonaMa) {
+		this.apostaSegonaMa = fitxesSegonaMa;
+	}
+
+	public int getFitxesSegonaMa() {
+		return apostaSegonaMa;
 	}
 }
