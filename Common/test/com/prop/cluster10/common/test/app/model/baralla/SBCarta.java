@@ -1,5 +1,4 @@
 package com.prop.cluster10.common.test.app.model.baralla;
-
 public class SBCarta {
 	String pal;
 	int numero;
