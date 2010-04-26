@@ -1,19 +1,20 @@
 package com.prop.cluster10.common.test.app.model.baralla;
+
+
+/**
+ * @author Antar Moratona Franco
+ */
+
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
+import java.util.ArrayList;
 
-import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
-
-
-// Hantaro's work
-
-//TODO: Canviar SBCarta per Carta
 public abstract class Baralla {
 
-	protected List<SBCarta> cartes;
+	protected List<SBCarta> cartes = new ArrayList<SBCarta>();
 
-    protected Stack<SBCarta> cartesDescartades;   
+    protected Stack<SBCarta> cartesDescartades = new Stack<SBCarta>();   
 
     public List<SBCarta> getCartes() {
 		return cartes;
@@ -38,7 +39,6 @@ public abstract class Baralla {
     }
   
     public SBCarta extreuCarta() { 
-    	//{Pre: cartes.size() > 0}
 		Random random = new Random();
 		int k = random.nextInt(cartes.size());
 		SBCarta carta = cartes.get(k);
