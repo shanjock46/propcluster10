@@ -1,3 +1,5 @@
+package com.prop.cluster10.blackjack.app.model;
+
 /**
  * 
  * @author Albert De Nova

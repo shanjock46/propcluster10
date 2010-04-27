@@ -11,6 +11,12 @@ public class ReglaComposta extends ReglaFinal {
 	private String tipusComparacio;
 
 	public ReglaComposta() {
+		this.nom = null;
+		this.primeraRegla = null;
+		this.segonaRegla = null;
+		this.tipusComparacio = null;
+		this.prioritat = null;
+		this.accio = null;
 	}
 
 	public ReglaComposta(String nom, ReglaFinal primeraRegla, ReglaFinal segonaRegla, String tipusComparacio,

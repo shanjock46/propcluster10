@@ -1,4 +1,8 @@
+package com.prop.cluster10.blackjack.app.model;
+
 import java.util.HashMap;
+
+import com.prop.cluster10.common.app.model.EstadistiquesGenerals;
 
 
 public class EstadistiquesGeneralsBlackJack extends EstadistiquesGenerals {

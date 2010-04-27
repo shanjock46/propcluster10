@@ -18,6 +18,9 @@ public class ReglaSimple extends ReglaFinal {
 		this.frase = null;
 		this.propietat = null;
 		this.tipusComparacio = null;
+		this.nom = null;
+		this.accio = null;
+		this.prioritat = null;
 	}
 
 	public ReglaSimple(String nom, String frase, Integer valor, Integer prioritat) {

@@ -3,7 +3,7 @@ package com.prop.cluster10.blackjack.test.app.model.jugadorblackjack;
 
 import java.util.List;
 
-import com.prop.cluster10.blackjack.test.app.controller.CtrlJugadorBlackJack.SBCarta;
+import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
 
 
 public class SBJugador {

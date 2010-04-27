@@ -1,4 +1,4 @@
-
+package com.prop.cluster10.blackjack.app.controller;
 
 public class CtrlPartidaBlackJack {
 	

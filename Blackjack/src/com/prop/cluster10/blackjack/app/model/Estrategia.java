@@ -1,8 +1,12 @@
+package com.prop.cluster10.blackjack.app.model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.prop.cluster10.common.test.app.model.estrategia.JugadorStub;
 
 /**
  * 
