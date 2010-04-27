@@ -1,3 +1,7 @@
+package com.prop.cluster10.blackjack.test.app.controller.CtrlJugadorBlackJack;
+
+import com.prop.cluster10.common.app.model.BarallaFrancesa;
+
 
 
 
