@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+import com.prop.cluster10.common.app.model.BarallaFrancesa;
+
 
 public class TestBaralla {
 

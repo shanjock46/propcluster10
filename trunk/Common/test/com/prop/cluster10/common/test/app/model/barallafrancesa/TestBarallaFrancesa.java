@@ -25,7 +25,7 @@ public class TestBarallaFrancesa {
 				case 1:
 					io.writeln("Nombre de copies que té la baralla?");
 					int copies = io.readint();
-					io.writeln("Utilitzar comodins?");
+					io.writeln("Utilitzar comodins? Y: Si, N: No");
 					String respostaComodin = io.readword();					
 					barallaFrancesa = new BarallaFrancesa(copies, respostaComodin.equals("Y"));
 					break;

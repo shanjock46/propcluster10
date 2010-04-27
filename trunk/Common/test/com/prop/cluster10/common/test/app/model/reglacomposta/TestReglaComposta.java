@@ -101,6 +101,7 @@ public class TestReglaComposta {
 				case 10:
 					io.writeln("Introdueix tipus de comparacio");
 					tipusComparacio = io.readword();
+					reglaComposta.setTipusComparacio(tipusComparacio);
 					break;
 				case 11:
 					io.writeln("Tipus de comparacio: " + reglaComposta.getTipusComparacio());
