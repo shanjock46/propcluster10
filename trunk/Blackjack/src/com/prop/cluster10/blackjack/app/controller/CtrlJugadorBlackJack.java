@@ -1,5 +1,7 @@
 package com.prop.cluster10.blackjack.app.controller;
 
+import com.prop.cluster10.blackjack.test.app.controller.CtrlJugadorBlackJack.SBCtrlJugador;
+import com.prop.cluster10.blackjack.test.app.model.jugadorblackjack.JugadorBlackJack;
 import com.prop.cluster10.common.test.app.model.baralla.SBCarta;
 
 // Antar Moratona Franco
