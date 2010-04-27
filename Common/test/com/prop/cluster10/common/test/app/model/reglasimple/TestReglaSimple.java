@@ -65,7 +65,9 @@ public class TestReglaSimple {
 					String propietat = io.readword();
 					io.writeln("Introdueix tipus de comparacio");
 					String tipusComparacio = io.readword();
+					io.writeln("Introdueix valor");
 					valor = io.readint();
+					io.writeln("Introdueix prioritat");
 					prioritat = io.readint();
 					reglaSimple = new ReglaSimple(nom, propietat, tipusComparacio, valor, prioritat);					
 					io.writeln("S'ha creat una baralla amb nom, propietat, tipusComparacio, valor i prioritat");
@@ -115,6 +117,7 @@ public class TestReglaSimple {
 				case 13:
 					io.writeln("Introdueix propietat");
 					propietat = io.readword();
+					reglaSimple.setPropietat(propietat);
 					break;
 				case 14:
 					io.writeln("Propietat: " + reglaSimple.getPropietat());
@@ -122,6 +125,7 @@ public class TestReglaSimple {
 				case 15:
 					io.writeln("Introdueix tipus de comparacio");
 					tipusComparacio = io.readword();
+					reglaSimple.setTipusComparacio(tipusComparacio);
 					break;
 				case 16:
 					io.writeln("Tipus de comparacio: " + reglaSimple.getTipusComparacio());
