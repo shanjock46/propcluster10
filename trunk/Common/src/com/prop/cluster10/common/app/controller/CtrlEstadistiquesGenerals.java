@@ -1,6 +1,6 @@
 package com.prop.cluster10.common.app.controller;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.prop.cluster10.common.app.model.EstadistiquesGenerals;
 /**
@@ -10,7 +10,7 @@ public abstract class CtrlEstadistiquesGenerals {
 
 	private EstadistiquesGenerals estadistiquesGenerals;
 		
-	public ArrayList<Object> carregaEstadistiquesGenerals() {		
+	public HashMap<String, Object> carregaEstadistiquesGenerals() {		
 		return estadistiquesGenerals.carregaEstadistiquesGenerals();
 	}
 	

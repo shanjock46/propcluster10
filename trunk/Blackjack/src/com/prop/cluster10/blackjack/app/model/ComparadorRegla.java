@@ -1,3 +1,5 @@
+package com.prop.cluster10.blackjack.app.model;
+
 import java.util.Comparator;
 
 public class ComparadorRegla implements Comparator<ReglaFinal> {
