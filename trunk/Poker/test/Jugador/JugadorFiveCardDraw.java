@@ -7,10 +7,7 @@ package Jugador;
 
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -149,7 +146,7 @@ public class JugadorFiveCardDraw extends Jugador{
 
         }
         else if (descarte==true) {
-            map.put("Fase descart", call);
+            map.put("Fase descart", 0);
         }
         else{
             map.put("Segona ronda d'apostes", 0);
