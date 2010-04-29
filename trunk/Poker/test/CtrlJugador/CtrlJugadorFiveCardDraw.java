@@ -20,11 +20,11 @@ public class CtrlJugadorFiveCardDraw extends CtrlJugador{
         
     }
     public void crearJugador (String nom, boolean maquina) {
-        jug=new JugadorFiveCardDraw(nom);
+        jugador=new JugadorFiveCardDraw(nom);
         if (maquina) {
             estrategia=new CtrlEstrategiaSB();
             estrategia.crearEstrategia();
-            jug.setEstrategia(estrategia.getEstrategia());
+            jugador.setEstrategia(estrategia.getEstrategia());
             }
 
     }
