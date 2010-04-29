@@ -1,3 +1,5 @@
+package com.prop.cluster10.common.test.app.controller.ctrlpartida;
+
 /* Aquesta es una adaptacio d'un conjunt de classes
    per a fer entrada/sortida de texte amb Java.
    La versio original va ser creada per Per Brinch
