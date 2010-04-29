@@ -184,7 +184,7 @@ public EstadistiquesGeneralsFiveCardDraw(){
         this.totalVictoriaEscalaColor = totalVictoriaEscalaColor;
     }
 
-    public void actualitzaEstadístiquesGeneralsFiveCardDraw(String s){
+    public void actualitzaEstadistiquesGeneralsFiveCardDraw(String s){
 
         if (s.compareToIgnoreCase("carta alta")==0){
             if (this.totalVictoriaCartaAlta==-1) this.totalVictoriaCartaAlta=1;

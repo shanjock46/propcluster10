@@ -38,7 +38,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                 io.writeln("17- Canviar el total de victories per Full");
                 io.writeln("18- Canviar el total de victories per Poker");
                 io.writeln("19- Canviar el total de victories per Escala de Color");
-                io.writeln("20- Actualització d'estadistiques  generals Five Card Draw");
+                io.writeln("20- Actualitzacio d'estadistiques  generals Five Card Draw");
                 io.writeln("21- Carrega estadistiques generals Poker");
                 io.writeln("0- Sortir");
 
@@ -145,7 +145,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                                     io.writeln("Poker");
                                     io.writeln("Escala Color");
                                     String combinacio=io.readword();
-                                    e.actualitzaEstadístiquesGeneralsFiveCardDraw(combinacio);
+                                    e.actualitzaEstadistiquesGeneralsFiveCardDraw(combinacio);
                                     io.writeln("Les estadistiques generals FiveCardDraw han estat actualitzades");
                                 
                                 break;
