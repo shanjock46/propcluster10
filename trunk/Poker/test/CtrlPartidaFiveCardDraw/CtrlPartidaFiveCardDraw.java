@@ -31,12 +31,12 @@ public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
                 else CG=(int)(cashInicial*(0.05));
 		partida = new PartidaFiveCardDraw(players, CG);
 		ctrlRonda = new CtrlRondaFiveCardDraw(partida.creaRonda());
-		this.jugarPartida();
+		jugarPartida();
 	}
 
     public boolean fiPartida() {
 
-		return (this.partida.getJugadorsActius().size() == 1);
+		return (partida.getJugadorsActius().size() == 1);
 
 
 }

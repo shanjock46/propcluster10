@@ -29,29 +29,29 @@ public abstract class CtrlJugador {
     }
 
     public void setJugador(Jugador jug) {
-        this.jugador = jug;
+        jugador = jug;
     }
 
     public CtrlDadesJugadorSB getCapaDeDades() {
         return capaDeDades;
     }
 
-    public void setCapaDeDades(CtrlDadesJugadorSB capaDeDades) {
-        this.capaDeDades = capaDeDades;
+    public void setCapaDeDades(CtrlDadesJugadorSB capaDades) {
+        capaDeDades = capaDades;
     }
 
     public CtrlEstrategiaSB getEstrategia() {
         return estrategia;
     }
 
-    public void setEstrategia(CtrlEstrategiaSB estrategia) {
-        this.estrategia = estrategia;
+    public void setEstrategia(CtrlEstrategiaSB strategia) {
+        estrategia = strategia;
     }
 //Mes funcions
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
     public void obteJugador (String nom){
-        this.jugador=capaDeDades.obteJugador(nom);
+        jugador=capaDeDades.obteJugador(nom);
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();

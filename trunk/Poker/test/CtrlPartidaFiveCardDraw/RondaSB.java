@@ -26,17 +26,17 @@ public abstract class RondaSB
 		return baralla;
 	}
 
-	public void setBaralla(BarallaSB baralla) {
-		this.baralla = baralla;
+	public void setBaralla(BarallaSB b) {
+		baralla = b;
 	}
 
-	public void setJugadorsActius(List<Jugador> jugadorsActius) {
-		this.jugadorsActius = jugadorsActius;
+	public void setJugadorsActius(List<Jugador> jugadorsAct) {
+		jugadorsActius = jugadorsAct;
 	}
 
 	public void retirarJugador(Jugador j)
 	{
-		this.jugadorsActius.remove(j);
+		jugadorsActius.remove(j);
 	}
 
 	public Jugador getGuanyador() {

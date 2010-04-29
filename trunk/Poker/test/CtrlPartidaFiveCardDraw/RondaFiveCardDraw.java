@@ -20,10 +20,10 @@ public class RondaFiveCardDraw extends RondaSB{
     private int pot;
     private Iterator<Jugador> iter;
     
-    public RondaFiveCardDraw(List<Jugador> jugadors, BarallaSB baralla){
+    public RondaFiveCardDraw(List<Jugador> jugadors, BarallaSB b){
         jugadorsActius=new LinkedList<Jugador>();
         jugadorsActius.addAll(jugadors);
-        this.baralla=baralla;
+        baralla=b;
         guanyadors=new ArrayList<Jugador>();
         pot=0;
         iter=jugadorsActius.iterator();
@@ -53,16 +53,16 @@ public class RondaFiveCardDraw extends RondaSB{
         return guanyadors;
     }
     
-    public void setGuanyadors(ArrayList<Jugador> guanyadors) {
-        this.guanyadors = guanyadors;
+    public void setGuanyadors(ArrayList<Jugador> guany) {
+        guanyadors = guany;
     }
    
     public int getPot() {
         return pot;
     }
     
-    public void setPot(int pot) {
-        this.pot = pot;
+    public void setPot(int p) {
+        pot = p;
     }
 
        
