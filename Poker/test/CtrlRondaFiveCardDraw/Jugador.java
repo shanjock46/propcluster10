@@ -34,7 +34,7 @@ public abstract class Jugador {
     protected int aposta;
     protected Estadistiques est;
     protected ArrayList<Carta> ma;
-    protected Estrategia estrategia;
+    protected EstrategiaSB estrategia;
     
 
     
@@ -65,7 +65,7 @@ public abstract class Jugador {
         return est;
     }
 
-    public Estrategia getEstrategia() {
+    public EstrategiaSB getEstrategia() {
         return estrategia;
     }
 
@@ -99,7 +99,7 @@ public abstract class Jugador {
         Comparator<Carta> ordrecreixent=new order();
         Collections.sort(ma, ordrecreixent);
     }
-    public void setEstrategia(Estrategia strategia) {
+    public void setEstrategia(EstrategiaSB strategia) {
         estrategia = strategia;
     }
 
