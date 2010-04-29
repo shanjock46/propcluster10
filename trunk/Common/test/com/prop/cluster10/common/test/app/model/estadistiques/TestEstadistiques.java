@@ -45,8 +45,8 @@ public class TestEstadistiques {
                 io.writeln("20- Veure el coeficient d'efectivitat de les partides");
                 io.writeln("21- Veure el coeficient d'efectivitat de les rondes");
                 io.writeln("22- Veure la mitjana de rondes per partida");
-                io.writeln("23- Actualització d'estadistiques al finalitzar una ronda");
-                io.writeln("24- Actualització d'estadistiques al finalitzar una partida");
+                io.writeln("23- Actualitzacio d'estadistiques al finalitzar una ronda");
+                io.writeln("24- Actualitzacio d'estadistiques al finalitzar una partida");
                 io.writeln("25- Carrega estadistiques");
                 io.writeln("0- Sortir");
 
