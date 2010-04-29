@@ -7,20 +7,20 @@ public class ReglaComposta extends ReglaFinal {
 	private String comparacio;
 
 	public ReglaComposta() {
-		this.nom = null;
-		this.regla1 = null;
-		this.regla2 = null;
-		this.comparacio = null;
-		this.prioritat = null;
-		this.accio = null;
+		nom = null;
+		regla1 = null;
+		regla2 = null;
+		comparacio = null;
+		prioritat = null;
+		accio = null;
 	}
 
-	public ReglaComposta(String nom, ReglaFinal a, ReglaFinal b, String comp) {
+	public ReglaComposta(String n, ReglaFinal a, ReglaFinal b, String comp) {
 
-                this.nom = nom;
-		this.regla1 = a;
-		this.regla2 = b;
-		this.comparacio = comp;
+                nom = n;
+		regla1 = a;
+		regla2 = b;
+		comparacio = comp;
 		
 	}
 
@@ -30,8 +30,8 @@ public class ReglaComposta extends ReglaFinal {
     }
 
  
-    public void setRegla1(ReglaFinal regla1) {
-        this.regla1 = regla1;
+    public void setRegla1(ReglaFinal r1) {
+        regla1 = r1;
     }
 
   
@@ -40,8 +40,8 @@ public class ReglaComposta extends ReglaFinal {
     }
 
     
-    public void setRegla2(ReglaFinal regla2) {
-        this.regla2 = regla2;
+    public void setRegla2(ReglaFinal r2) {
+        regla2 = r2;
     }
 
    
@@ -50,8 +50,8 @@ public class ReglaComposta extends ReglaFinal {
     }
 
    
-    public void setComparacio(String comparacio) {
-        this.comparacio = comparacio;
+    public void setComparacio(String comp) {
+        comparacio = comp;
     }
 
 		
