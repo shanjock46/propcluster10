@@ -22,7 +22,7 @@ public class PartidaFiveCardDraw extends Partida{
         jugadorsActius = new ArrayList<Jugador>();
         jugadorsActius.addAll(j);
         id = (new Date()).getTime();// assignem un identificador a la nova partida
-        this.rondesJugades = 0;
+        rondesJugades = 0;
         CG=cega;
 	}
     
