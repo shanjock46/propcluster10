@@ -23,7 +23,7 @@ public class TestCtrlJugador {
                 inout io = new inout();
                 CtrlJugador c=new CtrlJugadorFiveCardDraw();
                 Jugador j=new JugadorFiveCardDraw();
-                c.setJug(j);
+                c.setJugador(j);
                 io.writeln("1- Retorna el jugador present a la capa");
                 io.writeln("2- Canvia el jugador present a la capa");
                 io.writeln("3- Retorna la capa de dades de jugador");
@@ -41,8 +41,8 @@ public class TestCtrlJugador {
                         switch (op) {
 
                         case 1:// getJug()
-                                if (c.getJug()==null) io.writeln("No hi ha cap jugador present a la capa.");
-                                else io.writeln("El jugador present a la capa es diu "+c.getJug().getNom());
+                                if (c.getJugador()==null) io.writeln("No hi ha cap jugador present a la capa.");
+                                else io.writeln("El jugador present a la capa es diu "+c.getJugador().getNom());
                                 break;
 
                         case 2:// setJug(Jugador)
@@ -50,7 +50,7 @@ public class TestCtrlJugador {
                                 String nom=io.readword();
                                 j=new JugadorFiveCardDraw();
                                 j.setNom(nom);
-                                c.setJug(j);
+                                c.setJugador(j);
                                 io.writeln("S'ha canviat el jugador present a la capa");
                                 break;
 
