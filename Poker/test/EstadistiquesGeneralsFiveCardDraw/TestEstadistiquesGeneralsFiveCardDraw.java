@@ -134,7 +134,7 @@ public class TestEstadistiquesGeneralsFiveCardDraw {
                          
                          case 20:// actualitzaEstadistiquesGeneralsFiveCardDraw()
                                
-                                    io.writeln("Amb quina combinació ha acabat la ronda?");
+                                    io.writeln("Amb quina combinacio ha acabat la ronda?");
                                     io.writeln("Carta Alta");
                                     io.writeln("Parelles");
                                     io.writeln("Dobles Parelles");
