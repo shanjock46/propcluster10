@@ -25,7 +25,7 @@ public class CtrlEstrategiaSB {
      * @param estrategia the estrategia to set
      */
     public void setEstrategia(EstrategiaSB estrategia) {
-        this.estrategia = estrategia;
+        estrategia = estrategia;
     }
 
     void crearEstrategia() {

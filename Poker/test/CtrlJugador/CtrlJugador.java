@@ -28,24 +28,24 @@ public abstract class CtrlJugador {
         return jug;
     }
 
-    public void setJug(Jugador jug) {
-        this.jug = jug;
+    public void setJug(Jugador juga) {
+        jug = juga;
     }
 
     public CtrlDadesJugadorSB getCapaDeDades() {
         return capaDeDades;
     }
 
-    public void setCapaDeDades(CtrlDadesJugadorSB capaDeDades) {
-        this.capaDeDades = capaDeDades;
+    public void setCapaDeDades(CtrlDadesJugadorSB capaDades) {
+        capaDeDades = capaDades;
     }
 
     public CtrlEstrategiaSB getEstrategia() {
         return estrategia;
     }
 
-    public void setEstrategia(CtrlEstrategiaSB estrategia) {
-        this.estrategia = estrategia;
+    public void setEstrategia(CtrlEstrategiaSB strategia) {
+        estrategia = strategia;
     }
 //Mes funcions
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
@@ -73,13 +73,4 @@ public abstract class CtrlJugador {
     public Map carregaEstadistiques () {
         return getJug().carregaEstadistiques();
     }
-
- 
-
-
-
-
-
-
-
 }

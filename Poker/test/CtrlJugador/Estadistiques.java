@@ -26,121 +26,121 @@ public class Estadistiques {
         return partidesJugades;
     }
 
-    public void setPartidesJugades(int partidesJugades) {
-        this.partidesJugades = partidesJugades;
+    public void setPartidesJugades(int partidesJug) {
+        partidesJugades = partidesJug;
     }
 
     public int getPartidesGuanyades() {
         return partidesGuanyades;
     }
 
-    public void setPartidesGuanyades(int partidesGuanyades) {
-        this.partidesGuanyades = partidesGuanyades;
+    public void setPartidesGuanyades(int partidesGuany) {
+        partidesGuanyades = partidesGuany;
     }
 
     public int getPartidesEliminat() {
         return partidesEliminat;
     }
 
-    public void setPartidesEliminat(int partidesEliminat) {
-        this.partidesEliminat = partidesEliminat;
+    public void setPartidesEliminat(int partidesElim) {
+        partidesEliminat = partidesElim;
     }
 
     public int getRondesJugades() {
         return rondesJugades;
     }
 
-    public void setRondesJugades(int rondesJugades) {
-        this.rondesJugades = rondesJugades;
+    public void setRondesJugades(int rJugades) {
+        rondesJugades = rJugades;
     }
 
     public int getRondesGuanyades() {
         return rondesGuanyades;
     }
 
-    public void setRondesGuanyades(int rondesGuanyades) {
-        this.rondesGuanyades = rondesGuanyades;
+    public void setRondesGuanyades(int ronGuanyades) {
+        rondesGuanyades = ronGuanyades;
     }
 
     public int getRondesPerdudes() {
         return rondesPerdudes;
     }
 
-    public void setRondesPerdudes(int rondesPerdudes) {
-        this.rondesPerdudes = rondesPerdudes;
+    public void setRondesPerdudes(int ronPerdudes) {
+        rondesPerdudes = ronPerdudes;
     }
 
     public int getFitxesGuanyades() {
         return fitxesGuanyades;
     }
 
-    public void setFitxesGuanyades(int fitxesGuanyades) {
-        this.fitxesGuanyades = fitxesGuanyades;
+    public void setFitxesGuanyades(int fGuanyades) {
+        fitxesGuanyades = fGuanyades;
     }
 
     public double percentatgePartidesGuanyades() {
-        if (this.getPartidesJugades()==0) return 0;
-        else return (((double)this.getPartidesGuanyades())/((double)this.getPartidesJugades())*100);
+        if (getPartidesJugades()==0) return 0;
+        else return (((double)getPartidesGuanyades())/((double)getPartidesJugades())*100);
     }
 
     public double percentatgePartidesPerdudes() {
-        if (this.getPartidesJugades()==0) return 0;
-        else return (((double)this.getPartidesEliminat())/((double)this.getPartidesJugades())*100);
+        if (getPartidesJugades()==0) return 0;
+        else return (((double)getPartidesEliminat())/((double)getPartidesJugades())*100);
     }
 
     public double coeficientEfectivitatPartides() {
-        if (this.getPartidesEliminat()==0 ) return 0;
-        else return ((double)this.getPartidesGuanyades()/(double)this.getPartidesEliminat());
+        if (getPartidesEliminat()==0 ) return 0;
+        else return ((double)getPartidesGuanyades()/(double)getPartidesEliminat());
     }
 
     public double percentatgeRondesGuanyades() {
-        if (this.getRondesJugades()==0) return 0;
-        else return (((double)this.getRondesGuanyades())/((double)this.getRondesJugades())*100);
+        if (getRondesJugades()==0) return 0;
+        else return (((double)getRondesGuanyades())/((double)getRondesJugades())*100);
     }
 
     public double percentatgeRondesPerdudes() {
-        if (this.getRondesJugades()==0) return 0;
-        else return (((double)this.getRondesPerdudes())/((double)this.getRondesJugades())*100);
+        if (getRondesJugades()==0) return 0;
+        else return (((double)getRondesPerdudes())/((double)getRondesJugades())*100);
     }
 
     public double coeficientEfectivitatRondes() {
-        if (this.getRondesPerdudes()==0 ) return 0;
-        else return ((double)this.getRondesGuanyades()/(double)this.getRondesPerdudes());
+        if (getRondesPerdudes()==0 ) return 0;
+        else return ((double)getRondesGuanyades()/(double)getRondesPerdudes());
     }
 
     public double mitjanaRondesGuanyadesPartida() {
-        if (this.getPartidesGuanyades()==0) return 0;
-        else return ((double)this.getRondesGuanyades()/(double)this.getPartidesGuanyades());
+        if (getPartidesGuanyades()==0) return 0;
+        else return ((double)getRondesGuanyades()/(double)getPartidesGuanyades());
     }
 
     public void actualitzaFiRonda(boolean r, int e) {
-        this.setRondesJugades(this.getRondesJugades()+1);
-        this.setFitxesGuanyades(this.getFitxesGuanyades()+e);
-        if (r) this.setRondesGuanyades(this.getRondesGuanyades()+1);
-        else this.setRondesPerdudes(this.getRondesPerdudes()+1);
+        setRondesJugades(getRondesJugades()+1);
+        setFitxesGuanyades(getFitxesGuanyades()+e);
+        if (r) setRondesGuanyades(getRondesGuanyades()+1);
+        else setRondesPerdudes(getRondesPerdudes()+1);
     }
 
     public void actualitzaFiPartida(boolean p) {
-        this.setPartidesJugades(this.getPartidesJugades()+1);
-        if (p) this.setPartidesGuanyades(this.getPartidesGuanyades()+1);
-        else this.setPartidesEliminat(this.getPartidesEliminat()+1);
+        setPartidesJugades(getPartidesJugades()+1);
+        if (p) setPartidesGuanyades(getPartidesGuanyades()+1);
+        else setPartidesEliminat(getPartidesEliminat()+1);
     }
 
     public Map carregaEstadistiques() {
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("Partides jugades", this.partidesJugades);
-        map.put("Partides guanyades", this.partidesGuanyades);
-        map.put("Partides eliminat", this.partidesEliminat);
-        map.put("Rondes jugades", this.rondesJugades);
-        map.put("Rondes guanyades", this.rondesGuanyades);
-        map.put("Rondes perdudes", this.rondesPerdudes);
-        map.put("Percentatge partides guanyades", this.percentatgePartidesGuanyades());
-        map.put("Percentatge partides perdudes", this.percentatgePartidesPerdudes());
-        map.put("Percentatge rondes guanyades", this.percentatgeRondesGuanyades());
-        map.put("Percentatge rondes perdudes", this.percentatgeRondesPerdudes());
-        map.put("Coeficient efectivitat partides", this.coeficientEfectivitatPartides());
-        map.put("Coeficient efectivitat rondes", this.coeficientEfectivitatRondes());
-        map.put("Fitxes guanyades", this.fitxesGuanyades);
+        map.put("Partides jugades", partidesJugades);
+        map.put("Partides guanyades", partidesGuanyades);
+        map.put("Partides eliminat", partidesEliminat);
+        map.put("Rondes jugades", rondesJugades);
+        map.put("Rondes guanyades", rondesGuanyades);
+        map.put("Rondes perdudes", rondesPerdudes);
+        map.put("Percentatge partides guanyades", percentatgePartidesGuanyades());
+        map.put("Percentatge partides perdudes", percentatgePartidesPerdudes());
+        map.put("Percentatge rondes guanyades", percentatgeRondesGuanyades());
+        map.put("Percentatge rondes perdudes", percentatgeRondesPerdudes());
+        map.put("Coeficient efectivitat partides", coeficientEfectivitatPartides());
+        map.put("Coeficient efectivitat rondes", coeficientEfectivitatRondes());
+        map.put("Fitxes guanyades", fitxesGuanyades);
 
         return map;
     }
