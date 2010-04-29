@@ -10,6 +10,5 @@ package CtrlPartidaFiveCardDraw;
  * @author Daniel Mulero
  */
 public class CtrlPartidaSB {
-    protected PartidaSB partida;
-    protected CtrlRondaSB ctrlRonda;
+    
 }
