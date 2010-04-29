@@ -6,9 +6,7 @@
 package CtrlPartidaFiveCardDraw;
 
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -67,11 +65,11 @@ public abstract class CtrlJugador {
     }
 
     public void guardaJugador () {
-        getCapaDeDades().guardaJugador(jugador);
+        capaDeDades.guardaJugador(jugador);
     }
 
     public Map carregaEstadistiques () {
-        return getJugador().carregaEstadistiques();
+        return jugador.carregaEstadistiques();
     }
 
  
