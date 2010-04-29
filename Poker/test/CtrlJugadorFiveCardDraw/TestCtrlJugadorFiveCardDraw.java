@@ -30,7 +30,7 @@ public class TestCtrlJugadorFiveCardDraw {
                         case 2:// crearJugador(string nom,boolean maquina)
                                 io.writeln("Escrigui el nom del jugador:");
                                 String nom=io.readword();
-                                io.writeln("Es jugador m√†quina (si/no)");
+                                io.writeln("Es jugador ma†quina (si/no)");
                                 String maquina=io.readword();
                                 if (maquina.compareToIgnoreCase("si")==0) {
                                     c.crearJugador(nom, true);
