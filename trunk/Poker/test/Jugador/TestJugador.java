@@ -210,7 +210,7 @@ public class TestJugador {
 
                         case 19:// Carrega estadistiques()
                                 io.writeln("Les estadistiques son...");
-                                Map<String,Double> pepe=jug.carregaEstadistiques();
+                                Map<String,Object> pepe=jug.carregaEstadistiques();
 
                                 Iterator iterator = pepe.keySet().iterator();
 
