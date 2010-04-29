@@ -91,14 +91,12 @@ public abstract class Jugador {
         est = e;
     }
 
-    /**
-     * @param ma the ma to set
-     */
     public void setMa(ArrayList<Carta> m) {
         ma = m;
         Comparator<Carta> ordrecreixent=new order();
         Collections.sort(ma, ordrecreixent);
     }
+
     public void setEstrategia(EstrategiaSB strategia) {
         estrategia = strategia;
     }

@@ -6,9 +6,7 @@
 package Jugador;
 
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -16,11 +14,12 @@ import java.util.Map;
  */
 public class TestJugador {
 
-           public static void main(String[] args) throws Exception {
+           public static void main(String[] args) throws Exception  {
 
                 int op = 30;
                 inout io = new inout();
                 Jugador jug=new JugadorFiveCardDraw();
+                io.writeln("hola");
                 io.writeln("1- Crear un jugador buit");
                 io.writeln("2- Crear un jugador amb nom i cash");
                 io.writeln("3- Crear un jugador amb nom");
@@ -39,8 +38,7 @@ public class TestJugador {
                 io.writeln("16- Afegir una carta a la ma");
                 io.writeln("17- Buidar la ma");
                 io.writeln("18- Descartar una carta");
-                io.writeln("19- Fer una evaluació");
-                io.writeln("20- Carrega les estadístiques");
+                io.writeln("19- Carrega les estadístiques");
                 io.writeln("0- Sortir");
 
                 while (op != 0) {
@@ -209,15 +207,6 @@ public class TestJugador {
                                 jug.descartar(num, pal);
                                 io.writeln("La carta de numero: "+num+" i pal"+pal+" ha estat descartada");
                                 break;
-
-                        /*case 19:// Evaluador(int,boolean,int,int,int)
-                                                               
-                                boolean[] rc=jug.
-                                for (int ui=0;ui<rc.length;ui++) {
-                                    if (rc[ui]==true) io.writeln("El boolea en posicio "+ui+" es TRUE");
-                    }
-
-                                break;*/
 
                         case 19:// Carrega estadistiques()
                                 io.writeln("Les estadistiques son...");
