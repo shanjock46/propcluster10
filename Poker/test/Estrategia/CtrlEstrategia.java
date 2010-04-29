@@ -15,7 +15,7 @@ public class CtrlEstrategia {
 
     private Estrategia strategy;
     private CtrlReglaFinal crf;
-    private int numeroReglas;
+    private int numeroReglas;  //numero de regles finals amb accio sense contar els defaults
 
     public CtrlEstrategia() {
         strategy=null;
@@ -37,10 +37,19 @@ public class CtrlEstrategia {
     public void assignarAccio (String r, String a) {
         numeroReglas++;
         ReglaFinal r1=obteRegla(r);
-        
-        r1.setAccio(a);
+        CtrlAccio ca=new CtrlAccio();
+        r1.setAccio(ca.obtenirAccio(a));
         r1.setPrioritat(numeroReglas);
     }
+
+    public void canviPrioritat(String a, String b){
+        ReglaFinal r1=obteRegla(a);
+        ReglaFinal r2=obteRegla(b);
+        int aux=r1.getPrioritat();
+        r1.setPrioritat(r2.getPrioritat());
+        r2.setPrioritat(aux);
+    }
+
 
     private ReglaFinal obteRegla (String a){
 
