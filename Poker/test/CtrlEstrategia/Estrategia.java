@@ -22,22 +22,21 @@ public class Estrategia {
 	
         private void inicialitzadorReglesSimples(){
                 ReglaSimple simple=new ReglaSimple();
-                CtrlAccio acc=new CtrlAccio();
                 //Regles que actuaran en cas de que no es complis cap altra regla
                 simple.setNom("Per defecte fase aposta 1");
                 simple.setFrase("Primera ronda d'apostes");
                 simple.setPrioritat(999);
-                simple.setAccio(acc.obtenirAccio("fold"));
+                simple.setAccio("FOLD");
                 simple.setNom("Per defecte fase aposta 2");
                 simple.setFrase("Segona ronda d'apostes");
                 simple.setPrioritat(999);
-                simple.setAccio(acc.obtenirAccio("fold"));
+                simple.setAccio("FOLD");
                 conjuntRegles.add(simple);
                 simple=new ReglaSimple();
                 simple.setNom("Per defecte fase descart");
                 simple.setFrase("Fase descart");
                 simple.setPrioritat(999);
-                simple.setAccio(acc.obtenirAccio("descartar res"));
+                simple.setAccio("DESCARTAR_RES");
                 
                 //Conjunt de regles simples sobre les quals crearem altres regles finals (amb accio associada)
                 conjuntRegles.add(simple);
