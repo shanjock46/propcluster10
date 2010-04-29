@@ -36,22 +36,22 @@ public abstract class CtrlJugador {
         return capaDeDades;
     }
 
-    public void setCapaDeDades(CtrlDadesJugadorSB capaDeDades) {
-        this.capaDeDades = capaDeDades;
+    public void setCapaDeDades(CtrlDadesJugadorSB capaDades) {
+        capaDeDades = capaDades;
     }
 
     public CtrlEstrategiaSB getEstrategia() {
         return estrategia;
     }
 
-    public void setEstrategia(CtrlEstrategiaSB estrategia) {
-        this.estrategia = estrategia;
+    public void setEstrategia(CtrlEstrategiaSB strategia) {
+        estrategia = strategia;
     }
 //Mes funcions
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
     public void obteJugador (String nom){
-        this.jug=capaDeDades.obteJugador(nom);
+        jug=capaDeDades.obteJugador(nom);
     }
     public ArrayList obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();

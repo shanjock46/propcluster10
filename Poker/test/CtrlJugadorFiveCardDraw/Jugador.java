@@ -42,24 +42,24 @@ public abstract class Jugador {
     
 
     public String getNom(){
-        return this.nom;
+        return nom;
 
     }
     
     public ArrayList<Carta> getMa(){
         
-        return this.ma;
+        return ma;
     }
 
     public int getCash(){
 
-        return this.cash;
+        return cash;
 
     }
 
     public int getAposta(){
 
-        return this.aposta;
+        return aposta;
 
     }
 
@@ -71,38 +71,38 @@ public abstract class Jugador {
         return estrategia;
     }
 
-    public void setNom(String nom){
+    public void setNom(String n){
 
-        this.nom = nom;
-
-    }
-
-    public void setCash(int cash){
-
-        this.cash = cash;
+        nom = n;
 
     }
 
-    public void setAposta(int aposta){
+    public void setCash(int c){
 
-        this.aposta = aposta;
+        cash = c;
 
     }
 
-    public void setEst(Estadistiques est) {
-        this.est = est;
+    public void setAposta(int apost){
+
+        aposta = apost;
+
+    }
+
+    public void setEst(Estadistiques e) {
+        est = e;
     }
 
     /**
      * @param ma the ma to set
      */
-    public void setMa(ArrayList<Carta> ma) {
-        this.ma = ma;
+    public void setMa(ArrayList<Carta> m) {
+        ma = m;
         Comparator<Carta> ordrecreixent=new order();
         Collections.sort(ma, ordrecreixent);
     }
-    public void setEstrategia(EstrategiaSB estrategia) {
-        this.estrategia = estrategia;
+    public void setEstrategia(EstrategiaSB strategia) {
+        estrategia = strategia;
     }
 
     public void afegeixCarta(Carta cart){
