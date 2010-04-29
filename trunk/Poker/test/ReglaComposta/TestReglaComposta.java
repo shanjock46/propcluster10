@@ -18,10 +18,14 @@ public class TestReglaComposta {
                 InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br=new BufferedReader(isr);
                 ReglaComposta a=new ReglaComposta();
-                io.writeln("1- Crea una ReglaSimple buida");
-                io.writeln("2- Crea una ReglaSimple amb nom i frase");
-                io.writeln("3- Obte la frase de la ReglaSimple");
-                io.writeln("4- Canvia la frase de la ReglaSimple");
+                io.writeln("1- Crea una ReglaComposta buida");
+                io.writeln("2- Crea una ReglaComposta amb nom, regla1, regla2 i comparador");
+                io.writeln("3- Obte regla1");
+                io.writeln("4- Obte regla2");
+                io.writeln("5- Obte comparador");
+                io.writeln("6- Canvia regla1");
+                io.writeln("7- Canvia regla2");
+                io.writeln("8- Canvia comparador");
 
                 while (op != 0) {
                     op = io.readint();
