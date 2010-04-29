@@ -14,42 +14,43 @@ import java.io.*;
 public class TestReglaSimple {
     public static void main(String[] args) throws Exception {
     int op = 30;
-
+                inout io=new inout();
                 InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br=new BufferedReader(isr);
                 ReglaSimple a=new ReglaSimple();
-                System.out.println("1- Crea una ReglaSimple buida");
-                System.out.println("2- Crea una ReglaSimple amb nom i frase");
-                System.out.println("3- Obte la frase de la ReglaSimple");
-                System.out.println("4- Canvia la frase de la ReglaSimple");
+                io.writeln("1- Crea una ReglaSimple buida");
+                io.writeln("2- Crea una ReglaSimple amb nom i frase");
+                io.writeln("3- Obte la frase de la ReglaSimple");
+                io.writeln("4- Canvia la frase de la ReglaSimple");
 
                 while (op != 0) {
-                        op = br.read();
+                    op = io.readint();
                         switch (op) {
 
                         case 1:// ReglaSimple()
                             a=new ReglaSimple();
+                            io.writeln("S'ha creat una ReglaSimple buida");
                             break;
 
                         case 2:// ReglaSimple(String, String)
-                            System.out.println("Introdueix el nom de la ReglaSimple");
+                            io.writeln("Introdueix el nom de la ReglaSimple");
                             String nom=br.readLine();
-                            System.out.println("Introdueix la frase de la ReglaSimple");
+                            io.writeln("Introdueix la frase de la ReglaSimple");
                             String frase=br.readLine();
                             a=new ReglaSimple(nom,frase);
-                            System.out.println("S'ha creat una ReglaSimple amb nom i frase: "+a.getFrase());
-                            System.out.println("Pots obtenir o canviar la frase des d'aqui. El nom, des de el tester de ReglaFinal");
+                            io.writeln("S'ha creat una ReglaSimple amb nom i frase: "+a.getFrase());
+                            io.writeln("Pots obtenir o canviar la frase des d'aqui. El nom, des de el tester de ReglaFinal");
                             break;
 
                         case 3:// getFrase()
-                            System.out.println("La frase de la ReglaSimple es: "+a.getFrase());
+                            io.writeln("La frase de la ReglaSimple es: "+a.getFrase());
                             break;
 
                         case 4:// setFrase(String)
-                            System.out.println("Introdueix una nova frase per la ReglaSimple");
+                            io.writeln("Introdueix una nova frase per la ReglaSimple");
                             String f=br.readLine();
                             a.setFrase(f);
-                            System.out.println("La nova frase de la ReglaSimple es: "+a.getFrase());
+                            io.writeln("La nova frase de la ReglaSimple es: "+a.getFrase());
                             break;
 }
                 }}}
