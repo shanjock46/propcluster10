@@ -4,7 +4,7 @@ public abstract class ReglaFinal {
 
 	protected String nom;
 	protected Integer prioritat;
-	protected Accio accio;
+	protected String accio;
 	
 	/* GETTERS & SETTERS */
 	public String getNom() {
@@ -23,11 +23,11 @@ public abstract class ReglaFinal {
 		prioritat = pes;
 	}
 	
-	public Accio getAccio() {
+	public String getAccio() {
 		return accio;
 	}
 	
-	public void setAccio(Accio ac) {
+	public void setAccio(String ac) {
 		accio = ac;
 	}
 

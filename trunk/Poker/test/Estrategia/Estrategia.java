@@ -22,22 +22,22 @@ public class Estrategia {
 	
         private void inicialitzadorReglesSimples(){
                 ReglaSimple simple=new ReglaSimple();
-                
+                CtrlAccio acc=new CtrlAccio();
                 //Regles que actuaran en cas de que no es complis cap altra regla
                 simple.setNom("Per defecte fase aposta 1");
                 simple.setFrase("Primera ronda d'apostes");
                 simple.setPrioritat(999);
-                simple.setAccio(Accio.FOLD);
+                simple.setAccio(acc.obtenirAccio("fold"));
                 simple.setNom("Per defecte fase aposta 2");
                 simple.setFrase("Segona ronda d'apostes");
                 simple.setPrioritat(999);
-                simple.setAccio(Accio.FOLD);
+                simple.setAccio(acc.obtenirAccio("fold"));
                 conjuntRegles.add(simple);
                 simple=new ReglaSimple();
                 simple.setNom("Per defecte fase descart");
                 simple.setFrase("Fase descart");
                 simple.setPrioritat(999);
-                simple.setAccio(Accio.DESCARTAR_RES);
+                simple.setAccio(acc.obtenirAccio("descartar res"));
                 
                 //Conjunt de regles simples sobre les quals crearem altres regles finals (amb accio associada)
                 conjuntRegles.add(simple);
@@ -169,7 +169,7 @@ public class Estrategia {
 		conjuntRegles.add(reglaFinal);
 	}
 
-	public Accio avaluaRegles(Map m) {
+	public String avaluaRegles(Map m) {
 		// Ordenem regles
 		Collections.sort(conjuntRegles, new ComparadorRegla());
 
@@ -208,7 +208,7 @@ public class Estrategia {
 
 	
 	private boolean avaluaReglaSimple(ReglaSimple a, Map m) {
-		//Si la frase esta present al mapa proporcionat per l'evaluador de situació
+		//Si la frase esta present al mapa proporcionat per l'evaluador de situaciï¿½
                 if (m.containsKey(a.getFrase())) return true;
                 else return false;
 	}
