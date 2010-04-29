@@ -24,8 +24,8 @@ public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
         Iterator<String> pateador=llista.iterator();
         while (pateador.hasNext()) {
             ctrlJugador.obteJugador(pateador.next());
-            ctrlJugador.getJug().setCash(cashInicial);
-            players.add(ctrlJugador.getJug());
+            ctrlJugador.getJugador().setCash(cashInicial);
+            players.add(ctrlJugador.getJugador());
         }
                 if (cashInicial*(0.05)<1) CG=1;
                 else CG=(int)(cashInicial*(0.05));
