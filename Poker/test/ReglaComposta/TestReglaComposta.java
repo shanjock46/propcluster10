@@ -55,11 +55,13 @@ public class TestReglaComposta {
                             break;
 
                         case 3:// getRegla1()
-                            io.writeln("El nom de la regla1 de la ReglaComposta es: "+a.getRegla1().getNom());
+                            if (a.getRegla1()==null) io.writeln("Executa la opcio 2 i crea una regla composta no buida");
+                            else io.writeln("El nom de la regla1 de la ReglaComposta es: "+a.getRegla1().getNom());
                             break;
 
                         case 4:// getRegla2()
-                            io.writeln("El nom de la regla2 de la ReglaComposta es: "+a.getRegla2().getNom());
+                            if (a.getRegla2()==null) io.writeln("Executa la opcio 2 i crea una regla composta no buida");
+                            else io.writeln("El nom de la regla2 de la ReglaComposta es: "+a.getRegla2().getNom());
                             break;
 
                         case 5:// getComparacio()
