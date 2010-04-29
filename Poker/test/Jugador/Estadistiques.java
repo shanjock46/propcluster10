@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package CodiFont;
+package Jugador;
 
 import java.util.*;
 
