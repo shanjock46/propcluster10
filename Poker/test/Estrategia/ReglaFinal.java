@@ -11,8 +11,8 @@ public abstract class ReglaFinal {
 		return nom;
 	}
 	
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setNom(String n) {
+		nom = n;
 	}
 	
 	public Integer getPrioritat() {
@@ -20,15 +20,15 @@ public abstract class ReglaFinal {
 	}
 	
 	public void setPrioritat(Integer pes) {
-		this.prioritat = pes;
+		prioritat = pes;
 	}
 	
 	public Accio getAccio() {
 		return accio;
 	}
 	
-	public void setAccio(Accio accio) {
-		this.accio = accio;
+	public void setAccio(Accio ac) {
+		accio = ac;
 	}
 
 }

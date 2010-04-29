@@ -5,26 +5,26 @@ public class ReglaSimple extends ReglaFinal {
 	private String frase;
 
 	public ReglaSimple() {
-            this.frase = null;
-            this.nom = null;
+            frase = null;
+            nom = null;
             
 	}
 
 	public ReglaSimple(String a, String b) {
-            this.nom = a;
-            this.frase = b;
-            this.accio = null;
-            this.prioritat = null;
+            nom = a;
+            frase = b;
+            accio = null;
+            prioritat = null;
 	}
 
     
         public String getFrase() {
-            return this.frase;
+            return frase;
         }
 
 
         public void setFrase(String a) {
-            this.frase = a;
+            frase = a;
         }
 	
 	
