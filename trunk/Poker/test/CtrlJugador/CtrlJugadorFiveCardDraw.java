@@ -15,6 +15,10 @@ public class CtrlJugadorFiveCardDraw extends CtrlJugador{
 
     
 
+    public CtrlJugadorFiveCardDraw(){
+        capaDeDades = new CtrlDadesJugadorSB() ;
+        
+    }
     public void crearJugador (String nom, boolean maquina) {
         jug=new JugadorFiveCardDraw(nom);
         if (maquina) {
