@@ -5,9 +5,7 @@
 
 package CtrlPartidaFiveCardDraw;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -15,6 +13,8 @@ import java.util.List;
  */
 public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
 
+    private PartidaFiveCardDraw partida;
+    private CtrlRondaFiveCardDraw ctrlRonda;
     private CtrlJugador ctrlJugador;
     private int CG=0;
 
@@ -30,8 +30,8 @@ public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
                 if (cashInicial*(0.05)<1) CG=1;
                 else CG=(int)(cashInicial*(0.05));
 		partida = new PartidaFiveCardDraw(players, CG);
-		ctrlRonda = new CtrlRondaFiveCardDraw(partida.creaRonda());
-		jugarPartida();
+		ctrlRonda=partida.creaRonda();
+		
 	}
 
     public boolean fiPartida() {
@@ -39,5 +39,6 @@ public class CtrlPartidaFiveCardDraw extends CtrlPartidaSB{
 		return (partida.getJugadorsActius().size() == 1);
 
 
+}
 }
 
