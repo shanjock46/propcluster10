@@ -51,12 +51,12 @@ public abstract class CtrlJugador {
     public abstract void crearJugador (String nom, boolean maquina); // Cada uno se define su propio metodo en CtrlJugadorXXXXX
 
     public void obteJugador (String nom){
-        //this.jug=capaDeDades.obteJugador(nom);   Persistencia no implementada
+        jug=capaDeDades.obteJugador(nom);
     }
-    public ArrayList obteLlistatJugadors () {
+    public ArrayList<String> obteLlistatJugadors () {
         ArrayList<String> noms=new ArrayList();
         ArrayList<Jugador> jugadors=new ArrayList();
-        //jugadors=capaDeDades.obteTots();
+        jugadors=capaDeDades.obteTots();
         Iterator<Jugador> it=jugadors.iterator();
         Jugador aux;
         while (it.hasNext()) {
@@ -67,7 +67,7 @@ public abstract class CtrlJugador {
     }
 
     public void guardaJugador () {
-        //getCapaDeDades().guardaJugador(jug);
+        capaDeDades.guardaJugador(jug);
     }
 
     public Map carregaEstadistiques () {

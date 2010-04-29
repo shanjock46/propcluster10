@@ -23,6 +23,7 @@ public class TestCtrlJugador {
                 inout io = new inout();
                 CtrlJugador c=new CtrlJugadorFiveCardDraw();
                 Jugador j=new JugadorFiveCardDraw();
+                c.setJug(j);
                 io.writeln("1- Retorna el jugador present a la capa");
                 io.writeln("2- Canvia el jugador present a la capa");
                 io.writeln("3- Retorna la capa de dades de jugador");
@@ -97,22 +98,22 @@ public class TestCtrlJugador {
                                 io.writeln("Introdueix nom a buscar");
                                 String nom3=io.readword();
                                 c.obteJugador(nom3);
-                                io.writeln("persistencia no implementada encara");
+                                //io.writeln("persistencia no implementada encara");
                                 break;
                         
                         case 9:// obteLlistatJugadors()
                                 ArrayList<String> llista=new ArrayList<String>();
                                 llista=c.obteLlistatJugadors();
-                                Iterator<String> it=llista.iterator();
+                                /*Iterator<String> it=llista.iterator();
                                 while (it.hasNext()) {
                                     io.writeln(it.next());
         }
-                                io.writeln("Fi de la llista");
+                                io.writeln("Fi de la llista");*/
                                 break;
 
                         case 10:// guardarJugador()
                                 c.guardaJugador();
-                                io.writeln("S'ha guardat el jugador a la capa de dades");
+                                //io.writeln("S'ha guardat el jugador a la capa de dades");
                                 break;
 
                         case 11:// carregaEstadistiques()
