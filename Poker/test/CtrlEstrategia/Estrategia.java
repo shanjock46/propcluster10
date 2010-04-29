@@ -14,12 +14,62 @@ public class Estrategia {
 
 	private List<ReglaFinal> conjuntRegles;
 	
-
+        //PUBLIC
 	public Estrategia() {
 		conjuntRegles = new ArrayList<ReglaFinal>();
                 inicialitzadorReglesSimples();
 	}
-	
+        
+	public void afegirRegla(ReglaFinal reglaFinal) {
+		conjuntRegles.add(reglaFinal);
+	}
+
+	public String avaluaRegles(Map m) {
+		// Ordenem regles
+		Collections.sort(conjuntRegles, new ComparadorRegla());
+
+		Iterator<ReglaFinal> pateaReglas = conjuntRegles.iterator();
+		boolean reglaOK = false;
+		ReglaFinal reglaFinal = null;
+
+		// Iterem sobre cada regla que tenim al set, buscant la primera que s'acompleixi i
+                // ademes tingui una accio associada.
+		while (!reglaOK && pateaReglas.hasNext()) {
+			reglaFinal = pateaReglas.next();
+			reglaOK = avaluaReglaFinal(reglaFinal,m);
+
+                        if (reglaOK && reglaFinal.getAccio()==null) reglaOK=false;
+		}
+                //A las malas, acaba saltant alguna de les regles per defecte
+                return reglaFinal.getAccio();
+
+        }
+
+        //GETTERS & SETTERS
+        public List getConjuntRegles() {
+            return conjuntRegles;
+        }
+
+        public void setConjuntRegles(List<ReglaFinal> x) {
+            conjuntRegles=x;
+        }
+
+	//PRIVATE
+	private boolean avaluaReglaFinal(ReglaFinal reglaFinal, Map m) {
+		boolean reglaOK = false;
+
+		// Comprovem quin tipus de regla evaluem
+		if (reglaFinal instanceof ReglaSimple) {
+			// Si es simple l'evaluem com a simple
+			reglaOK = avaluaReglaSimple((ReglaSimple) reglaFinal,m);
+		} else {
+			// Si es composta l'evaluem com composta
+			reglaOK = avaluaReglaComposta((ReglaComposta) reglaFinal,m);
+		}
+
+		return reglaOK;
+	}
+
         private void inicialitzadorReglesSimples(){
                 ReglaSimple simple=new ReglaSimple();
                 //Regles que actuaran en cas de que no es complis cap altra regla
@@ -37,7 +87,7 @@ public class Estrategia {
                 simple.setFrase("Fase descart");
                 simple.setPrioritat(999);
                 simple.setAccio("DESCARTAR_RES");
-                
+
                 //Conjunt de regles simples sobre les quals crearem altres regles finals (amb accio associada)
                 conjuntRegles.add(simple);
                 simple=new ReglaSimple();
@@ -164,48 +214,6 @@ public class Estrategia {
 
             }
 	
-	public void afegirRegla(ReglaFinal reglaFinal) {
-		conjuntRegles.add(reglaFinal);
-	}
-
-	public String avaluaRegles(Map m) {
-		// Ordenem regles
-		Collections.sort(conjuntRegles, new ComparadorRegla());
-
-		Iterator<ReglaFinal> pateaReglas = conjuntRegles.iterator();
-		boolean reglaOK = false;
-		ReglaFinal reglaFinal = null;
-
-		// Iterem sobre cada regla que tenim al set, buscant la primera que s'acompleixi i
-                // ademes tingui una accio associada.
-		while (!reglaOK && pateaReglas.hasNext()) {
-			reglaFinal = pateaReglas.next();
-			reglaOK = avaluaReglaFinal(reglaFinal,m);
-
-                        if (reglaOK && reglaFinal.getAccio()==null) reglaOK=false;
-		}
-                //A las malas, acaba saltant alguna de les regles per defecte
-                return reglaFinal.getAccio();
-
-        }
-
-	/* PRIVATE */
-	private boolean avaluaReglaFinal(ReglaFinal reglaFinal, Map m) {
-		boolean reglaOK = false;
-
-		// Comprovem quin tipus de regla evaluem
-		if (reglaFinal instanceof ReglaSimple) {
-			// Si es simple l'evaluem com a simple
-			reglaOK = avaluaReglaSimple((ReglaSimple) reglaFinal,m);
-		} else {
-			// Si es composta l'evaluem com composta
-			reglaOK = avaluaReglaComposta((ReglaComposta) reglaFinal,m);
-		}
-
-		return reglaOK;
-	}
-
-	
 	private boolean avaluaReglaSimple(ReglaSimple a, Map m) {
 		//Si la frase esta present al mapa proporcionat per l'evaluador de situaci�
                 if (m.containsKey(a.getFrase())) return true;
@@ -228,14 +236,7 @@ public class Estrategia {
 		return false;
 	}
 
-        //Getters & Setters
-        public List getConjuntRegles() {
-            return conjuntRegles;
-        }
-
-        public void setConjuntRegles(List<ReglaFinal> x) {
-            conjuntRegles=x;
-        }
+        
 
 	
 	
