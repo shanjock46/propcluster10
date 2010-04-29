@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package CtrlRondaFiveCardDraw;
+package Carta;
 
 /**
  *
@@ -16,48 +16,48 @@ public class Carta {
 
 
     public Carta() {
-    	this.pal="";
-    	this.numero=-1;
-    	this.valor=-1;
+    	pal="";
+    	numero=-1;
+    	valor=-1;
     }
 
     public Carta(String p, int n, int v) {
-    	this.pal=p;
-    	this.numero=n;
-    	this.valor=v;
+    	pal=p;
+    	numero=n;
+    	valor=v;
     }
 
     public String getPal() {
- 		return this.pal;
+ 		return pal;
  	}
 
     public int getNumero() {
- 		return this.numero;
+ 		return numero;
  	}
 
     public int getValor() {
- 		return this.valor;
+ 		return valor;
  	}
 
     public void setPal(String p) {
- 		this.pal=p;
+ 		pal=p;
  	}
 
     public void setNumero(int n) {
- 		this.numero=n;
+ 		numero=n;
  	}
 
     public void setValor(int v) {
- 		this.valor=v;
+ 		valor=v;
  	}
 
     public int compareTo (Carta c) {
  		if (c.getValor()==0 || this.valor==0) return -3;
- 		else if ((c.getNumero()>this.numero)&&(c.getPal().compareToIgnoreCase(this.pal)!=0)) return -2;
- 		else if ((c.getNumero()>this.numero)&&(c.getPal().compareToIgnoreCase(this.pal)==0)) return -1;
- 		else if ((c.getNumero()==this.numero)&&(c.getPal().compareToIgnoreCase(this.pal)==0)) return 0;
- 		else if ((c.getNumero()<this.numero)&&(c.getPal().compareToIgnoreCase(this.pal)==0)) return 1;
- 		else if ((c.getNumero()<this.numero)&&(c.getPal().compareToIgnoreCase(this.pal)!=0)) return 2;
+ 		else if ((c.getNumero()>numero)&&(c.getPal().compareToIgnoreCase(pal)!=0)) return -2;
+ 		else if ((c.getNumero()>numero)&&(c.getPal().compareToIgnoreCase(pal)==0)) return -1;
+ 		else if ((c.getNumero()==numero)&&(c.getPal().compareToIgnoreCase(pal)==0)) return 0;
+ 		else if ((c.getNumero()<numero)&&(c.getPal().compareToIgnoreCase(pal)==0)) return 1;
+ 		else if ((c.getNumero()<numero)&&(c.getPal().compareToIgnoreCase(pal)!=0)) return 2;
  		else return 3;
  	}
 }
