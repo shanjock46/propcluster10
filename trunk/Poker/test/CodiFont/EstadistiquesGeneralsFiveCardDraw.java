@@ -27,18 +27,18 @@ public class EstadistiquesGeneralsFiveCardDraw extends EstadistiquesGenerals {
 
 public EstadistiquesGeneralsFiveCardDraw(){
 
-    this.totalVictoriaCartaAlta=-1;
-    this.totalVictoriaParelles=-1;
-    this.totalVictoriaDoblesParelles=-1;
-    this.totalVictoriaTrio=-1;
-    this.totalVictoriaEscala=-1;
-    this.totalVictoriaColor=-1;
-    this.totalVictoriaFull=-1;
-    this.totalVictoriaPoker=-1;
-    this.totalVictoriaEscalaColor=-1;
-    this.totalPartidesJugades=-1;
-    this.totalRondesJugades=-1;
-    this.totalJugadorsParticipants=-1;
+    totalVictoriaCartaAlta=-1;
+    totalVictoriaParelles=-1;
+    totalVictoriaDoblesParelles=-1;
+    totalVictoriaTrio=-1;
+    totalVictoriaEscala=-1;
+    totalVictoriaColor=-1;
+    totalVictoriaFull=-1;
+    totalVictoriaPoker=-1;
+    totalVictoriaEscalaColor=-1;
+    totalPartidesJugades=-1;
+    totalRondesJugades=-1;
+    totalJugadorsParticipants=-1;
 }
 
     /**
@@ -53,8 +53,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaCartaAlta the totalVictoriaCartaAlta to set
      */
-    public void setTotalVictoriaCartaAlta(int totalVictoriaCartaAlta) {
-        this.totalVictoriaCartaAlta = totalVictoriaCartaAlta;
+    public void setTotalVictoriaCartaAlta(int totalVictoriaCartaAlt) {
+        totalVictoriaCartaAlta = totalVictoriaCartaAlt;
     }
 
     /**
@@ -70,8 +70,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaParelles the totalVictoriaParelles to set
      */
-    public void setTotalVictoriaParelles(int totalVictoriaParelles) {
-        this.totalVictoriaParelles = totalVictoriaParelles;
+    public void setTotalVictoriaParelles(int totalVictoriaParell) {
+        totalVictoriaParelles = totalVictoriaParell;
     }
 
     /**
@@ -86,8 +86,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaDoblesParelles the totalVictoriaDoblesParelles to set
      */
-    public void setTotalVictoriaDoblesParelles(int totalVictoriaDoblesParelles) {
-        this.totalVictoriaDoblesParelles = totalVictoriaDoblesParelles;
+    public void setTotalVictoriaDoblesParelles(int totalVictoriaDoblesParell) {
+        totalVictoriaDoblesParelles = totalVictoriaDoblesParell;
     }
 
     /**
@@ -102,8 +102,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaTrio the totalVictoriaTrio to set
      */
-    public void setTotalVictoriaTrio(int totalVictoriaTrio) {
-        this.totalVictoriaTrio = totalVictoriaTrio;
+    public void setTotalVictoriaTrio(int totalVictoriaTri) {
+        totalVictoriaTrio = totalVictoriaTri;
     }
 
     /**
@@ -117,8 +117,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaEscala the totalVictoriaEscala to set
      */
-    public void setTotalVictoriaEscala(int totalVictoriaEscala) {
-        this.totalVictoriaEscala = totalVictoriaEscala;
+    public void setTotalVictoriaEscala(int totalVictoriaEscal) {
+        totalVictoriaEscala = totalVictoriaEscal;
     }
 
     /**
@@ -133,8 +133,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaColor the totalVictoriaColor to set
      */
-    public void setTotalVictoriaColor(int totalVictoriaColor) {
-        this.totalVictoriaColor = totalVictoriaColor;
+    public void setTotalVictoriaColor(int totalVictoriaCol) {
+        totalVictoriaColor = totalVictoriaCol;
     }
 
     /**
@@ -149,8 +149,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaFull the totalVictoriaFull to set
      */
-    public void setTotalVictoriaFull(int totalVictoriaFull) {
-        this.totalVictoriaFull = totalVictoriaFull;
+    public void setTotalVictoriaFull(int totalVictoriaFul) {
+        totalVictoriaFull = totalVictoriaFul;
     }
 
     /**
@@ -165,8 +165,8 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaPoker the totalVictoriaPoker to set
      */
-    public void setTotalVictoriaPoker(int totalVictoriaPoker) {
-        this.totalVictoriaPoker = totalVictoriaPoker;
+    public void setTotalVictoriaPoker(int totalVictoriaPokr) {
+        totalVictoriaPoker = totalVictoriaPokr;
     }
 
     /**
@@ -181,88 +181,88 @@ public EstadistiquesGeneralsFiveCardDraw(){
     /**
      * @param totalVictoriaEscalaColor the totalVictoriaEscalaColor to set
      */
-    public void setTotalVictoriaEscalaColor(int totalVictoriaEscalaColor) {
-        this.totalVictoriaEscalaColor = totalVictoriaEscalaColor;
+    public void setTotalVictoriaEscalaColor(int totalVictoriaEscalaCol) {
+        totalVictoriaEscalaColor = totalVictoriaEscalaCol;
     }
 
     public void actualitzaEstadistiquesGeneralsFiveCardDraw(String s){
 
         if (s.compareToIgnoreCase("carta alta")==0){
-            if (this.totalVictoriaCartaAlta==-1) this.totalVictoriaCartaAlta=1;
-            else this.totalVictoriaCartaAlta++;
+            if (totalVictoriaCartaAlta==-1) totalVictoriaCartaAlta=1;
+            else totalVictoriaCartaAlta++;
         }
         else if (s.compareToIgnoreCase("parelles")==0){
-            if (this.totalVictoriaParelles==-1) this.totalVictoriaParelles=1;
-            else this.totalVictoriaParelles++;
+            if (totalVictoriaParelles==-1) totalVictoriaParelles=1;
+            else totalVictoriaParelles++;
         }
         else if (s.compareToIgnoreCase("dobles parelles")==0){
-            if (this.totalVictoriaDoblesParelles==-1) this.totalVictoriaDoblesParelles=1;
-            else this.totalVictoriaDoblesParelles++;
+            if (totalVictoriaDoblesParelles==-1) totalVictoriaDoblesParelles=1;
+            else totalVictoriaDoblesParelles++;
         }
         else if (s.compareToIgnoreCase("trio")==0){
-            if (this.totalVictoriaTrio==-1) this.totalVictoriaTrio=1;
-            else this.totalVictoriaTrio++;
+            if (totalVictoriaTrio==-1) totalVictoriaTrio=1;
+            else totalVictoriaTrio++;
         }
         else if (s.compareToIgnoreCase("escala")==0){
-            if (this.totalVictoriaEscala==-1) this.totalVictoriaEscala=1;
-            else this.totalVictoriaEscala++;
+            if (totalVictoriaEscala==-1) totalVictoriaEscala=1;
+            else totalVictoriaEscala++;
         }
         else if (s.compareToIgnoreCase("color")==0){
-            if (this.totalVictoriaColor==-1) this.totalVictoriaColor=1;
-            else this.totalVictoriaColor++;
+            if (totalVictoriaColor==-1) totalVictoriaColor=1;
+            else totalVictoriaColor++;
         }
         else if (s.compareToIgnoreCase("full")==0){
-            if (this.totalVictoriaFull==-1) this.totalVictoriaFull=1;
-            else this.totalVictoriaFull++;
+            if (totalVictoriaFull==-1) totalVictoriaFull=1;
+            else totalVictoriaFull++;
         }
         else if (s.compareToIgnoreCase("poker")==0){
-            if (this.totalVictoriaPoker==-1) this.totalVictoriaPoker=1;
-            else this.totalVictoriaPoker++;
+            if (totalVictoriaPoker==-1) totalVictoriaPoker=1;
+            else totalVictoriaPoker++;
         }
         else if (s.compareToIgnoreCase("escala color")==0){
-            if (this.totalVictoriaEscalaColor==-1) this.totalVictoriaEscalaColor=1;
-            else this.totalVictoriaEscalaColor++;
+            if (totalVictoriaEscalaColor==-1) totalVictoriaEscalaColor=1;
+            else totalVictoriaEscalaColor++;
         }
     }
 
     public Map carregaEstadistiquesGeneralsPoker() {
         Map<String, Object> map = new HashMap<String, Object>();
             
-            if (this.totalPartidesJugades==-1) map.put("Total partides jugades", 0);
-            else map.put("Total partides jugades", this.totalRondesJugades);
+            if (totalPartidesJugades==-1) map.put("Total partides jugades", 0);
+            else map.put("Total partides jugades", totalRondesJugades);
        
-            if (this.totalRondesJugades==-1) map.put("Total rondes jugades", 0);
-            else map.put("Total rondes jugades", this.totalRondesJugades);
+            if (totalRondesJugades==-1) map.put("Total rondes jugades", 0);
+            else map.put("Total rondes jugades", totalRondesJugades);
         
-            if (this.totalJugadorsParticipants==-1) map.put("Total jugadors participants", 0);
-            else map.put("Total jugadors participants", this.totalJugadorsParticipants);
+            if (totalJugadorsParticipants==-1) map.put("Total jugadors participants", 0);
+            else map.put("Total jugadors participants", totalJugadorsParticipants);
         
-            if (this.totalVictoriaCartaAlta==-1)  map.put("Total victoria carta alta", 0);
-            else  map.put("Total victoria carta alta", this.totalVictoriaCartaAlta);
+            if (totalVictoriaCartaAlta==-1)  map.put("Total victoria carta alta", 0);
+            else  map.put("Total victoria carta alta", totalVictoriaCartaAlta);
        
-            if (this.totalVictoriaParelles==-1) map.put("Total victoria parella", 0);
-            else map.put("Total victoria parella", this.totalVictoriaParelles);
+            if (totalVictoriaParelles==-1) map.put("Total victoria parella", 0);
+            else map.put("Total victoria parella", totalVictoriaParelles);
         
-            if (this.totalVictoriaDoblesParelles==-1) map.put("Total victoria doble parella", 0);
-            else map.put("Total victoria doble parella", this.totalVictoriaDoblesParelles);
+            if (totalVictoriaDoblesParelles==-1) map.put("Total victoria doble parella", 0);
+            else map.put("Total victoria doble parella", totalVictoriaDoblesParelles);
        
-            if (this.totalVictoriaTrio==-1) map.put("Total victoria trio", 0);
-            else map.put("Total victoria trio", this.totalVictoriaTrio);
+            if (totalVictoriaTrio==-1) map.put("Total victoria trio", 0);
+            else map.put("Total victoria trio", totalVictoriaTrio);
         
-            if (this.totalVictoriaEscala==-1) map.put("Total victoria escala", 0);
-            else map.put("Total victoria escala", this.totalVictoriaEscala);
+            if (totalVictoriaEscala==-1) map.put("Total victoria escala", 0);
+            else map.put("Total victoria escala", totalVictoriaEscala);
        
-            if (this.totalVictoriaColor==-1) map.put("Total victoria color", 0);
-            else map.put("Total victoria color", this.totalVictoriaColor);
+            if (totalVictoriaColor==-1) map.put("Total victoria color", 0);
+            else map.put("Total victoria color", totalVictoriaColor);
         
-            if (this.totalVictoriaFull==-1) map.put("Total victoria full", 0);
-            else map.put("Total victoria full", this.totalVictoriaFull);
+            if (totalVictoriaFull==-1) map.put("Total victoria full", 0);
+            else map.put("Total victoria full", totalVictoriaFull);
         
-            if (this.totalVictoriaPoker==-1) map.put("Total victoria poker", 0);
-            else map.put("Total victoria poker", this.totalVictoriaPoker);
+            if (totalVictoriaPoker==-1) map.put("Total victoria poker", 0);
+            else map.put("Total victoria poker", totalVictoriaPoker);
         
-            if (this.totalVictoriaEscalaColor==-1) map.put("Total victoria escala de color", 0);
-            else map.put("Total victoria escala de color", this.totalVictoriaEscalaColor);
+            if (totalVictoriaEscalaColor==-1) map.put("Total victoria escala de color", 0);
+            else map.put("Total victoria escala de color", totalVictoriaEscalaColor);
         
                 return map;
     }
