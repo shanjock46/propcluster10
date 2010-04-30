@@ -87,19 +87,33 @@ public class TestCtrlEstrategia {
                             io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
                             io.writeln("Escolleix la regla (Entra el nom de una regla del sistema)");
                             String regla=br.readLine();
-                            io.writeln("Escolleix la regla (Entra el nom de una regla del sistema)");
+                            io.writeln("Escolleix la accio (Entra el nom de una regla del sistema)");
                             String accio=br.readLine();
                             ce.assignarAccio(regla, accio);
                             io.writeln("S'ha assignat a la regla "+regla+" l'accio "+accio);
                             break;
 
                         case 5:// canviPrioritat(String, String)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            io.writeln("Regles existents al sistema:");
+                            List<ReglaFinal> lll=ce.getStrategy().getConjuntRegles();
+                            Iterator<ReglaFinal> pateador3=lll.iterator();
+                            int iii=1;
+                            while (pateador3.hasNext()){
+                                if (iii%5==0) io.writeln(" "+pateador3.next().getNom()+",");
+                                else io.write(" "+pateador3.next().getNom()+",");
+                            iii++;
+                            }
+                            io.writeln();
+                            io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
+                            io.writeln("Escolleix la regla1 (Entra el nom de una regla del sistema)");
+                            String regla1=br.readLine();
+                            io.writeln("Escolleix la regla2 (Entra el nom de una regla del sistema)");
+                            String regla2=br.readLine();
+                            ce.canviPrioritat(regla1, regla2);
+                            io.writeln("S'ha intercanviat la prioritat de les regles introduides si eren valides");
                             break;
 
                         case 6:// getStrategy()
-                            ce=new CtrlEstrategia();
                             io.writeln("S'ha creat un nou controlador d'estrategia");
                             break;
 
