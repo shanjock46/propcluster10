@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package Jugador;
+package com.prop.cluster10.common.test.app.model.jugador;
 
 /**
  *
