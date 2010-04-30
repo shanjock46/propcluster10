@@ -39,7 +39,7 @@ public class TestCtrlAccio {
                             io.writeln("descartar guardar parella carta alta, descartar guardar doble parella, descartar guardar trio, descartar guardar trio carta alta,");
                             io.writeln("descartar guardar poker, descartar guardar projecte escala, descartar guardar projecte color.");
                             io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
-                            String ac=a.obtenirAccio(io.readword());
+                            String ac=a.obtenirAccio(br.readLine());
                             io.writeln("L'accio obtinguda es: "+ac);
                             break;
 
