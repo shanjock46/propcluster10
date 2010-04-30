@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author Martina Canyelles
  */
-public class EstadistiquesGeneralsFiveCardDraw extends EstadistiquesGenerals {
+public class EstadistiquesGeneralsFiveCardDraw extends EstadistiquesGeneralsSB {
 
     private int totalVictoriaCartaAlta;
     private int totalVictoriaParelles;
