@@ -20,7 +20,7 @@ public class TestReglaFinal {
                 BufferedReader br=new BufferedReader(isr);
                 CtrlReglaFinal a=new CtrlReglaFinal();
                 io.writeln("1- Crea el controlador de ReglaFinal buit");
-                io.writeln("2- Obte una accio");
+                io.writeln("2- Crea una nova regla composta");
                 io.writeln("0- Sortir");
 
                 while (op != 0) {
