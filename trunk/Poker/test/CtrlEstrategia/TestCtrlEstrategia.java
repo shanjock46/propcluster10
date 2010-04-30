@@ -6,6 +6,7 @@
 package CtrlEstrategia;
 
 import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -48,7 +49,15 @@ public class TestCtrlEstrategia {
 
                         case 3:// afegirReglaComposta(String, String, String, String)
                             io.writeln("Regles existents al sistema:");
-
+                            List<ReglaFinal> l=ce.getStrategy().getConjuntRegles();
+                            Iterator<ReglaFinal> pateador=l.iterator();
+                            int i=1;
+                            while (pateador.hasNext()){
+                                if (i%5==0) io.writeln(" "+pateador.next().getNom()+",");
+                                else io.write(" "+pateador.next().getNom()+",");
+                            i++;
+                            }
+                            io.writeln();
                             io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
                             
                             io.writeln("Introdueix el nom de la nova ReglaComposta");
