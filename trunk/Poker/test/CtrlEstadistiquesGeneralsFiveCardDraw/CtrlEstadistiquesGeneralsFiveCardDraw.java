@@ -23,8 +23,7 @@ public class CtrlEstadistiquesGeneralsFiveCardDraw extends CtrlEstadistiquesGene
         return map;
     }
 
-    public void actualitzaEstadistiquesPoker(int i, int c, String s) {
-        getEst().actualitzaEstadistiquesGenerals(i, c);
+    public void actualitzaEstadistiquesPoker(String s) {
         getEst().actualitzaEstadistiquesGeneralsFiveCardDraw(s);
     }
 
