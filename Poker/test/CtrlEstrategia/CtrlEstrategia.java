@@ -31,26 +31,51 @@ public class CtrlEstrategia {
     public void afegirReglaComposta (String n, String a, String b, String comp){
         ReglaFinal r1=obteRegla(a);
         ReglaFinal r2=obteRegla(b);
-        if (r1!=null && r2!=null) strategy.afegirRegla(crf.crearReglaComposta(n,r1,r2,comp));
+        if (r1!=null && r2!=null) strategy.afegirRegla(getCrf().crearReglaComposta(n,r1,r2,comp));
     }
 
     public void assignarAccio (String r, String a) {
-        numeroReglas++;
+        numeroReglas=numeroReglas + 1;
         ReglaFinal r1=obteRegla(r);
         CtrlAccio ca=new CtrlAccio();
-        r1.setAccio(ca.obtenirAccio(a));
-        r1.setPrioritat(numeroReglas);
+        assigna(r1,numeroReglas,ca.obtenirAccio(a));
+        
     }
 
     public void canviPrioritat(String a, String b){
         ReglaFinal r1=obteRegla(a);
         ReglaFinal r2=obteRegla(b);
-        int aux=r1.getPrioritat();
-        r1.setPrioritat(r2.getPrioritat());
-        r2.setPrioritat(aux);
+        canvi(r1,r2);
+
+        
     }
 
+    //Getters & Setters
+    public Estrategia getStrategy() {
+        return strategy;
+    }
 
+    public void setStrategy(Estrategia strategy) {
+        this.strategy = strategy;
+    }
+
+    public CtrlReglaFinal getCrf() {
+        return crf;
+    }
+
+    public void setCrf(CtrlReglaFinal crf) {
+        this.crf = crf;
+    }
+
+    public int getNumeroReglas() {
+        return numeroReglas;
+    }
+    
+    public void setNumeroReglas(int numeroReglas) {
+        this.numeroReglas = numeroReglas;
+    }
+
+    //Private
     private ReglaFinal obteRegla (String a){
 
         List<ReglaFinal> x=strategy.getConjuntRegles();
@@ -61,5 +86,30 @@ public class CtrlEstrategia {
             if (r.getNom().compareTo(a)==0) return r;
         }
         return null;
+    }
+
+    private void assigna (ReglaFinal r, int n, String a){
+
+        List<ReglaFinal> x=strategy.getConjuntRegles();
+        x.remove(r);
+        r.setAccio(a);
+        r.setPrioritat(n);
+        x.add(r);
+        strategy.setConjuntRegles(x);
+
+    }
+
+    private void canvi (ReglaFinal r, ReglaFinal s){
+
+        List<ReglaFinal> x=strategy.getConjuntRegles();
+        x.remove(r);
+        x.remove(s);
+        int aux=r.getPrioritat();
+        r.setPrioritat(s.getPrioritat());
+        s.setPrioritat(aux);
+        x.add(r);
+        x.add(s);
+        strategy.setConjuntRegles(x);
+
     }
 }
