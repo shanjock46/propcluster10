@@ -25,7 +25,8 @@ public class TestReglaFinal {
                 io.writeln("5- Canvia el nom de la ReglaFinal");
                 io.writeln("6- Canvia la prioritat de la ReglaFinal");
                 io.writeln("7- Canvia l'accio de la ReglaFinal");
-
+                io.writeln("0- Sortir");
+                
                 while (op != 0) {
                     op = io.readint();
                         switch (op) {
