@@ -114,32 +114,35 @@ public class TestCtrlEstrategia {
                             break;
 
                         case 6:// getStrategy()
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            if (ce.getStrategy()==null) io.writeln("S'ha fet un getStrategy, i l'objecte es null (no inicialitzat)");
+                            else io.writeln("S'ha fet un getStrategy, i l'objecte no es null (inicialitzat)");
                             break;
 
                         case 7:// getCrf()
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            if (ce.getCrf()==null) io.writeln("S'ha fet un getCrf, i l'objecte es null (no inicialitzat)");
+                            else io.writeln("S'ha fet un getCrf, i l'objecte no es null (inicialitzat)");
                             break;
 
                         case 8:// getNumeroReglas()
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            io.writeln("El numero de regles amb accio associada al controlador es "+ce.getNumeroReglas());
                             break;
 
                         case 9:// setStrategy(Estrategia)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            Estrategia est=new Estrategia();
+                            ce.setStrategy(est);
+                            io.writeln("S'ha setejat un objecte Estrategia inicialitzada standard al controlador");
                             break;
 
                         case 10:// setCrf(CtrlReglaFinal)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            CtrlReglaFinal ctrl=new CtrlReglaFinal();
+                            ce.setCrf(ctrl);
+                            io.writeln("S'ha setejat un objecte CtrlRondaFinal al controlador");
                             break;
 
                         case 11:// setNumeroReglas(Integer)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            int uuu=io.readint();
+                            ce.setNumeroReglas(uuu);
+                            io.writeln("S'ha actualitzat el numero de regles. Ara es "+ce.getNumeroReglas());
                             break;
 
                         }}}
