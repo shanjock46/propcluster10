@@ -35,9 +35,9 @@ public class TestReglaSimple {
 
                         case 2:// ReglaSimple(String, String)
                             io.writeln("Introdueix el nom de la ReglaSimple");
-                            String nom=br.readLine();
+                            String nom=io.readword();
                             io.writeln("Introdueix la frase de la ReglaSimple");
-                            String frase=br.readLine();
+                            String frase=io.readword();
                             a=new ReglaSimple(nom,frase);
                             io.writeln("S'ha creat una ReglaSimple amb nom i frase: "+a.getFrase());
                             io.writeln("Pots obtenir o canviar la frase des d'aqui. El nom, des de el tester de ReglaFinal");
@@ -49,7 +49,7 @@ public class TestReglaSimple {
 
                         case 4:// setFrase(String)
                             io.writeln("Introdueix una nova frase per la ReglaSimple");
-                            String f=br.readLine();
+                            String f=io.readword();
                             a.setFrase(f);
                             io.writeln("La nova frase de la ReglaSimple es: "+a.getFrase());
                             break;
