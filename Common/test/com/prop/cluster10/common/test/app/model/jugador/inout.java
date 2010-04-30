@@ -15,7 +15,7 @@ keyboard and disk files. The present version runs on
 Macintosh, Unix, and Windows 95 systems.
 */
 
-package Jugador;
+package com.prop.cluster10.common.test.app.model.jugador;
 
 import java.io.*;
 
