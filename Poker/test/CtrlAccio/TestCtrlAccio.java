@@ -28,6 +28,7 @@ public class TestCtrlAccio {
 
                         case 1:// CtrlAccio()
                             a=new CtrlAccio();
+                            io.writeln("S'ha creat un nou controlador d'accio");
                             break;
 
                         case 2:// obtenirAccio(String)
