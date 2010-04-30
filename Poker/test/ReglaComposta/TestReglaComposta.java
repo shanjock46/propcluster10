@@ -79,12 +79,12 @@ public class TestReglaComposta {
                             break;
 
                         case 7:// setRegla2(ReglaFinal)
-                            io.writeln("Introdueix el nom de la ReglaFinal1");
+                            io.writeln("Introdueix el nom de la ReglaFinal2");
                             String nom6=io.readword();
                             ReglaComposta a4=new ReglaComposta();
                             a4.setNom(nom6);
-                            a.setRegla1(a4);
-                            io.writeln("El nom de la nova regla1 de ReglaComposta es: "+a.getRegla1().getNom());
+                            a.setRegla2(a4);
+                            io.writeln("El nom de la nova regla1 de ReglaComposta es: "+a.getRegla2().getNom());
                             break;
 
                         case 8:// setComparacio(String)
