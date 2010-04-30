@@ -38,7 +38,7 @@ public class TestEstrategia {
 
                         case 2:// afegirRegla(ReglaFinal)
                             io.writeln("Introdueix el nom de la regla que vols afegir");
-                            String nom=br.readLine();
+                            String nom=io.readword();
                             ReglaSimple a=new ReglaSimple();
                             a.setNom(nom);
                             e.afegirRegla(a);
@@ -93,7 +93,7 @@ public class TestEstrategia {
                             Map<String,Object> m=new HashMap<String,Object>();
                             for (int i=1;i<=regla;i++){
                             io.writeln("Introdueix la frase de la regla "+i);
-                            String frase=br.readLine();
+                            String frase=io.readword();
                             m.put(frase, null);
                             }
                             io.writeln(e.avaluaRegles(m));
@@ -114,15 +114,15 @@ public class TestEstrategia {
                         case 5:// setConjuntRegles()
                             io.writeln("Substituirem el set de regles present a estrategia per 3 noves regles...");
                             io.writeln("Introdueix el nom de la regla 1");
-                            String nom1=br.readLine();
+                            String nom1=io.readword();
                             ReglaSimple a1=new ReglaSimple();
                             a1.setNom(nom1);
                             io.writeln("Introdueix el nom de la regla 2");
-                            String nom2=br.readLine();
+                            String nom2=io.readword();
                             ReglaSimple a2=new ReglaSimple();
                             a2.setNom(nom2);
                             io.writeln("Introdueix el nom de la regla 3");
-                            String nom3=br.readLine();
+                            String nom3=io.readword();
                             ReglaSimple a3=new ReglaSimple();
                             a3.setNom(nom3);
                             List<ReglaFinal> ll=new ArrayList<ReglaFinal>();
