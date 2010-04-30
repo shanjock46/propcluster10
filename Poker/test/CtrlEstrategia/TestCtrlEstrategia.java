@@ -42,13 +42,26 @@ public class TestCtrlEstrategia {
                             break;
 
                         case 2:// crearEstrategia()
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            ce.crearEstrategia();
+                            io.writeln("S'ha inicialitzat els atributs del controlador");
                             break;
 
                         case 3:// afegirReglaComposta(String, String, String, String)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            io.writeln("Regles existents al sistema:");
+
+                            io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
+                            
+                            io.writeln("Introdueix el nom de la nova ReglaComposta");
+                            String nom1=br.readLine();
+                            io.writeln("Introdueix el nom de la ReglaFinal1");
+                            String nom2=br.readLine();
+                            io.writeln("Introdueix el nom de la ReglaFinal2");
+                            String nom3=br.readLine();
+                            io.writeln("Introdueix el comparador de la nova regla");
+                            String comp=br.readLine();
+                            ce.afegirReglaComposta(nom1,nom2,nom3,comp);
+                            io.writeln("S'ha creat una ReglaComposta amb nom, regla 1, regla 2 i comparador");
+                            io.writeln("Pots obtenir o canviar regla1, regla2 i comparador des d'aqui. El nom, des de el tester de ReglaFinal");
                             break;
 
                         case 4:// assignarAccio(String, String)
