@@ -45,7 +45,7 @@ public class CtrlEstrategia {
     public void canviPrioritat(String a, String b){
         ReglaFinal r1=obteRegla(a);
         ReglaFinal r2=obteRegla(b);
-        canvi(r1,r2);
+        if (r1!=null&&r2!=null) canvi(r1,r2);
 
         
     }
