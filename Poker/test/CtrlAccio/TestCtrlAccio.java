@@ -21,6 +21,7 @@ public class TestCtrlAccio {
                 CtrlAccio a=new CtrlAccio();
                 io.writeln("1- Crea el controlador d'accio");
                 io.writeln("2- Obte una accio");
+                io.writeln("0 - Sortir");
 
                 while (op != 0) {
                         op = io.readint();
