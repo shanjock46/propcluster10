@@ -34,17 +34,17 @@ public class TestReglaFinal {
 
                         case 2:// crearReglaComposta()
                             io.writeln("Introdueix el nom de la ReglaFinal1");
-                            String nom1=br.readLine();
+                            String nom1=io.readword();
                             ReglaComposta a1=new ReglaComposta();
                             a1.setNom(nom1);
                             io.writeln("Introdueix el nom de la ReglaFinal2");
-                            String nom2=br.readLine();
+                            String nom2=io.readword();
                             ReglaComposta a2=new ReglaComposta();
                             a2.setNom(nom2);
                             io.writeln("Introdueix el nom de la nova regla");
-                            String nom3=br.readLine();
+                            String nom3=io.readword();
                             io.writeln("Introdueix el comparador de la nova regla");
-                            String comp=br.readLine();
+                            String comp=io.readword();
                             ReglaComposta x=(ReglaComposta)a.crearReglaComposta(nom3, a1, a2, comp);
                             io.writeln("S'ha creat una nova regla composta al controlador");
                             io.writeln("La nova ReglaComposta te nom: "+x.getNom()+", el nom de la seva regla1 es: "+x.getRegla1().getNom()+", el nom de la seva regla2 es: "+x.getRegla2().getNom()+" i el seu comparador es: "+x.getComparacio());
