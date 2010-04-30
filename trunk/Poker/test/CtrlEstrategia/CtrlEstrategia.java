@@ -55,24 +55,24 @@ public class CtrlEstrategia {
         return strategy;
     }
 
-    public void setStrategy(Estrategia strategy) {
-        this.strategy = strategy;
+    public void setStrategy(Estrategia strategys) {
+        strategy = strategys;
     }
 
     public CtrlReglaFinal getCrf() {
         return crf;
     }
 
-    public void setCrf(CtrlReglaFinal crf) {
-        this.crf = crf;
+    public void setCrf(CtrlReglaFinal crfs) {
+        crf = crfs;
     }
 
     public int getNumeroReglas() {
         return numeroReglas;
     }
     
-    public void setNumeroReglas(int numeroReglas) {
-        this.numeroReglas = numeroReglas;
+    public void setNumeroReglas(int numeroReglass) {
+        numeroReglas = numeroReglass;
     }
 
     //Private
