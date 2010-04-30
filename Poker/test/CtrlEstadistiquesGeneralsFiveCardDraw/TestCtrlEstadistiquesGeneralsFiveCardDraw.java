@@ -18,9 +18,9 @@ public class TestCtrlEstadistiquesGeneralsFiveCardDraw {
                 CtrlEstadistiquesGeneralsFiveCardDraw a=new CtrlEstadistiquesGeneralsFiveCardDraw();
                 io.writeln("1- Crea el controlador d'estadistiques");
                 io.writeln("2- Carrega les estadistiques presents al controlador");
-                io.writeln("3- ");
-                io.writeln("4- ");
-                io.writeln("5- ");
+                io.writeln("3- Actualitza les estadistiques de poker");
+                io.writeln("4- Obte les Estadistiques present al controlador");
+                io.writeln("5- Canvia les estadistiques presents al controlador per un objecte estadistiques buit");
                 io.writeln("0- Sortir");
 
                 while (op != 0) {
