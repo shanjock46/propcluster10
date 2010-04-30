@@ -27,6 +27,8 @@ public class Estrategia {
                 simple.setFrase("Primera ronda d'apostes");
                 simple.setPrioritat(999);
                 simple.setAccio("FOLD");
+                simple=new ReglaSimple();
+                conjuntRegles.add(simple);
                 simple.setNom("Per defecte fase aposta 2");
                 simple.setFrase("Segona ronda d'apostes");
                 simple.setPrioritat(999);
@@ -174,7 +176,7 @@ public class Estrategia {
 
 		Iterator<ReglaFinal> pateaReglas = conjuntRegles.iterator();
 		boolean reglaOK = false;
-		ReglaFinal reglaFinal = null;
+                ReglaFinal reglaFinal = null;
 
 		// Iterem sobre cada regla que tenim al set, buscant la primera que s'acompleixi i
                 // ademes tingui una accio associada.
@@ -185,14 +187,17 @@ public class Estrategia {
                         if (reglaOK && reglaFinal.getAccio()==null) reglaOK=false;
 		}
                 //A las malas, acaba saltant alguna de les regles per defecte
-                return reglaFinal.getAccio();
+                if(reglaOK==true) return reglaFinal.getAccio();
+                else if (m.containsKey("Primera ronda d'apostes")) return "FOLD";
+                else if (m.containsKey("Segona ronda d'apostes")) return "FOLD";
+                else if (m.containsKey("Fase descart")) return "DESCARTA_RES";
+                else return "CAP ES COMPLEIX";
 
         }
 
 	/* PRIVATE */
 	private boolean avaluaReglaFinal(ReglaFinal reglaFinal, Map m) {
 		boolean reglaOK = false;
-
 		// Comprovem quin tipus de regla evaluem
 		if (reglaFinal instanceof ReglaSimple) {
 			// Si es simple l'evaluem com a simple
