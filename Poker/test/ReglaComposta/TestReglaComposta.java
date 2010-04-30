@@ -26,6 +26,7 @@ public class TestReglaComposta {
                 io.writeln("6- Canvia regla1");
                 io.writeln("7- Canvia regla2");
                 io.writeln("8- Canvia comparador");
+                io.writeln("0- Sortir");
 
                 while (op != 0) {
                     op = io.readint();
