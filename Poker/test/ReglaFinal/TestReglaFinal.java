@@ -50,7 +50,7 @@ public class TestReglaFinal {
 
                         case 5:// setNom(String)
                             io.writeln("Introdueix un nou nom");
-                            String f=br.readLine();
+                            String f=io.readword();
                             a.setNom(f);
                             io.writeln("El nou nom de la ReglaFinal es: "+a.getNom());
                             break;
@@ -64,7 +64,7 @@ public class TestReglaFinal {
 
                         case 7:// setAccio(String)
                             io.writeln("Introdueix una nova accio");
-                            String f2=br.readLine();
+                            String f2=io.readword();
                             a.setAccio(f2);
                             io.writeln("La nova accio associada a la ReglaFinal es: "+a.getAccio());
                             break;
