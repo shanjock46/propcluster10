@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author Dani
  */
-public class TestReglaFinal {
+public class TestCtrlReglaFinal {
      public static void main(String[] args) throws Exception {
 
                 int op = 30;
