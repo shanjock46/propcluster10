@@ -24,6 +24,7 @@ public class TestEstrategia {
                 io.writeln("3- Avalua les regles de l'estrategia");
                 io.writeln("4- Obte conjunt de regles");
                 io.writeln("5- Canvia el conjunt de regles");
+                io.writeln("0 - Sortir");
 
 
                 while (op != 0) {
