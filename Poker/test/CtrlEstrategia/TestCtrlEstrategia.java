@@ -81,11 +81,16 @@ public class TestCtrlEstrategia {
                             while (pateador2.hasNext()){
                                 if (ii%5==0) io.writeln(" "+pateador2.next().getNom()+",");
                                 else io.write(" "+pateador2.next().getNom()+",");
-                            i++;
+                            ii++;
                             }
                             io.writeln();
                             io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
-                            io.writeln("A quina regla");
+                            io.writeln("Escolleix la regla (Entra el nom de una regla del sistema)");
+                            String regla=br.readLine();
+                            io.writeln("Escolleix la regla (Entra el nom de una regla del sistema)");
+                            String accio=br.readLine();
+                            ce.assignarAccio(regla, accio);
+                            io.writeln("S'ha assignat a la regla "+regla+" l'accio "+accio);
                             break;
 
                         case 5:// canviPrioritat(String, String)
