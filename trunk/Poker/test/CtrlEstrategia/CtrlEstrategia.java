@@ -38,7 +38,7 @@ public class CtrlEstrategia {
         numeroReglas=numeroReglas + 1;
         ReglaFinal r1=obteRegla(r);
         CtrlAccio ca=new CtrlAccio();
-        assigna(r1,numeroReglas,ca.obtenirAccio(a));
+        if (r1!=null) assigna(r1,numeroReglas,ca.obtenirAccio(a));
         
     }
 

@@ -74,8 +74,18 @@ public class TestCtrlEstrategia {
                             break;
 
                         case 4:// assignarAccio(String, String)
-                            ce=new CtrlEstrategia();
-                            io.writeln("S'ha creat un nou controlador d'estrategia");
+                            io.writeln("Regles existents al sistema:");
+                            List<ReglaFinal> ll=ce.getStrategy().getConjuntRegles();
+                            Iterator<ReglaFinal> pateador2=ll.iterator();
+                            int ii=1;
+                            while (pateador2.hasNext()){
+                                if (ii%5==0) io.writeln(" "+pateador2.next().getNom()+",");
+                                else io.write(" "+pateador2.next().getNom()+",");
+                            i++;
+                            }
+                            io.writeln();
+                            io.writeln("----------------AVIS:CAP ALTRE OPCIO ES VALIDA---------------------------------------");
+                            io.writeln("A quina regla");
                             break;
 
                         case 5:// canviPrioritat(String, String)
