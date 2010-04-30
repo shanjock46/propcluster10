@@ -22,6 +22,7 @@ public class TestReglaSimple {
                 io.writeln("2- Crea una ReglaSimple amb nom i frase");
                 io.writeln("3- Obte la frase de la ReglaSimple");
                 io.writeln("4- Canvia la frase de la ReglaSimple");
+                io.writeln("0- Sortir");
 
                 while (op != 0) {
                     op = io.readint();
