@@ -83,7 +83,7 @@ public class CtrlEstrategia {
 
         while (pateador.hasNext()) {
             ReglaFinal r=pateador.next();
-            if (r.getNom().compareTo(a)==0) return r;
+            if (r.getNom().compareToIgnoreCase(a)==0) return r;
         }
         return null;
     }
