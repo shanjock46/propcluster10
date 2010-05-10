@@ -11,15 +11,27 @@
 
 package testVistas;
 
+import java.awt.Point;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Alberto
  */
-public class Estadistiques extends javax.swing.JFrame {
+public class Estadistiques extends javax.swing.JFrame implements WindowListener{
 
     /** Creates new form Estadistiques */
-    public Estadistiques() {
+    JFrame padre;
+
+    public Estadistiques(JFrame padre) {
+        this.padre = padre;
         initComponents();
+        Point pt = padre.getLocation();
+        this.setLocation(pt);
+        this.setVisible(true);
+        this.padre.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -94,13 +106,13 @@ public class Estadistiques extends javax.swing.JFrame {
     /**
     * @param args the command line arguments
     */
-    public static void main(String args[]) {
+   /* public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Estadistiques().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4;
@@ -109,5 +121,26 @@ public class Estadistiques extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
+
+    public void windowOpened(WindowEvent e) {
+    }
+
+    public void windowClosing(WindowEvent e) {
+    }
+
+    public void windowClosed(WindowEvent e) {
+    }
+
+    public void windowIconified(WindowEvent e) {
+    }
+
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    public void windowActivated(WindowEvent e) {
+    }
+
+    public void windowDeactivated(WindowEvent e) {
+    }
 
 }

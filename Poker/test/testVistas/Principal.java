@@ -200,15 +200,13 @@ public class Principal extends javax.swing.JFrame implements WindowListener {
     }//GEN-LAST:event_ButtonVisualActionPerformed
 
     private void ButtonEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEstActionPerformed
-        Estadistiques p = new Estadistiques();
-        p.setVisible(true);
-        dispose();
+        this.setEnabled(false);
+        Estadistiques p = new Estadistiques(this);
     }//GEN-LAST:event_ButtonEstActionPerformed
 
     private void ButtonCrearJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCrearJugActionPerformed
-        CrearJugador p = new CrearJugador();
-        p.setVisible(true);
-        dispose();
+        this.setEnabled(false);
+        CrearJugador p = new CrearJugador(this);
     }//GEN-LAST:event_ButtonCrearJugActionPerformed
 
     private void ButtonCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCarregarActionPerformed
@@ -243,7 +241,7 @@ public class Principal extends javax.swing.JFrame implements WindowListener {
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
-    private void AvisSortir(){
+    public void AvisSortir(){
         Point pt = new Point();
         pt = this.getLocation();
         AvisSortir p = new AvisSortir(this);

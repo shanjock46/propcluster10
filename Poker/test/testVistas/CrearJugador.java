@@ -4,17 +4,32 @@
  * Created on 04-may-2010, 17:52:20
  */
 package testVistas;
+
+import java.awt.Point;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Alberto
  */
-public class CrearJugador extends javax.swing.JFrame {
+public class CrearJugador extends javax.swing.JFrame implements WindowListener{
+
+
+    JFrame padre;
 
     /** Creates new form CrearJugador */
-    public CrearJugador() {
+    public CrearJugador(JFrame padre) {
+        this.padre = padre;
+        Point pt = this.padre.getLocation();
+        this.setLocation(pt);
+        this.setVisible(true);
+
         initComponents();
         jButton3.setEnabled(false);
         jRadioButton1.setSelected(true);
+        addWindowListener(this);
     }
 
     /** This method is called from within the constructor to
@@ -172,13 +187,13 @@ public class CrearJugador extends javax.swing.JFrame {
     /**
     * @param args the command line arguments
     */
-    public static void main(String args[]) {
+  /*  public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CrearJugador().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -194,5 +209,28 @@ public class CrearJugador extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    public void windowClosing(WindowEvent e) {
+                //AvisSortir();
+    }
+
+    public void windowClosed(WindowEvent e) {
+    }
+
+    public void windowIconified(WindowEvent e) {
+    }
+
+    public void windowDeiconified(WindowEvent e) {
+    }
+
+    public void windowActivated(WindowEvent e) {
+    }
+
+    public void windowDeactivated(WindowEvent e) {
+    }
 
 }
